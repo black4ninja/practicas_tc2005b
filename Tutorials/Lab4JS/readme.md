@@ -1611,3 +1611,60 @@ cLog("Hello World);
 Al usar la asignación de funciones por valor, podemos asignar cada tipo de salida a la consola en una variable más corta para escribir menos y poder depurar nuestro código de una manera más rápida.
 
 No olvides utilizar los conceptos vistos como en el último ejemplo para hacer que tu código sea más limpio, legible y sobre todo funcional.
+
+## Arreglos y Objetos
+
+### Arreglos
+
+Los arreglos en javascript son iguales a otros lenguajes de programación, con la diferencia que aquí al momento de declarar un arreglo podemos también considerarlo como una lista. A diferencia de lenguajes de programación más estrictos esto significa que una vez definido el arreglo su tamaño podrá no ser fijo y podremos seguir agregando elementos. Esto es una función muy poderosa de los arrays en Javascript ya que nos permite trabajar directamente con estructuras de datos que al final hoy en día es lo que se necesita para manipular información.
+
+```
+const arreglo = ["Elemento"];
+const arreglo2 = new Array();
+arreglo.push("Otro elemento");
+arreglo.push(5);
+const elemento = 8;
+arreglo.push(elemento);
+arreglo[10] = "Uno más";
+//arreglos asociativos
+arreglo["dos"] = 2;
+
+console.log(arreglo);
+```
+
+### Iteraciones sobre arreglos
+
+Igualmente como en otros lenguajes de programación podemos iterar sobre los arreglos que hayamos declarado usando un ciclo for.
+
+```
+for (let i = 0; i < arreglo.length; i++) {
+    console.log(arreglo[i]);
+}
+```
+
+Otra forma de iterar sobre los arreglos es con un tipo especial de ciclo for, pero este puede ser de 2 tipos, utilizando las palabras reservadas **of** e **in**, para el primero nos devuelve el elemento tal cual del arreglo que queremos revisar, y para el segundo nos devuelve el índice del elemento del arreglo.
+
+```
+for(let valor of arreglo) {
+    console.log(valor);
+}
+for(let indice in arreglo) {
+    console.log(indice);
+}
+```
+
+Aquí va a depender el caso que se quiera manejar pero en la industria ambos son ampliamente utilizados.
+
+### Objetos
+
+Los objetos parecerían un tema completamente aparte, pero si recuerdas en el lab1 de introducción al HTML, te hable sobre los medios actuales de información y como se utilizan el HTML, el XML, y el JSON.
+
+Si has puesto atención hasta el momento te tengo una buena noticia, los objetos en Javascript son objetos JSON por default, por lo que para declararlos basta con realizar lo siguiente:
+
+```
+const objeto = { atributo1: "Valor 1", atributo2: "valor 2" };
+objeto.atributo3 = 3;
+console.log(objeto);
+```
+
+La forma estándar de JSON nos dice que la llave debe ser un string, pero observa que en el caso del ejemplo **atributo1** esta más formado como una especie de variable, es importante destacar esto ya que si intentas copiar un objeto de javascript directamente sobre un JSON puedes llevarte una sorpresa en que no son compatibles y esto se debe al formato. Más adelante veremos como lidiar con esta situación, pero de momento observa como el objeto nos permite guardar información que queramos.

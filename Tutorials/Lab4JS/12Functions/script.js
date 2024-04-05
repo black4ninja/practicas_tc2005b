@@ -170,3 +170,8 @@ console.assert(1 === "1");
 console.assert(1 == true);
 
 console.assert(2 == "1");
+
+
+const objeto = {atributo1: "Valor 1", atributo2: "valor 2"};
+objeto.atributo3 = 3;
+console.log(objeto);

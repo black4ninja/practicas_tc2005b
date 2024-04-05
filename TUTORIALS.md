@@ -27,3 +27,4 @@ Los laboratorios son extensiones de lo que vemos en clase, siempre revisa el mat
   - Condicionales
   - Ciclos
   - Funciones
+  - Arreglos y Objetos
