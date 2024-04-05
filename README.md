@@ -1,12 +1,13 @@
 # TC2005B
 Este repositorio esta pensado como centro de información y documentación sobre los temas vistos en clase.
 
-[![HTML](https://img.shields.io/badge/HTML-gray.svg?logo=html5&style=flat)]()
-[![CSS](https://img.shields.io/badge/CSS-gray.svg?logo=css3&style=flat)]()
-[![JS](https://img.shields.io/badge/javascript-gray.svg?logo=javascript&style=flat)]()
-[![NodeJS](https://img.shields.io/badge/NodeJS-gray.svg?logo=node.js&style=flat)]()
-[![MariaDB](https://img.shields.io/badge/MariaDB-gray.svg?logo=mariadb&style=flat)]()
-</br>
+[![HTML](https://img.shields.io/badge/HTML-orange.svg?logo=html5&style=flat)]()
+[![CSS](https://img.shields.io/badge/CSS-red.svg?logo=css3&style=flat)]()
+[![JS](https://img.shields.io/badge/javascript-blue.svg?logo=javascript&style=flat)]()
+[![NodeJS](https://img.shields.io/badge/NodeJS-green.svg?logo=node.js&style=flat)]()
+[![MariaDB](https://img.shields.io/badge/MariaDB-purple.svg?logo=mariadb&style=flat)]()
+[![Git](https://img.shields.io/badge/Git-black.svg?logo=git&style=flat)]()
+
 
 ## ¿Cómo esta organizada la documentación?
 
