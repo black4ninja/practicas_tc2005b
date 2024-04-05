@@ -1,14 +1,14 @@
 # TUTORIALES
 
 Los laboratorios son extensiones de lo que vemos en clase, siempre revisa el material ya que puede haber detalles que por tiempo no alcancemos a ver y que es tu responsabilidad entender para no atrasarte en las bases de lo que tienes que aprender del curso.
-- [LAB1 - Introducción a HTML](/Lab1HTML/readme.md)
+- [LAB1 - Introducción a HTML](/Tutorials/Lab1HTML/readme.md)
   - Plantilla básica de HTML
   - Introducción a HTML
   - Estándares adicionales de transmisión de información HTML, XML, JSON
   - Etiquetas HTML
   - Atributos HTML
   - Formularios HTML
-- [LAB2 - Control de versiones](Lab2Git/readme.md)
+- [LAB2 - Control de versiones](/Tutorials/Lab2Git/readme.md)
   - Introducción básica
   - Requerimientos Previos
   - Manejo básico de repositorios
