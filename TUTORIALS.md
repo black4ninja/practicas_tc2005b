@@ -34,3 +34,7 @@ Los laboratorios son extensiones de lo que vemos en clase, siempre revisa el mat
     - Punto y coma
     - Comentarios
   - UseStrict
+    - Uso de let
+    - Var en lugar de let
+    - Declaraciones dobles
+    - 
