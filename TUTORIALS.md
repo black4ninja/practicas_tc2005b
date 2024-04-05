@@ -33,3 +33,4 @@ Los laboratorios son extensiones de lo que vemos en clase, siempre revisa el mat
     - Declaraciones
     - Punto y coma
     - Comentarios
+  - UseStrict
