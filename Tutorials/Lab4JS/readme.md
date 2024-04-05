@@ -1333,32 +1333,32 @@ console.log( userName );
 
 ### Parámetros
 ``` 
-    function showMessage(from, text) { // parameters: from, text
-        console.log(from + ': ' + text);
-    }
+function showMessage(from, text) { // parameters: from, text
+    console.log(from + ': ' + text);
+}
 
-    showMessage('Ann', 'Hello!'); // Ann: Hello! (*)
-    showMessage('Ann', "What's up?"); // Ann: What's up? (**)
+showMessage('Ann', 'Hello!'); // Ann: Hello! (*)
+showMessage('Ann', "What's up?"); // Ann: What's up? (**)
 ```
 
 ### Valores default
 ```
-    function showMessage(from, text = "no text given") {
-        console.log( from + ": " + text );
-    }
+function showMessage(from, text = "no text given") {
+    console.log( from + ": " + text );
+}
 
-    showMessage("Ann"); // Ann: no text given
-    showMessage("Ann", undefined);
+showMessage("Ann"); // Ann: no text given
+showMessage("Ann", undefined);
 ```
 
 ### Regresando valores
 ```
-    function sum(a, b) {
-        return a + b;
-    }
+function sum(a, b) {
+    return a + b;
+}
 
-    let result = sum(1, 2);
-    console.log( result ); // 3
+let result = sum(1, 2);
+console.log( result ); // 3
 ```
 
 ### Nombrado de funciones
@@ -1380,3 +1380,234 @@ El resultado final sería algo como:
 - createForm(..)      // creates a form (and usually returns it)
 - checkPermission(..) // checks a permission, returns true/false
 
+### Expresiones con funciones
+
+En Javascript, una función no es una "estructura mágica del lenguaje", más bien es un tipo especial de valores.
+
+La sintáxis que usamos anteriormente se le conoce como **Function Declaration**.
+
+```
+function sayHi() {
+  console.log( "Hello" );
+}
+```
+
+Existe otra sintáxis que es llamada **Function Expression**. Esta forma nos permite crear una función en medio de cualquier expresión. Esto es algo muy importante pues es lo que hace diferente a Javascript de muchos lenguajes de programación, ya que podemos hacer muchas operaciones como almacenar la función en una variable.
+
+```
+let sayHi = function() {
+  console.log( "Hello" );
+};
+```
+
+Aquí podemos ver que la variable **sayHi** obtiene el valor, la nueva función, creada como **function() { alert("Hello"); }**.
+
+Como la creación de la función sucede en el contexto de la expresión de asignación (a la derecha del operador =), esta es una **Function Expression.**
+
+Por favor observa que no hay un nombre después de la palabra reservada **function**. Omitiendo el nombre es permitido por las **Function Expressions**.
+
+Aquí inmediatamente se asigna el valor a la variable, por lo que el significado de este código es "crear una función y ponerla en la variable **sayHi**.
+
+Cuando trabajamos con **Function Expressions** el formato de función sin nombre es conocido también como **función anónima.**
+
+### Las funciones son un valor
+
+Para reiterar, no importa como una función es creada, esta es un valor.
+
+```
+function sayHi() {
+  console.log( "Hello" );
+}
+
+console.log( sayHi ); // shows the function code
+```
+
+Nota que en el ejemplo anterior la última línea no ejecuta la función, por que no hay paréntesis después de **sayHi**. Existen lenguajes de programación donde cualquier mención al nombre de una función causa su ejecución, pero en Javascript esto no sucede.
+
+Ahora bien, como en Javascript una función es un valor, podemos lidiar con ella como un valor. Por ello podemos hacer acciones como la siguiente:
+
+```
+function sayHi() {   // (1) crear
+  alert( "Hello" );
+}
+
+let func = sayHi;    // (2) copiar
+
+func(); // Hello     // (3) ejecutar la copia (funciona)!
+sayHi(); // Hello    //     esto aún funciona
+```
+
+### Funciones Callback
+
+Veamos más ejemplos de pasar funciones como valores y usar **function expressions**.
+
+Vamos a escribir la función **ask(question, yes, no)** con 3 parámetros.
+
+- question - Texto de la pregunta
+- yes - Función que regresa en caso de contestar sí
+- no - Función que regresa en caso de contestar no
+
+La función debe realizar la pregunta y dependiendo de la respuesta llamar a yes() o no()
+
+```
+function ask(question, yes, no) {
+  if (confirm(question)) yes()
+  else no();
+}
+
+function showOk() {
+  console.log( "You agreed." );
+}
+
+function showCancel() {
+  console.log( "You canceled the execution." );
+}
+
+// usage: functions showOk, showCancel are passed as arguments to ask
+ask("Do you agree?", showOk, showCancel);
+```
+
+En la práctica estas funciones son muy útiles. Lamayor diferencia entre una pregunta del mundo real y el ejemplo anterior es que una pregunta real tiene formas más complejas de interactuar con un usuario que un simple **confirm**. En el navegador tales funciones por lo general dibujan una bonita venta de pregunta , pero eso es otro tema.
+
+Los argumentos **showOk** y **showCancel** de **ask** son llamadas **funciones callback** o solamente **callbacks**.
+
+La idea es que pasemos una función y esperemos a que sea **llamada después** si es necesario. En nuestro caso, **showOk** se convierte en el callback para **yes** y **showCancel** se convierte en el callback para **no**.
+
+Podemos usar **Function Expressions** para escribir una equivalente función más corta.
+
+```
+function ask(question, yes, no) {
+  if (confirm(question)) yes()
+  else no();
+}
+
+ask(
+  "Do you agree?",
+  function() { console.log("You agreed."); },
+  function() { console.log("You canceled the execution."); }
+);
+
+```
+
+### Funciones flecha
+
+Existe otra simple forma de crear funciones, que a menudo es mejor que las **Function Expressions** y se llama **Arrow Functions**, por que se ven de la siguiente manera.
+
+```
+let func = (arg1, arg2, ..., argN) => expression;
+```
+
+Esto crea una función que agrega n argumentos, luego evalua la **expression** a la derecha y devuelve su resultado.
+
+En otras palabras, sería la versión corta de:
+
+```
+let func = function(arg1, arg2, ..., argN) {
+  return expression;
+};
+```
+
+Un ejemplo concreto sería el siguiente:
+
+```
+let sum = (a, b) => a + b;
+
+/* This arrow function is a shorter form of:
+
+let sum = function(a, b) {
+  return a + b;
+};
+*/
+
+alert( sum(1, 2) ); // 3
+```
+
+Como puedes ver **(a, b) => a + b**, significa una función que acepta 2 parámetros **a** y **b**. Al ejecutarse, se evalua la expresión a + b y regresa el resultado.
+
+- Si solo tenemos un argumento, el paréntesis al rededor de los parámetros puede ser omitido, haciendo la versión todavía más corta.
+
+```
+let double = n => n * 2;
+// roughly the same as: let double = function(n) { return n * 2 }
+
+alert( double(3) ); // 6
+```
+
+- Si no hay argumentos, los paréntesis quedan vacíos, pero ellos deben estar presentes:
+
+```
+let sayHi = () => alert("Hello!");
+sayHi();
+```
+
+Las **Arrow Functions** pueden ser usadas de la misma manera como **Function Expressions**
+
+Para poder crear dinámicamente una función.
+
+```
+let age = prompt("What is your age?", 18);
+
+let welcome = (age < 18) ?
+  () => console.log('Hello!') :
+  () => console.log("Greetings!");
+
+welcome();
+```
+
+**Arrow Functions** pueden parecer muy diferentes y difíciles de leer al inicio, pero esto cambia rápidamente una vez que la estructura se adapta a los ojos.
+
+Son muy convenientes para acciones simple de una sola línea, donde solo somos flojos para leer muchas palabras.
+
+## Debugging en el navegador
+
+Dentro del código que hemos estado usando en los ejemplos anteriores puedes darte cuenta que utiliza el
+
+```
+console.log("Hello World");
+```
+
+El console.log sirve para mostrar algo en la consola de nuestro navegador, es muy común imprimir diferentes tipos de mensajes y la función **log** también lo es. Pero existen algunas funciones adicionales que también pueden ayudarnos como son **info**, **warn** y **error**.
+
+Las funciones **log** e **info** son muy similares en que solo proveen información básica, y depende del navegador pueden distinguirse entre ellas al momento de ver el resultado.
+
+Las que sí son diferentes son **warn** que además de marcar la advertencia en la consola también muestra un contador de las advertencias que se tienen para facilidad. En programación un warning es algo que requiere atender más no es urgente o necesario de modificar en el momento.
+
+Por su parte **error** sirve para marcar en rojo y en un contador aparte la cantidad de errores reportados por esta salida. En programación un error es algo que requiere atención inmediata pues puede hacer que la funcionalidad no funcione como se espera o en un peor caso no funcione del todo
+
+```
+console.log("Hello World");
+console.info("Clash of clans");
+console.warn("This is a warning");
+console.error("This is an error");
+```
+
+Por último y no menos importante está el **assert**, esta salida de consola simple, puede ayudarnos a realizar pruebas en nuestro código cuando esperamos un valor en particular. Esto nos permite tener una primera aproximación a automatizar las pruebas del navegador ya que lo que se recibe como valor es el resultado de una expresión, en caso de que la expresión verdadera no sucede nada, sin embargo en caso de ser false la consola lanza un error para que el desarrollador pueda ver el error.
+
+```
+console.assert(1 == "1");
+console.assert(1 == true);
+```
+
+Las dos impresiones en consola anteriores, no van a desplegar nada puesto que el resultado de las expresiones es verdadero en ambos casos.
+
+Si queremos ver el error necesitamos realizar algo como lo siguiente, en donde la expresión sea falsa.
+
+```
+console.assert(2 == "1");
+```
+
+Ahora que conocemos las impresiones básicas, es probable que estar escribiéndolas a cada momento sea algo tedioso, pero podemos aplicar los conocimientos que ya tenemos y simplificar esto de la siguiente manera.
+
+```
+let cLog = console.log;
+let cInfo = console.info;
+let cWarn = console.warn;
+let cError = console.error;
+let cAssert = console.assert;
+
+cLog("Hello World);
+```
+
+Al usar la asignación de funciones por valor, podemos asignar cada tipo de salida a la consola en una variable más corta para escribir menos y poder depurar nuestro código de una manera más rápida.
+
+No olvides utilizar los conceptos vistos como en el último ejemplo para hacer que tu código sea más limpio, legible y sobre todo funcional.
