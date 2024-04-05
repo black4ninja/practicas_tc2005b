@@ -7,15 +7,15 @@
 
 //Para crear una variable en Javascript usarmos la plabra reservada "let"
 
-let message;
+//let message;
 
 //Ahora podemos asignar información a nuestra variable usando el operador "=""
 
-message = 'Hello'; //Almacena el string 'Hello' en la variable message
+//message = 'Hello'; //Almacena el string 'Hello' en la variable message
 
 //El string ahora guardado en memoria se asocia con esa variable. Podemos acceder a la variable usando el nombre de la misma.
 
-alert(message);
+//alert(message);
 
 //Para se concisos, podemos combinar la declaración de la variable y su asignación en una sola línea.
 //let message2 = 'Hello!';
@@ -62,14 +62,16 @@ var message3 = 'Hello';
 //let message4 = "This";
 
 // 'let' repetido puede llevar a un error
-//let message4 = "That"; // SyntaxError: 'message' has already been declared
+//let message5 = "That"; // SyntaxError: 'message' has already been declared
 
 //NOMBRADO DE VARIABLES
 //Existen 2 limitaciones al nombrado de variables
-// 1. El nombre contiene solo letras, dígitos o símbolos $ y _.
+// 1. El nombre contiene solo letras, dígitos o 
+//símbolos $ y _.
 // 2. El primer caracter no debe ser un dígito.
 let userName;
 let test123;
+
 
 /* 
 Cuando el nombre contiene múltiples palabras se utiliza el estilo camelCase.
@@ -112,13 +114,12 @@ alert($ + _); // 3
 
 //CONSTANTES
 //Para declarar constantes, valores que no cambian, se usa la palabra reservada 'const' en lugar de 'let'
-const myBirthday = '18.04.1982';
+//const myBirthday = '18.04.1982';
 
 //Las variables declaradas usando 'const' son llamadas "constantes". Estas no pueden ser reasignadas. Un intento para hacerlo causará un error
-/* 
-    const myBirthday2 = '18.04.1982';
-    myBirthday2 = '01.01.2001'; // error, can't reassign the constant!
-*/
+ 
+//const myBirthday2 = '18.04.1982';
+//myBirthday2 = '01.01.2001'; // error, can't reassign the constant!
 
 //Constantes en mayúsculas
 /*
