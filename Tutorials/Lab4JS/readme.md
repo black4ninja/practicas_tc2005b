@@ -457,61 +457,85 @@ let userName;
 let test123;
 ```
 
-
-/* 
 Cuando el nombre contiene múltiples palabras se utiliza el estilo camelCase.
+
 Esto significa: Las palabras van seguidas, cada palabra excepto excepto la primera inician con mayúscula: myVeryLongName.
 
-Lo que es interesante es que el signo de dólar '$' y el guión bajo '_' también pueden usarse en nombre.
+Lo que es interesante es que el signo de dólar **$** y el guión bajo **_** también pueden usarse en nombre.
+
 Estos son símbolos regulares, justo como letras, sin ningún significado especial.
-*/
+
+```
 let $ = 1; // declarar la variable con el nombre "$"
 let _ = 2; // y ahora la variable con el nombre "_"
 
 alert($ + _); // 3
+```
+Si bien el ejemplo anterior funciona, al momento de leer el código este no es descriptivo en el contenido de las variables por lo que la recomendación es siempre declarar variables que den noción al programador de que es lo que contienen para tener un código más legible.
 
-//Ejemplos de variables con nombre incorrectos
-//let 1a; // No puede iniciar con un dígito
+Ejemplos de variables con nombre incorrectos
 
-//let my-name; // hyphens '-' no son permitidos
+```
+let 1a; // No puede iniciar con un dígito
+let my-name; // hyphens '-' no son permitidos
+```
 
-//Las mayúsculas y minúsculas importan
-//Las variables nombradas apple y APPLE son 2 variables diferentes.
+Las mayúsculas y minúsculas importan
+Las variables nombradas apple y APPLE son 2 variables diferentes.
 
-//Caracteres no latinos son permitidos, pero no recomendados.
-//Es posible usar cualquier lenguaje, incluyendo letras Cirílicas, logogramas Chinos
-//let имя = '...';
-//let 我 = '...';
-//Técnicamente no existe un error. Pero la convención internacional usa Inglés para el nombre de variables.
+```
+let apple;
+let APPLE;
+```
 
-//Una asignación sin usar use strict
-/* 
-    // Nota: No se usa "use strict" en este ejemplo
-    num = 5; // La variable "num" es creada si no existe.
-    alert(num); // 5
-*/
-//Esta es una mala práctica y es causa de error con el strict mode
-/*
-    "use strict";
+Caracteres no latinos son permitidos, pero no recomendados.
+Es posible usar cualquier lenguaje, incluyendo letras Cirílicas, logogramas Chinos
 
-    num = 5; // error: num is not defined
-*/
+```
+let имя = '...';
+let 我 = '...';
+```
 
-//CONSTANTES
-//Para declarar constantes, valores que no cambian, se usa la palabra reservada 'const' en lugar de 'let'
-//const myBirthday = '18.04.1982';
+Técnicamente no existe un error. Pero la convención internacional usa Inglés para el nombre de variables.
 
-//Las variables declaradas usando 'const' son llamadas "constantes". Estas no pueden ser reasignadas. Un intento para hacerlo causará un error
- 
-//const myBirthday2 = '18.04.1982';
-//myBirthday2 = '01.01.2001'; // error, can't reassign the constant!
+Una asignación sin usar use strict
 
-//Constantes en mayúsculas
-/*
-    La buena práctica para el uso de constantes difíciles de recordad es usar valores conocidos antes de su ejecución.
-    Tales constantes son nombrados usando mayúsculas y guines bajos. 
-*/
-/* 
+``` 
+// Nota: No se usa "use strict" en este ejemplo
+
+num = 5; // La variable "num" es creada si no existe.
+alert(num); // 5
+```
+
+Esta es una mala práctica y es causa de error con el strict mode
+
+```
+"use strict";
+
+num = 5; // error: num is not defined
+```
+
+### Constantes
+Para declarar constantes, valores que no cambian, se usa la palabra reservada **const** en lugar de **let**.
+
+```
+const myBirthday = '18.04.1982';
+```
+
+Las variables declaradas usando 'const' son llamadas "constantes". Estas no pueden ser reasignadas. Un intento para hacerlo causará un error
+
+``` 
+const myBirthday2 = '18.04.1982';
+myBirthday2 = '01.01.2001'; // error, can't reassign the constant!
+```
+
+#### Constantes en mayúsculas
+
+La buena práctica para el uso de constantes difíciles de recordad es usar valores conocidos antes de su ejecución.
+
+Tales constantes son nombrados usando mayúsculas y guines bajos. 
+
+```
 const COLOR_RED = "#F00";
 const COLOR_GREEN = "#0F0";
 const COLOR_BLUE = "#00F";
@@ -520,23 +544,645 @@ const COLOR_ORANGE = "#FF7F00";
 // ...when we need to pick a color
 let color = COLOR_ORANGE;
 alert(color); // #FF7F00
-*/
-/*
-    Beneficios:
-    - COLOR_ORANGE es más fácil de recordar que #FF7F00
-    - Es más fácil equivocarse escribiendo "#FF7F00" que COLOR_ORANGE
-    - Cuando leemos el código, COLOR_ORANGE es mas significativo que #FF7F00
-*/
+```
 
-//¿Reusar o crear?
-/*
-    Algunos programadores tienden a reusar las variables en lugar re declarar nuevas.
+Beneficios:
+- COLOR_ORANGE es más fácil de recordar que #FF7F00
+- Es más fácil equivocarse escribiendo "#FF7F00" que COLOR_ORANGE
+- Cuando leemos el código, COLOR_ORANGE es mas significativo que #FF7F00
 
-    Como resultado, sus variables son como cajas donde avientan cosas sin cambiar sus nombres. Como resultado, ¿qué hay dentro de la caja?¿quién sabe?
-    Necesitamos ir a detalle y verificar, esto consume mucho tiempo.
+### ¿Reusar o crear variables?
+Algunos programadores tienden a reusar las variables en lugar re declarar nuevas.
 
-    Una variable extra es buena, no mala. Preguntate lo siguiente: ¿Cuánto te cobran por una nueva variable? NADA, SON GRATIS.
+Como resultado, sus variables son como cajas donde avientan cosas sin cambiar sus nombres. Como resultado, ¿qué hay dentro de la caja?¿quién sabe?
+Necesitamos ir a detalle y verificar, esto consume mucho tiempo.
 
-    Los optimizadores modernos de Javascript optimizan muy bien el código, entonces no habrá problemas de rendimiento.
-    Usar diferentes nombre de variables ayuda incluso al motor de Javascript a optimizar más tu código.
-*/
+Una variable extra es buena, no mala. Preguntate lo siguiente: ¿Cuánto te cobran por una nueva variable? NADA, SON GRATIS.
+
+Los optimizadores modernos de Javascript optimizan muy bien el código, entonces no habrá problemas de rendimiento.
+Usar diferentes nombre de variables ayuda incluso al motor de Javascript a optimizar más tu código.
+
+[Ver ejemplo completo HTML](/Tutorials/Lab4JS/4Variables/index.html)
+
+[Ver ejemplo completo JS](/Tutorials/Lab4JS/4Variables/script.js)
+
+## Tipos de datos
+
+Un valor en Javascript siempre es de cierto tipo. Por ejemplo, un string o un número
+
+Existen 8 TIPOS BÁSICOS de datos en Javascript.
+
+Podemos colocar cualquier tipo en una variable. Por ejemplo. una variable puede ser un string y después almacenar un número.
+
+```
+let message = "hello";
+message = 123456;
+```
+Los lenguajes de programación que permiten esto tales como Javascript son conocidos como dinámicamente tipados, esto significa que existen tipos de datos, pero las variables
+no están ligados a ninguno de ellos.
+
+### Number
+```
+let n = 123;
+n = 12.345;
+```
+
+El tipo number representa tanto enteros como flotantes.
+
+Existen muchos tipos de operación para los numeros. ej. multiplicación *, división /, suma +, resta -, etc.
+
+Además de los números regulares, también tenemos valores especiales que son: Infinity, -Infinity y NaN.
+
+- Infinity: Representa el ∞ infinito matemático. Es un valor especial que es mayor a cualquier número.
+
+```
+alert( 1 / 0 ); // Infinity
+alert( Infinity ); // Infinity
+```
+
+- NaN: representa un error computacional. Es el resultado de una operación matemática incorrecta o no definida.
+```
+alert( "not a number" / 2 ); // NaN, tal división es errónea
+
+//NaN es continua. Cualquier operación matemática en NaN regresa NaN
+alert( NaN + 1 ); // NaN
+alert( 3 * NaN ); // NaN
+alert( "not a number" / 2 - 1 ); // NaN
+```
+Así que si una operación matemática devuelve NaN, se propaga el resultado.
+
+Realizar operaciones matemáticas en Javascript es "seguro", podemos hacer lo que sea: dividir por 0, tratar valores no numéricos como números, etc.
+
+El script no fallará con un error fatal. Lo más que puede suceder es obtener un NaN como resultado.
+
+### BigInt
+En Javascript los números se representand por valores enteros (253-1) (eso es 9007199254740991), o menores que -(253-1) para negativos.
+
+Para ser precisos los números puede soportar hasta 1.7976931348623157 ^ 10308, pero fuera de ese rango existirá un error de precisión, porque no todos los dígitos
+caben en 64-bits. Por lo que un valor aproximado será guardado.
+
+```
+console.log(9007199254740991 + 1); // 9007199254740992
+console.log(9007199254740991 + 2); // 9007199254740992
+```
+
+Para ello el BigInt fue agregado recientemente y se usan agregando una n al final del número.
+
+La n al final representa el BigInt
+
+```
+const bigInt = 1234567890123456789012345678901234567890n;
+```
+
+> Nota: No es muy común utilizar este tipo de números pero es bueno conocerlos en caso de necesitarlos.
+
+### String
+Un string en Javascript se rodea por comillas
+
+```
+let str = "Hello";
+let str2 = 'Single quotes are ok too';
+let phrase = `can embed another ${str}`;
+```
+En Javascript existen 3 tipos de comillas:
+
+1. Dobles: "Hello".
+2. Simples: 'Hello'.
+3. Backticks: \`Hello\`.
+
+Dobles y simples son comillas "sencillas". Practicamente no existe diferencia en Javascript.
+
+Backticks son comillas de "funcionalidad extendida". Estas nos permiten meter variables y expresiones dentro de un string usando
+la simbología ${...}, por ejemplo
+
+```
+let name = "John";
+
+// embed a variable
+alert( `Hello, ${name}!` ); // Hello, John!
+
+// embed an expression
+alert( `the result is ${1 + 2}` ); // the result is 3
+```
+
+
+### Boolean
+
+El tipo boolean tiene los valores true y false
+let nameFieldChecked = true; // yes, name field is checked
+let ageFieldChecked = false; // no, age field is not checked
+
+Los valores booleanos son resultado de comparaciones
+
+```
+let isGreater = 4 > 1;
+alert( isGreater ); // true
+```
+### Null
+
+El valor especial null no pertenece a ninguno de los tipos descritos previamente
+
+Forma parte de un tipo separado de tipos que contienen el valor null
+
+```
+let age = null;
+```
+
+En Javascript, null es una referencia a un objeto no existente, o un apuntador nulo como en otros lenguajes.
+
+Es un valor especial el cual representa "nada", "vacío" o "desconocido"
+
+El código de arriba indica que age es desconocido.
+
+### Undefined
+
+El valor especial undefined también es un tipo aparte. Es un tipo en sí mismo, como null.
+
+El significado de undefined es "valor no asignado"
+
+Si una variable es declarada, pero no asignada, entonces su valor es undefined
+
+```
+let age;
+alert(age); // shows "undefined"
+```
+
+Técnicamente es posible asignar undefined a una variable
+
+```
+let age = 100;
+
+// change the value to undefined
+age = undefined;
+
+alert(age); // "undefined"
+```
+
+Pero no te recomiendo realizar esta acción. Normalmente, uno utiliza null para asignar "vacío" o "desconocido" a una variable, mientras que undefined está reservado al valor inicial default para desasignar cosas.
+
+### Objetos y símbolos
+
+El tipo especial Object:
+Todos los otros tipos son llamados "primitive" por que sus valores pueden contener solo una cosa (un string o un número). En contraste, los objetos son usados para almacenar colecciones de datos y entidades más complejas.
+
+Por lo mismo, los objetos merecen un tratamiento especial.
+
+El tipo symbol:
+Se usa para crear identificadores únicos para objetos. Tenemos que mencionarlos pero vamos a posponer sus detalles para más adelante.
+
+### El operador typeof
+
+El operador typeof regresa un tipo de operando. Es útil cuando queremos procesar valores de diferens tipos o solo verificar.
+
+La llamada a typeof x regresa un string con el nombre del tipo de valor de la variable
+
+```
+typeof undefined // "undefined"
+typeof 0 // "number"
+typeof 10n // "bigint"
+typeof true // "boolean"
+typeof "foo" // "string"
+typeof Symbol("id") // "symbol"
+typeof Math // "object"  (1)
+typeof null // "object"  (2)
+typeof alert // "function"  (3)
+```
+
+Los últimos 3 necesitan una explicación adicional
+1. Math - provee operaciones matemáticas, de momento nos sirve como ejemplo de un objeto.
+2. El resultado del typeof null es "object". Ese es un error oficial reconocido que viene desde las versiones antiguas de Javascript.
+3. El resultado de typeof alert es "function", por que la alerta es una función. Las funciones son un tipo especial.
+
+[Ver ejemplo completo HTML](/Tutorials/Lab4JS/5DataTypes/index.html)
+
+[Ver ejemplo completo JS](/Tutorials/Lab4JS/5DataTypes/script.js)
+
+## Interacción: Alert, promt, confirm
+Como vamos a estar utilizando el navegador para visualizar nuestro ambiente de demostración, vamos a ver algunas funciones para interactuar con el usuario.
+
+### Alert
+
+Este lo hemos estado utilizando  previamente. Aquí se muestra un mensaje que espera a que el usuario presione "OK".
+
+```
+alert("Hello");
+```
+
+### Prompt
+
+La función prompt acepta 2 argumentos. Es una ventana de texto y un campo de texto para el visitante, el resultado contiene los botones OK/Cancel.
+
+result = prompt(title, [default]);
+
+title - Es el texto que se muestra al visitante.
+default - Como opcional es el segundo parámetro, el valor inicial para el campo de entrada de texto
+
+Las llaves cuadrada en la sintáxis[...]
+
+Las llaves cuadradas al rededor de default en la sintáxis denotan que el parámetro es opcional, no requerido.
+
+```
+let age = prompt('How old are you?', 100);
+
+alert(`You are ${age} years old!`); // You are 100 years old!
+```
+
+Para IE siempre coloca un default
+```
+let test = prompt("Test", ''); // <-- for IE
+```
+
+### Confirm
+La función confirm muestra una ventana modal con una pregunta y dos botones de OK y Cancel.
+
+```
+let isBoss = confirm("Are you the boss?");
+alert( isBoss ); // true if OK is pressed
+```
+
+[Ver ejemplo completo HTML](/Tutorials/Lab4JS/6Interaction/index.html)
+
+[Ver ejemplo completo JS](/Tutorials/Lab4JS/6Interaction/script.js)
+
+## Conversiones de Tipos
+
+### Conversión de Strings
+
+Conversiones de strin suceden cuando necesitamos convertir un valor en un string.
+
+```
+let value = true;
+alert(typeof value); // boolean
+
+value = String(value); // now value is a string "true"
+alert(typeof value); // string
+```
+
+Las conversiones de string son las más obvias. Un false se convierte en "false", null se convierte en "null", etc.
+
+### Conversión Numérica
+La conversión numérica es una función matemática y las expresiones se dan de manera automática.
+
+```
+//alert( "6" / "2" ); // 3, strings are converted to numbers
+```
+
+Podemos usar la función Number(value) para convertir explícitamente un valor a número
+
+```
+let str = "123";
+alert(typeof str); // string
+
+let num = Number(str); // becomes a number 123
+alert(typeof num); // number
+```
+
+La conversión explícita es requerida  cuando se lee un valor desde string como texto pero se espera un número para ser guardado.
+
+Si el string no es un número válido, el resultado de la conversión es un NaN.
+
+```
+let age = Number("an arbitrary string instead of a number");
+alert(age); // NaN, conversion failed
+```
+
+```
+alert( Number("   123   ") ); // 123
+alert( Number("123z") );      // NaN (error reading a number at "z")
+alert( Number(true) );        // 1
+alert( Number(false) );       // 0
+```
+
+### Conversión Booleana
+
+Esta es la más sencilla
+```
+alert( Boolean(1) ); // true
+alert( Boolean(0) ); // false
+
+alert( Boolean("hello") ); // true
+alert( Boolean("") ); // false
+```
+
+[Ver ejemplo completo HTML](/Tutorials/Lab4JS/7TypeConversions/index.html)
+
+[Ver ejemplo completo JS](/Tutorials/Lab4JS/7TypeConversions/script.js)
+
+## Operadores Básicos Matemáticos
+
+Términos unarios y binarios
+
+```
+let x = 1;
+
+x = -x;
+console.log( x ); // -1
+
+let x = 1, y = 3;
+console.log( y - x ); // 2
+```
+
+### Operaciones Matemáticas
+Las siguientes operacioens matemáticas son soportadas:
+- Suma +,
+- Resta -,
+- Multiplicación *,
+- División /,
+- Resto o Modular %,
+- Exponenciación **.
+
+### Resto %
+```
+console.log( 5 % 2 ); // 1
+console.log( 8 % 3 ); // 2
+console.log( 8 % 4 ); // 0
+```
+
+### Exponenciación **
+```
+console.log( 2 ** 2 ); // 2² = 4
+console.log( 2 ** 3 ); // 2³ = 8
+console.log( 2 ** 4 ); // 2⁴ = 16
+```
+
+### Concatenación de string binaria con + 
+```
+    let s = "my" + "string";
+    console.log(s); // mystring
+```
+
+```
+console.log( '1' + 2 ); // "12"
+console.log( 2 + '1' ); // "21"
+
+console.log(2 + 2 + '1' ); // "41" y no "221"
+console.log('1' + 2 + 2); // "122" y no "14"
+
+console.log( 6 - '2' ); // 4, convierte '2' a número
+console.log( '6' / '2' ); // 3, convierte ambos operandos en número
+```
+
+### Conversión numérica, unaria +
+
+```
+// No effect on numbers
+let x = 1;
+console.log( +x ); // 1
+
+let y = -2;
+console.log( +y ); // -2
+
+// Converts non-numbers
+console.log( +true ); // 1
+console.log( +"" );   // 0
+```
+
+### Encadenar asignaciones
+```
+let a, b, c;
+
+a = b = c = 2 + 2;
+
+console.log( a ); // 4
+console.log( b ); // 4
+console.log( c ); // 4
+```
+
+### Modificar al momento
+```
+let n = 2;
+n = n + 5;
+n = n * 2;
+
+let n = 2;
+n += 5; // now n = 7 (same as n = n + 5)
+n *= 2; // now n = 14 (same as n = n * 2)
+
+console.log( n ); // 14
+```
+
+### Incrementar
+```
+let counter = 2;
+counter++;        
+alert( counter ); // 3
+```
+
+### Decrementar
+```
+let counter = 2;
+counter--;       
+alert( counter ); // 1
+```
+
+### Operadores Bitwise
+Funcionan en operaciones de bajo nivel, y son poco utilizadas pero existen:
+
+- AND ( & )
+- OR ( | )
+- XOR ( ^ )
+- NOT ( ~ )
+- LEFT SHIFT ( << )
+- RIGHT SHIFT ( >> )
+- ZERO-FILL RIGHT SHIFT ( >>> )
+
+[Ver ejemplo completo HTML](/Tutorials/Lab4JS/8BasicOperators/index.html)
+
+[Ver ejemplo completo JS](/Tutorials/Lab4JS/8BasicOperators/script.js)
+
+## Comparaciones
+```
+console.log( 2 > 1 );  // true (correct)
+console.log( 2 == 1 ); // false (wrong)
+console.log( 2 != 1 ); // true (correct)
+```
+
+```
+console.log( 'Z' > 'A' ); // true
+console.log( 'Glow' > 'Glee' ); // true
+console.log( 'Bee' > 'Be' ); // true
+```
+
+```
+console.log( '2' > 1 ); // true, string '2' becomes a number 2
+console.log( '01' == 1 ); // true, string '01' becomes a number 1
+```
+
+### Igualdad estricta
+```
+console.log( 0 == false ); // true
+//Strin vacío
+console.log( '' == false ); // true
+```
+
+### Comparación entre null y undefined
+```
+console.log( null === undefined ); // false
+```
+
+### Null vs 0
+```
+console.log( null > 0 );  // (1) false
+console.log( null == 0 ); // (2) false
+console.log( null >= 0 ); // (3) true
+```
+
+### No comparar undefined
+```
+console.log( undefined > 0 ); // false (1)
+console.log( undefined < 0 ); // false (2)
+console.log( undefined == 0 ); // false (3)
+```
+
+[Ver ejemplo completo HTML](/Tutorials/Lab4JS/10Conditionals/index.html)
+
+[Ver ejemplo completo JS](/Tutorials/Lab4JS/10Conditionals/script.js)
+
+## Condicionales
+
+### Declaraciones IF
+
+```
+let year = prompt('In which year was ECMAScript-2015 specification published?', '');
+
+if (year == 2015) console.log( 'You are right!' );
+```
+
+```
+if (year == 2015) {
+    console.log( "That's correct!" );
+    console.log( "You're so smart!" );
+}
+```
+
+### Conversión booleana
+```
+if (0) { // 0 es falso
+  //...
+}
+```
+
+```
+if (1) { // 0 es verdadero
+  //...
+}
+```
+
+```
+let cond = (year == 2015); // evalua para verdadero o false
+
+if (cond) {
+  //...
+}
+```
+
+### El ELSE
+```
+let year = prompt('In which year was the ECMAScript-2015 specification published?', '');
+
+if (year == 2015) {
+    console.log( 'You guessed it right!' );
+} else {
+    console.log( 'How can you be so wrong?' ); // any value except 2015
+}
+```
+
+### Operador condicional ?
+```
+let accessAllowed;
+let age = prompt('How old are you?', '');
+
+if (age > 18) {
+    accessAllowed = true;
+} else {
+    accessAllowed = false;
+}
+
+console.log(accessAllowed);
+```
+
+```
+let result = condition ? value1 : value2;
+let accessAllowed = (age > 18) ? true : false;
+```
+
+
+#### Múltiple ?
+```
+let age = prompt('age?', 18);
+
+let message = (age < 3) ? 'Hi, baby!' :
+(age < 18) ? 'Hello!' :
+(age < 100) ? 'Greetings!' :
+'What an unusual age!';
+
+console.log( message );
+```
+
+```
+if (age < 3) {
+    message = 'Hi, baby!';
+} else if (age < 18) {
+    message = 'Hello!';
+} else if (age < 100) {
+    message = 'Greetings!';
+} else {
+    message = 'What an unusual age!';
+}
+```
+
+### La declaración switch
+```
+switch(x) {
+    case 'value1':  // if (x === 'value1')
+        ...
+        [break]
+
+    case 'value2':  // if (x === 'value2')
+        ...
+        [break]
+
+    default:
+        ...
+        [break]
+}
+```
+
+```
+let a = 2 + 2;
+
+switch (a) {
+case 3:
+    console.log( 'Too small' );
+    break;
+case 4:
+    console.log( 'Exactly!' );
+    break;
+case 5:
+    console.log( 'Too big' );
+    break;
+default:
+    console.log( "I don't know such values" );
+}
+```
+
+
+#### Agrupando case
+```
+let a = 3;
+
+switch (a) {
+case 4:
+    console.log('Right!');
+    break;
+
+case 3: // (*) grouped two cases
+case 5:
+    console.log('Wrong!');
+    console.log("Why don't you take a math class?");
+    break;
+
+default:
+    console.log('The result is strange. Really.');
+}
+```

@@ -34,7 +34,51 @@ Los laboratorios son extensiones de lo que vemos en clase, siempre revisa el mat
     - Punto y coma
     - Comentarios
   - UseStrict
+  - Variables
     - Uso de let
     - Var en lugar de let
     - Declaraciones dobles
-    - 
+    - Nombrado de variables
+    - Constantes
+    - ¿Reusar o crear variables?
+  - Tipos de datos
+    - Number
+    - BigInt
+    - String
+    - Boolean
+    - Null
+    - Undefined
+    - Objetos y símbolos
+    - El operador typeof
+  - Interacción: Alert, Prompt, Confirm
+    - Alert
+    - Prompt
+    - Confirm
+  - Conversiones de Tipos
+    - Conversión de Strings
+    - Conversión Numérica
+    - Conversión Booleana
+  - Operadores Básicos Matemáticos
+    - Operaciones Matemáticas
+    - Resto %
+    - Exponenciación **
+    - Concatenación de string binaria con + 
+    - Conversión numérica, unaria +
+    - Encadenar asignaciones
+    - Modificar al momento
+    - Incrementar
+    - Decrementar
+    - Operadores Bitwise
+  - Comparaciones
+    - Igualdad estricta
+    - Comparación entre null y undefined
+    - Null vs 0
+    - No comparar undefined
+  - Condicionales
+    - Declaraciones IF
+    - Conversión booleana
+    - El ELSE
+    - Operador condicional ?
+      - Múltiple ?
+    - La declaración switch
+      - Agrupando case
