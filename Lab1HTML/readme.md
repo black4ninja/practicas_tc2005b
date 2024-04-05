@@ -17,7 +17,7 @@ Como apoyo para el tema puedes usar la siguiente referencia [HTML for Babies](ht
 </html>
 ```
 
-## Introducción
+## Introducción a HTML
 
 El desarrollo web se basa en programación por etiquetas, estas vienen de la forma.
 
@@ -33,7 +33,7 @@ Si bien los navegadores web utilizan el HTML como estándar, no es el único pro
 
 Es muy importante que desde ahora tomes en cuenta en donde se encuentra la información y en que momento para que puedas resolver errores, es decir si estoy viendo un HTML ¿quién lo está cargando?, ¿el servidor me ha devuelto una respuesta?, preguntas como las anteriores nos ayudan a ubicar y entre mas conceptos añadimos más fácil se vuelve añadir más complejidad.
 
-## Estándares adicionales de transmisión de información
+## Estándares adicionales de transmisión de información HTML, XML, JSON
 
 Para entender este punto debemos localizarnos en las capas del modelo de redes OSI e identificar el protocolo TCP/IP.
 
@@ -152,7 +152,7 @@ Las propiedades que tenemos es el href, target, rel,title. Primero entendamos qu
 - El atributo rel igualmente es opcional y por default una etiqueta a utiliza el nofollow, esto sirve para que en caso de los buscadores como Google cuando entran a revisar las páginas y detectan estas etiquetas crean un mapa de a que sitios lleva la página, esto ayuda a la página destino a pocisionares mejor en internet, existe todo un tema al respecto dentro de marketing y SEO (Search Engine Optimization) para que funcione correctamente.
 - El atributo title ayuda a mostrar al usuario un título si pasa por encima el cursor.
 
-## Fromularios HTML
+## Formularios HTML
 Además de las páginas como un todo HTML, lo más importante a manejar son los **form** o formularios, ya que estos son los que permiten guardar información una página web.
 
 La estructura básica de un formulario completo es la siguiente
@@ -178,6 +178,6 @@ La etiqueta form recibe varios atributos importantes
 
 > Nota: Cuando llames la url, asegurate que tu servidor pueda manejar la llamada, el error más común es hacer una llamada POST y que el servidor solo procese la url mediante un GET.
 
-> En el ejemplo de código la url es **/age.php**, esto funciona para servidores desarrollados en php, pero otro tipo de urls pueden ser de formato sin extensión como **/age** solamente
+> En el ejemplo de código la url es **/age.php**, esto funciona para servidores desarrollados en php, pero otro tipo de urls pueden ser de formato sin extensión como **/age** solamente.
 
 Dentro del formulario observa que tenemos etiquetas de tipo  **input**, todas estas etiquetas tienen gran variación de parámetros ya que nos permiten hacer campos de texto, listas, botones, entre otros. Investiga las posibilidades que puedes realizar con los input y podrás guardar cualquier tipo de información incluso archivos en tu servidor y tu base de datos.

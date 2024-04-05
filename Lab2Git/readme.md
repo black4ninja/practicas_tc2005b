@@ -1,5 +1,6 @@
 # Control de versiones
 
+## Introducción básica
 Dentro del mundo de la programación, tener un manejo de control de versiones es parte del día a día.
 
 Esto implica que el programador tiene un lugar donde se aloja el código de cada proyecto.
@@ -388,7 +389,7 @@ Ya que tienes un repositorio en la nube y que tienes un método de conexión pue
 git clone {{url https o ssh del repositorio en la nube}}
 ```
 
-### Cambios hacia la nube
+### Subir los cambios al repositorio en la nube
 Una vez que clonemos el repositorio siempre es una buena práctica utilizar el comando 
 
 ```
