@@ -1034,9 +1034,9 @@ console.log( undefined < 0 ); // false (2)
 console.log( undefined == 0 ); // false (3)
 ```
 
-[Ver ejemplo completo HTML](/Tutorials/Lab4JS/10Conditionals/index.html)
+[Ver ejemplo completo HTML](/Tutorials/Lab4JS/9Comparisons/index.html)
 
-[Ver ejemplo completo JS](/Tutorials/Lab4JS/10Conditionals/script.js)
+[Ver ejemplo completo JS](/Tutorials/Lab4JS/9Comparisons/script.js)
 
 ## Condicionales
 
@@ -1186,3 +1186,197 @@ default:
     console.log('The result is strange. Really.');
 }
 ```
+
+[Ver ejemplo completo HTML](/Tutorials/Lab4JS/10Conditionals/index.html)
+
+[Ver ejemplo completo JS](/Tutorials/Lab4JS/10Conditionals/script.js)
+
+## Ciclos
+
+### Ciclo while
+
+```
+while (condición) {
+  // código
+}
+```
+
+```
+let i = 0;
+while (i < 3) { 
+  console.log( i );
+  i++;
+}
+
+let i = 3;
+while (i) { 
+  console.log( i );
+  i--;
+}
+
+let i = 3;
+while (i) alert(i--);
+```
+
+### Ciclo Do..while
+
+```
+do {
+    // código
+} while (condition);
+```
+
+```
+let i = 0;
+do {
+  alert( i );
+  i++;
+} while (i < 3);
+```
+
+### Ciclo for
+```
+for (begin; condition; step) {
+    //code
+}
+```
+
+```
+for (let i = 0; i < 3; i++) { // shows 0, then 1, then 2
+    console.log(i);
+}
+```
+
+### Break o rompiendo el ciclo
+```
+let sum = 0;
+
+while (true) {
+  let value = +prompt("Enter a number", '');
+
+  if (!value) break; // (*)
+  sum += value;
+}
+console.log( 'Sum: ' + sum );
+```
+
+### Continuar la siguiente iteración
+```
+for (let i = 0; i < 10; i++) {
+    // si es verdadero, saltar lo que queda del cuerpo
+    if (i % 2 == 0) continue;
+
+    console.log(i); // 1, luego 3, 5, 7, 9
+}
+```
+
+[Ver ejemplo completo HTML](/Tutorials/Lab4JS/11Loops/index.html)
+
+[Ver ejemplo completo JS](/Tutorials/Lab4JS/11Loops/script.js)
+
+## Funciones
+
+### Declaración de funciones
+```
+function showMessage() {
+  console.log( 'Hello everyone!' );
+}
+showMessage();
+showMessage();
+```  
+
+```
+function name(parameter1, parameter2, ... parameterN) {
+    // código
+}
+```
+
+### Variables locales
+```
+function showMessage() {
+    let message = "Hello, I'm JavaScript!"; // local variable
+
+    console.log( message );
+}
+
+showMessage(); // Hello, I'm JavaScript!
+
+console.log( message ); // <-- Error! The variable is local to the function
+```
+
+### Variables externas
+```
+let userName = 'John';
+
+function showMessage() {
+  let message = 'Hello, ' + userName;
+  alert(message);
+}
+
+showMessage(); // Hello, John
+```
+
+``` 
+let userName = 'John';
+
+function showMessage() {
+    userName = "Bob";
+
+    let message = 'Hello, ' + userName;
+    console.log(message);
+}
+
+console.log( userName );
+showMessage();
+console.log( userName );
+```
+
+### Parámetros
+``` 
+    function showMessage(from, text) { // parameters: from, text
+        console.log(from + ': ' + text);
+    }
+
+    showMessage('Ann', 'Hello!'); // Ann: Hello! (*)
+    showMessage('Ann', "What's up?"); // Ann: What's up? (**)
+```
+
+### Valores default
+```
+    function showMessage(from, text = "no text given") {
+        console.log( from + ": " + text );
+    }
+
+    showMessage("Ann"); // Ann: no text given
+    showMessage("Ann", undefined);
+```
+
+### Regresando valores
+```
+    function sum(a, b) {
+        return a + b;
+    }
+
+    let result = sum(1, 2);
+    console.log( result ); // 3
+```
+
+### Nombrado de funciones
+Las funciones son acciones. Su nombre por lo general es un verbo. Este debe ser breve, tan preciso como sea posible y describir lo que la función hace, para que quien lea el código entienda que hace.
+
+Por ejemplo, las funciones que empiezan con "show" por lo general muestran algo.
+
+Otros ejemplos serían:
+- "get..." - regresa un valor
+- "calc..." - calcula algo
+- "create..." - crea algo
+- "check..." - checa algo y regresa un boolean, etc.
+
+
+El resultado final sería algo como:
+- showMessage(..)     // shows a message
+- getAge(..)          // returns the age (gets it somehow)
+- calcSum(..)         // calculates a sum and returns the - result
+- createForm(..)      // creates a form (and usually returns it)
+- checkPermission(..) // checks a permission, returns true/false
+
