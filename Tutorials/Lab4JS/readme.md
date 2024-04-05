@@ -436,7 +436,7 @@ La palabra reservada **var** es casi igual a **let**. Este tipo de declaración 
 
 Hay unas sutiles diferencias entre **let** y **var**"**, pero esas diferencias todavía no nos van a interesar.
 
-## Declaraciones dobles
+### Declaraciones dobles
 
 La declaraciones dobles generan error
 ```
@@ -446,13 +446,16 @@ let message4 = "That"; // SyntaxError:
 **let** repetido puede llevar a un error
 message' has already been declared
 
-//NOMBRADO DE VARIABLES
-//Existen 2 limitaciones al nombrado de variables
-// 1. El nombre contiene solo letras, dígitos o 
-//símbolos $ y _.
-// 2. El primer caracter no debe ser un dígito.
+### Nombrado de variables
+
+Existen 2 limitaciones al nombrado de variables
+1. El nombre contiene solo letras, dígitos o símbolos $ y _.
+2. El primer caracter no debe ser un dígito.
+
+```
 let userName;
 let test123;
+```
 
 
 /* 
