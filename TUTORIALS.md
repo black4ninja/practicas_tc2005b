@@ -29,3 +29,7 @@ Los laboratorios son extensiones de lo que vemos en clase, siempre revisa el mat
   - Conclusión
 - [LAB4 - Introducción a Javascript](/Tutorials/Lab4JS/readme.md)
   - Inline Scripting
+  - Estructura de código
+    - Declaraciones
+    - Punto y coma
+    - Comentarios

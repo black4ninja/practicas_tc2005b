@@ -17,6 +17,20 @@ La primera de ellas es a través del inline sripting o dentro del mismo archivo 
 
 Por lo general aunque se puede realizar la buena práctica nos dice que debemos separar en archivos diferentes la funcionalidad, pero eso lo veremos poco a poco.
 
+Los programas de Javascript pueden ser insertados en cualquier parte del HTML usando la etiqueta
+
+```    
+<script></script>
+```
+
+Antes era necesarios añadir el atributo **type** pero en las nuevas versiones esto ya no es necesario pues el navegador lo hace de manera automática.
+    
+```
+<script type="text/javascript">
+    ...
+</script>
+```
+
 Para tener una base de donde comenzar podemos tener el siguiente código:
 
 ```
@@ -37,19 +51,264 @@ Para tener una base de donde comenzar podemos tener el siguiente código:
 
 </html>
 ```
+En el ejemplo anterior vemos como con el uso de la etiqueta **script** podemos añadir en su interior el código de javascript que queramos ejecutar.
 
-Los programas de Javascript pueden ser insertados en cualquier parte del HTML usando la etiqueta
-
-```    
-<script></script>
-```
-
-Antes era necesarios añadir el atributo **type** pero en las nuevas versiones esto ya no es necesario pues el navegador lo hace de manera automática.
-    
-```
-<script type="text/javascript">
-    ...
-</script>
-```
+La declaración que usamos es una llamada a la función **alert()**, la cual recibe como parámetro un string, y al momento de ejecutarse en el navegador nos muestra un modal de alerta simple con el texto que hayamos pasado como parámetro.
 
 [Ver ejemplo completo HTML](/Tutorials/Lab4JS/1HelloWorld/inline_script.html)
+
+## Estructura de Código
+También podemos añadir el código de javascript en archivos separados, en general siempre esta es la mejor práctica que debemos seguir.
+
+Una buena práctica es colocarlos en la parte de abajo afuera del body por cuestiones de carga y velocidad de la página.
+
+En el siguiente archivo HTML vamos a hacer uso de un archivo javascript externo, para ello el nombre del archivo será **script** y la extensión del mismo será .js el cual justamente delimita los archivos de javascript.
+
+```
+<!DOCTYPE HTML>
+<html>
+
+<body>
+
+  <p>Before the script...</p>
+
+
+  <p>...After the script.</p>
+
+</body>
+<script src="./1_separate_file_script.js"></script>
+
+</html>
+```
+Observa que colocamos la etiqueta del **script** fuera de la etiqueta **body**, esto es una buena práctica recomendada por lo navegadores, y esto se debe a la carga de la página.
+
+Cuando trabajamos con Javascript es muy común que este realice procesamiento, si la página contiene estilos e imágenes su tiempo de carga puede empezar a aumentar entre más cosas tenga, si a eso le añadimos el tiempo de procesamiento de Javascript hay páginas que tardan hasta 1 minuto en cargar. Si hablamos de páginas web optimizadas son segundos los que tarda un usuario en salirse sin haber visto nuestro contenido. Por ello al colocar el script fuera del body hacemos que esta carga se realice de manera paralela a cuando el usuario ya está navegando esto ayuda a recuperar valiosos segundos de navegación.
+
+Debe existir un equilibrio entre cuando cargar de manera paralela y la carga inicial de la página, pero todo esto se refiere a un tema de optimización para pocisionamiento de la página en buscadores y es todo un tema de estudio.
+
+Ahora bien dentro del nuevo archivo **script.js** podemos empezar directamente a escribir el código de javascript sin necesidad de escribir alguna directiva o etiqueta adicional como se muestra a continuación.
+
+```
+alert( 'Hello, world!' );
+```
+
+Observa que estamos usando nuevamente la misma declaración que cuando hicimos el **inline scripting**, solo que ahora lo hacemos desde el archivo separado, el resultado final será el mismo que el anterior pero abremos realizado una buena práctica separando nuestros códigos.
+
+[Ver ejemplo completo HTML](/Tutorials/Lab4JS/2CodeStructure/1SeparateFiles/index.html)
+
+[Ver ejemplo completo JS](/Tutorials/Lab4JS/2CodeStructure/1SeparateFiles/script.js)
+
+Podemos cargar tantos archivos de javascript como necesitemos y pueden o no  estar en la carpeta o utilizar algún CDN.
+
+>Nota: Un CDN es un tipo de servidor especial que esta orientado a servir archivos públicos como HTML, CSS, JS, imágenes, etc. Estos servidores tienen la peculiaridad que al no procesar información como un servidor normal son más baratos y tienen un mayor alcance, la idea es poder generar múltiples al rededor del mundo para dar mayor acceso a las aplicaciones. Un ejemplo es que se recomienda que las aplicaciones en React utilicen estos servidores para servir rápidamente la interfaz de usuario independientemente de como se procese la información tal y como lo hace Facebook.
+
+```
+<!DOCTYPE HTML>
+<html>
+
+    <body>
+
+        <p>Before the script...</p>
+
+
+        <p>...After the script.</p>
+
+    </body>
+    <script src="./script2.js"></script>
+    <script src="./script3.js"></script>
+
+</html>
+```
+
+Aquí el contenido de **script2** es el siguiente
+
+```
+alert( 'Hello' );
+```
+
+Y para **script3** el contenido es el siguiente
+
+```
+alert( 'world!' );
+```
+
+El resultado final es que la ejecución de las instrucciones viene dada por el orden en que colocamos los archivos, entonces para el navegador la fila de instrucciones quedaría de la siguiente forma:
+
+```
+alert( 'Hello' );
+alert( 'world!' );
+```
+
+Si cambiamos de orden los archivos, entonces la fila de instrucciones se invertiría dejando un resultado como:
+
+```
+alert( 'world!' );
+alert( 'Hello' );
+```
+
+> Este último punto es importante ya que si en algún momento necesitamos cargar una librería y ejecutar un código en un archivo separado dependiente de esa librería, debemos asegurarnos que el código se ejecuta después de haberla cargado. Es un error muy común al inicio perder esto de vista y por lo mismo podemos perder tiempo validando código funcional cuando que el verdadero problema es que la librería ni siquiera se ha cargado correctamente al momento de ejecutar el código.
+
+[Ver ejemplo completo HTML](/Tutorials/Lab4JS/2CodeStructure/2MultipleScripts/index.html)
+<br>
+[Ver ejemplo completo JS 2](/Tutorials/Lab4JS/2CodeStructure/2MultipleScripts/script2.js)
+<br>
+[Ver ejemplo completo JS 3](/Tutorials/Lab4JS/2CodeStructure/2MultipleScripts/script3.js)
+
+Como adicional obser lo que pasa cuando intentamos cargar un archivo externo de javascript y adentro de esa misma etiqueta ejecutar código también.
+
+```
+<!DOCTYPE HTML>
+<html>
+
+  <body>
+
+    <p>Before the script...</p>
+
+
+    <p>...After the script.</p>
+
+  </body>
+  
+  <script src="./script.js">
+      alert(1);
+  </script>
+
+</html>
+```
+
+Esta forma nos va a generar conflictos, pues si bien no vamos a ver un error en consola, el código que está dentro de la etiqueta no se va a ejecutar, pues una vez declarada la propiedad src de la etiqueta se da prioridad al archivo externo en este caso **script.js**.
+
+Así bien la forma correcta de hacer lo anterior sería la siguiente
+
+```
+<!DOCTYPE HTML>
+<html>
+
+  <body>
+
+    <p>Before the script...</p>
+
+
+    <p>...After the script.</p>
+
+  </body>
+  <script src="./script.js"></script>
+  <script>
+    alert(1);
+  </script>
+
+</html>
+```
+
+Donde de manera continua separamos el código del archivo y en otra etiqueta el inline sripting que queremos ejecutar.
+
+[Ver ejemplo completo HTML](/Tutorials/Lab4JS/2CodeStructure/3CombinedScripting/index.html)
+
+[Ver ejemplo completo JS](/Tutorials/Lab4JS/2CodeStructure/3CombinedScripting/script.js)
+
+**Nota: Para los siguiente ejemeplos seguiremos con el entendido que el archivo HTML no se modifica y solo el contenido del script.js va cambiando**
+
+La base del archivo HTML es la siguiente
+
+```
+<!DOCTYPE HTML>
+<html>
+
+<body>
+
+  <p>Before the script...</p>
+
+
+  <p>...After the script.</p>
+
+</body>
+<script src="./script.js"></script>
+
+</html>
+```
+
+### Declaraciones
+Las declaraciones son sintáxis y comandos que ejecutan acciones
+
+Ya vimos la primer declaración alert('Hello World') que muesta el mensaje Hello World.
+
+Podemos tener tantas declaraciones en nuestro código como queramos. Las declaraciones se separan con ;
+
+Por ejemplo podemos separar "Hello World" en 2 alertas
+
+```
+alert('Hello'); alert('World');
+```
+
+Usualmente las declaraciones se escriben en líneas separadas para hacer el código más legible
+
+```
+alert('Hello');
+alert('World');
+```
+
+### Punto y coma
+El punto y coma puede ser omitido en la mayoría de los casos cuando un salto de línea exista.
+
+```
+alert('Hello')
+alert('World')
+```
+Aquí Javascript interpreta el salto de línea como un punto y coma "implicito", a esto se le llama inserción automática de punto y coma.
+
+>Nota: La mayoría de los casos una nueva línea implica un punto y coma. Pero en la mayoría de los casos no significa siempre.
+
+Existen casos que una nueva línea no significa un punto y coma. Ejemplo:
+
+```
+alert(3 +
+1
++ 2);
+```
+
+El código tiene una salida de 6 por que javascript no inserta el punto y coma aquí. Es obvio en este caso que si la línea termina con un +
+entonces se tiene una expresión incompleta, por lo que un punto y coma sería incorrecto.
+
+
+Ejemplo de un error, remover el punto y coma del alert para ver el cambio:
+
+```
+alert("Hello");
+
+[1, 2].forEach(alert);
+```
+
+```
+alert("Hello") //Aquí se genera el error
+
+[1, 2].forEach(alert);
+```
+
+
+### Comentarios
+Conforme el tiempo pasa los programas se hacen más y más complejos, entonces se vuelve necesario agrega comentarios que describen como funciona el código y por qué.
+
+Los comentarios pueden ser colocados en cualquier lugar del script. Ellos no afectan su ejecución porque el engine simplemente lo ignora.
+
+```
+//One-line comments
+```
+
+```
+/*
+    Multiline comments
+*/
+```
+
+```
+//Comentarios anidados no son soportados
+/*
+  /* nested comment ?!? */
+// */
+```
+
+Se recomienda el uso de estándares para la documentación del código para Javascript se utiliza [JSDoc](https://jsdoc.app/)
+
+[Ver ejemplo completo HTML](/Tutorials/Lab4JS/2CodeStructure/4CodeStructure/index.html)
+
+[Ver ejemplo completo JS](/Tutorials/Lab4JS/2CodeStructure/4CodeStructure/script.js)
