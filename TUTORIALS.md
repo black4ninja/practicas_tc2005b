@@ -28,3 +28,7 @@ Los laboratorios son extensiones de lo que vemos en clase, siempre revisa el mat
   - Ciclos
   - Funciones
   - Arreglos y Objetos
+- [LAB6 - Programación Orientada a Eventos](/Tutorials/Lab5POE/readme.md)
+  - El DOM
+  - ¿Cómo seleccionar elementos en el documento?
+  - Usar eventos con Jasvascript

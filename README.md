@@ -15,7 +15,7 @@ Este repositorio esta pensado como centro de información y documentación sobre
 
 Guías por Tema - discuten tempas clave o particulares y conceptos a un alto nivel y proveen información de trasfondo y explicación.
 
-Guías de Referencia - contienen referencias técnicas para el tema revisado. Describen como funciona y como usarlo pero asumen que tienes un conocimiento básico de entendimiento para los conceptos clave.
+[Guías de Referencia](/REFERENCES.md) - contienen referencias técnicas para el tema revisado. Describen como funciona y como usarlo pero asumen que tienes un conocimiento básico de entendimiento para los conceptos clave.
 
 [Guías How-To son recetas](/RECIPES.md) - Te guían a través de pasos para resolver problemas concretos y casos de uso. Son más avanzados que los tutoriales y asumen que tienes conocimiento del tema buscado.
 
