@@ -354,6 +354,6 @@ El resultado es que al hacer clic en nuestro botón se despliega una alerta most
 Si quieres ahondar más en el tema te recomiendo el siguiente [artículo](https://www.freecodecamp.org/news/javascript-projects-for-beginners/) el cual crea varios proyectos de Javascript paso a paso para ir entendiendo el potencial que tiene, no olvides que la práctica es la única manera de entender como funciona y sin ello te estarás quedando atrás.
 
 
-[Ver ejemplo completo HTML](/Tutorials/Lab5POE/1getElementById/index.html)
+[Ver ejemplo completo HTML](/Tutorials/Lab6POE/1getElementById/index.html)
 
-[Ver ejemplo completo JS](/Tutorials/Lab5POE/1getElementById/script.js)
+[Ver ejemplo completo JS](/Tutorials/Lab6POE/1getElementById/script.js)
