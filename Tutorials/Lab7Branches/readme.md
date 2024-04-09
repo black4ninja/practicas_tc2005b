@@ -282,10 +282,10 @@ Por tanto los comandos a ejecutar serían:
 
 ```
 git pull origin
-git branches
+git branch
 ```
 
-En este caso particular **git pull origin** no va a realizar ningún cambio pues nuestro **repositorio local** es igual al **repositorio remoto**. Pero, **git branches** nos mostrará la lista de ramas disponibles en nuestro repositorio local que en este caso coinciden con el remoto.
+En este caso particular **git pull origin** no va a realizar ningún cambio pues nuestro **repositorio local** es igual al **repositorio remoto**. Pero, **git branch** nos mostrará la lista de ramas disponibles en nuestro repositorio local que en este caso coinciden con el remoto.
 
 ```
 * develop
@@ -311,7 +311,7 @@ Aunque nos dice que tenemos la última versión no está por demás tener la bue
 
 ```
 git pull origin
-git branches
+git branch
 ```
 
 El resultado final:
