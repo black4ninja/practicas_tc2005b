@@ -30,6 +30,16 @@ Sigue la convención de ramas que vayas estableciendo en tus equipos de trabajo,
 git checkout //Bajar los nuevos branches remotos
 git pull origin
 ```
+### Al empezar el día
+```
+git pull origin
+```
+
+### Al empezar una nueva funcionalidad
+```
+git pull origin
+git checkout -b {{nombre-rama}}
+```
 
 #### Al final del día o terminar trabajo
 ```
@@ -37,4 +47,11 @@ git pull origin
 git add -A
 git commit -m "Mensaje significativo de lo que incluye el commit"
 git push origin
+```
+
+### Eliminar branches locales que ya no existan en el repo remoto
+```
+git fetch
+git remote prune origin
+git branch | grep -v "main" | xargs git branch -D
 ```
