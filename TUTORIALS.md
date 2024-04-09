@@ -32,3 +32,12 @@ Los laboratorios son extensiones de lo que vemos en clase, siempre revisa el mat
   - El DOM
   - ¿Cómo seleccionar elementos en el documento?
   - Usar eventos con Jasvascript
+- [LAB7 - Manejo de Ramas](/Tutorials/Lab7Branches/readme.md)
+  - Introducción a las ramas
+  - Cambio entre ramas y obtener la última versión
+  - Gitflow Simplificado
+  - Hacer merge de las ramas con Pull Request
+  - Estrategias de Merge (merge, rebase, squash+merge)
+  - Actualizando cambios remotos
+  - Actualizar main o master
+  - Añadiendo etiquetas a versiones terminadas
