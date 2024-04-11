@@ -41,3 +41,16 @@ Los laboratorios son extensiones de lo que vemos en clase, siempre revisa el mat
   - Actualizando cambios remotos
   - Actualizar main o master
   - Añadiendo etiquetas a versiones terminadas
+- [LAB8 - Introducción al Backend](/Tutorials/Lab8IntroBackend/readme.md)
+  - Front-end y back-end
+  - Front-end
+  - Back-end
+  - Full-stack
+  - NodeJS
+  - Hello World
+  - Filesystem
+  - Async Sort
+  - Código Asíncrono
+  - Creando un servidor
+  - Ver que hace el servidor desde el navegador
+  - Devolver código HTML
