@@ -54,3 +54,6 @@ Los laboratorios son extensiones de lo que vemos en clase, siempre revisa el mat
   - Creando un servidor
   - Ver que hace el servidor desde el navegador
   - Devolver código HTML
+- [LAB10 - Rutas y Formas](/Tutorials/Lab10RutasYFormas/readme.md)
+  - Rutas
+  - Formas
