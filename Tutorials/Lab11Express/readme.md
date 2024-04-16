@@ -128,7 +128,7 @@ const server = http.createServer( (request, response) => {
 app.listen(3000);
 ```
 
-Este pequeño código nos permitirá crear un servidor pero utilizar express para empezar a realizar algunas funciones para nosotros.
+Este pequeño código nos permitirá crear un servidor para utilizar express y realizar algunas funciones para nosotros.
 
 La primera que veremos es conocida como **Middlewares**, estos son funciones que se van a ejecutar antes de realizar una instrucción o ruta del servidor, piensa en el caso de la autenticación de un usuario, podemos tener una verificación de autenticación en cada ruta de nuestro código, esto no será lo más óptimo pues estaremos duplicando código a diestra y siniestra. Para ello será mejor tener esta función que se ejecute antes de cada ruta y que este centralizada en el mismo pesado de código. Si bien podríamos llamarla simplemente como una función externa, el uso de middlewares proporcionado por express nos ayudará a secuenciar mejor el código más que como un proceso que como una función.
 
