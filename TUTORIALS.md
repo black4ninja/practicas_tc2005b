@@ -65,3 +65,9 @@ Los laboratorios son extensiones de lo que vemos en clase, siempre revisa el mat
   - pm2
   - Rutas con express
   - Separando en clases
+- [LAB12 - HTML Dinámico](/Tutorials/Lab12EJS/readme.md)
+  - Carpeta pública
+  - EJS
+- [LAB13 - MVC](/Tutorials/LAB13MVC/readme.md)
+  - MVC (Modelo Vista Controlador)
+  - Rutas y Controladores
