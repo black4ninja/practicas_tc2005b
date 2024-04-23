@@ -181,3 +181,185 @@ Pero internamente lo que sucede es lo siguiente:
 Con lo anterior a nivel arquitectura hemos segmentado en carpetas nuestras rutas y controladores, por lo que ahora en rutas vamos a tener una lista de urls con funciones que se llaman del controlador.
 
 El controlador es el encargado de hacer el renderizado y servir de **cerebro** para la función solicitada. Aquí lo que nos falta es conectar con un modelo y cargar el EJS de la vista para completar la arquitectura.
+
+## Modelos
+
+Como ya mencionamos anteriormente, los modelos son la parte de conexión con los datos de información. No confundir con que es un medio exclusivo para conectar con la base de datos, ya que dentro de un sistema podemos tener diferentes fuentes de información como: archivos, fuentes de datos, conexiones con otros sistemas y sí las bases de datos.
+
+Los modelos son parte de nuestra arquitectura por lo que es necesario definirlos en una carpeta **models** de nuestra aplicación. Para ello vamos a crear la carpeta y dentro un archivo que llamaremos usuarios.model.js.
+
+Al igual que la ruta al controlador, es necesario conectar el controlador al modelo. Por lo que en el controlador **usuarios.controller.js** debemos añadir al inicio del archivo lo siguiente:
+
+```
+const model = require("../models/usuarios.model.js")
+```
+
+Ahora para el contenido de **usuarios.model.js** tendremos lo siguiente:
+
+```
+exports.ObtenerUsuarios = function(correo,contrasena){
+    console.log("Obtener Usuarios");
+}
+```
+
+Aquí estamos creando una función ObtenerUsuarios, que conectaría con nuestra fuente de información y regresaría los datos.
+
+Por último dentro de **usuarios.controller.js** en la función index vamos a llamar al modelo de la siguiente manera:
+
+```
+const model = require("../models/usuarios.model.js")
+
+module.exports.index = async(req,res) =>{
+    model.ObtenerUsuarios()
+    res.status(200).send({status:"success",message:"Get all users"})
+}
+```
+
+Si entramos a la url
+
+```
+http://localhost:3000/usuarios/obtener_usuarios
+```
+
+Vamos a nuestra terminal y observamos que el log se realiza correctamente:
+
+![lab_13](/Tutorials/LAB13MVC/imgs/004.jpg)
+
+Ahora, dependerá de nuestro motor de base de datos o fuente de información, pero las buenas prácticas nos piden crear objetos para almacenar la información de nuestros modelos. Es decir crear objetos aunque sea en formato JSON que guarden la estructura de nuestros datos para poderlo manipular.
+
+Idealmente estos se separan en archivos adicionales, pero por facilidad vamos a declararlos en el mismo archivo de modelo simulando una llamada a una fuente de datos.
+
+```
+exports.ObtenerUsuarios = function(correo,contrasena){
+    let usuarios = [];
+
+    usuarios.push({
+        nombre:"Samuel",
+        id:1,
+        activo:true
+    });
+    usuarios.push({
+        nombre:"Lisa",
+        id:1,
+        activo:true
+    });
+    usuarios.push({
+        nombre:"Bob",
+        id:1,
+        activo:true
+    });
+    usuarios.push({
+        nombre:"Alicia",
+        id:1,
+        activo:true
+    });
+
+    return usuarios;
+}
+```
+
+Ahora si regresamos al controlador e imprimimos el valor de length de los usuarios regresados:
+```
+const model = require("../models/usuarios.model.js")
+
+module.exports.index = async(req,res) =>{
+    const usuarios = model.ObtenerUsuarios()
+    console.log(usuarios.length)
+    res.status(200).send({status:"success",message:"Get all users"})
+}
+```
+
+Nuestro resultado será:
+
+![lab_13](/Tutorials/LAB13MVC/imgs/005.jpg)
+
+Listo, hemos conectado un modelo dentro de nuestra arquitectura, ahora solo falta la vista.
+
+## Vistas
+
+Como vimos en el laboratorio anterior, debemos hacer uso de un HTML dinámico para definir nuestra vista y cargar los datos de nuestro modelo y controlador.
+
+Dentro de nuestro archivo **index.js** hemos definido el uso de ejs, pero en la estructura del proyecto no hemos agregado la carpeta. Por lo que vamos a crear **views** y dentro de la misma una carpeta que se llame **usuarios** para que desde adentro tengamos un archivo **obtener_usuarios.ejs**.,
+
+```
+<!DOCTYPE HTML>
+<html>
+<head>
+  <%- include('./../css.ejs') %>
+</head>
+<body>
+  <h1>Obtener Usuarios</h1>
+</body>
+<%- include('./../scripts.ejs') %>
+</html>
+```
+
+También vamos a crear los archivos css y scripts, pero estos los colocaremos fuera de la carpeta de usuarios. De momento no añadiremos nada a estos archivos pero esta es una estructura que te recomiendo para que todo tu módulo de usuarios contenga al menos los mismos css y scripts del proyecto.
+
+El resultado de la estructura se vería de la siguiente manera:
+
+![lab_13](/Tutorials/LAB13MVC/imgs/006.jpg)
+
+Si vamos a nuestro archivo **usuarios.controller.js** vamos a renderizar nuestra vista sustituyendo el send que teníamos por lo siguiente:
+
+const model = require("../models/usuarios.model.js")
+
+```
+module.exports.index = async(req,res) =>{
+    const usuarios = model.ObtenerUsuarios()
+    console.log(usuarios.length)
+    //res.status(200).send({status:"success",message:"Get all users"})
+    res.render("./usuarios/obtener_usuarios")
+}
+```
+
+Observa como a diferencia del laboatorio anterior, usamos la estructura de archivos para cargar nuestra carpeta de usuarios y luego nuestro ejs para modularizar nuestra funcionalidad.
+
+Por último vamos a cargar nuestros usuarios en una etiqueta **ul**, primero vamos a pasarlos desde el resultado de nuestro modelo a la vista usando el parámetro de json que recibe el método render.
+
+```
+const model = require("../models/usuarios.model.js")
+
+module.exports.index = async(req,res) =>{
+    const usuarios = model.ObtenerUsuarios()
+    console.log(usuarios.length)
+    //res.status(200).send({status:"success",message:"Get all users"})
+    res.render("./usuarios/obtener_usuarios",{
+        usuarios: usuarios
+    })
+}
+```
+
+Y dentro de nuestro ejs vamos a cargar el código de la siguiente manera:
+
+```
+<!DOCTYPE HTML>
+<html>
+<head>
+  <%- include('./../css.ejs') %>
+</head>
+<body>
+  <h1>Obtener Usuarios</h1>
+  <ul>
+    <% for(var i = 0; i < usuarios.length; i++){  %>
+      <li>
+        <%= usuarios[i].id %>, 
+        <%= usuarios[i].nombre %>, 
+        <%= usuarios[i].activo %>
+      </li>
+    <% } %>
+  </ul>
+</body>
+<%- include('./../scripts.ejs') %>
+</html>
+```
+
+Aquí haremos uso de la estructura que definimos en nuestro modelo. Y la cargaremos dentro de nuestro código.
+
+El resultado final en el navegador lo veremos de la siguiente manera:
+
+![lab_13](/Tutorials/LAB13MVC/imgs/007.jpg)
+
+Y con esto hemos conectado la arquitectura completa de nuestro proyecto, tenemos el modelo para cargar información, el controlador para manipular la transacción y la vista para visualizarlo, además de la ruta para ver el tipo de url que estamos llamando.
+
+Entiendo que de inicio parecen muchos archivos, pero esta buena práctica hará que tu código sea más simple en proyectos grandes pues la misma forma de repetir las cosas una y otra vez hace que el código sea lo más igual posible.

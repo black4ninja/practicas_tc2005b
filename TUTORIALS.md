@@ -71,3 +71,5 @@ Los laboratorios son extensiones de lo que vemos en clase, siempre revisa el mat
 - [LAB13 - MVC](/Tutorials/LAB13MVC/readme.md)
   - MVC (Modelo Vista Controlador)
   - Rutas y Controladores
+  - Modelos
+  - Vistas
