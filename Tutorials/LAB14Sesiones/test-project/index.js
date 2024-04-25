@@ -34,6 +34,25 @@ app.get('/test_cookie', (request, response, next) => {
     response.end(); 
 });
 
+app.get('/test_session', (request, response, next) => {
+    request.session.mi_variable = "valor"
+    response.setHeader('Content-Type', 'text/plain');
+    response.send(request.session.mi_variable);
+    response.end(); 
+});
+
+app.get('/test_session_variable', (request, response, next) => {
+    response.setHeader('Content-Type', 'text/plain');
+    response.send(request.session.mi_variable);
+    response.end(); 
+});
+
+app.get('/logout', (request, response, next) => {
+    request.session.destroy(() => {
+        response.redirect('/'); //Este código se ejecuta cuando la sesión se elimina.
+    });
+});
+
 const server = http.createServer( (request, response) => {    
     console.log(request.url);
 });

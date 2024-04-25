@@ -233,3 +233,41 @@ const server = http.createServer( (request, response) => {
 app.listen(3000);
 ```
 
+Con lo anterior no estamos creando una cookie, sino que estamos creando una sesión que es almacenada entre nuestro navegador y el servidor. Esto ya que si tratamos de buscar la cookie en el navgeador veremos que no aparece.
+
+Aquí la ventaja del servidor es que de manera automática, este establece la forma de conexión entre los datos permitiendonos guardar datos dentro de la sesión, puedes verlo como una cookie que vive del lado del servidor.
+
+Ahora bien, al igual que las cookies la recomendación es guardar poca información ya sea por facilidad del servidor y para evitar comprometer información importante del mismo.
+
+Más adelante en otros laboratorios veremos de que manera podemos hacer uso más especializado de la sesión, por ahora quedate en la forma de poder crear los datos, modificarlos y eliminarlos.
+
+Por lo mismo vamos a añadir 3 nuevas rutas a nuestro navegador:
+
+```
+app.get('/test_session', (request, response, next) => {
+    request.session.mi_variable = "valor"
+    response.setHeader('Content-Type', 'text/plain');
+    response.send(request.session.mi_variable);
+    response.end(); 
+});
+
+app.get('/test_session_variable', (request, response, next) => {
+    response.setHeader('Content-Type', 'text/plain');
+    response.send(request.session.mi_variable);
+    response.end(); 
+});
+
+app.get('/logout', (request, response, next) => {
+    request.session.destroy(() => {
+        response.redirect('/'); //Este código se ejecuta cuando la sesión se elimina.
+    });
+});
+```
+
+La primera ruta **test_session** añadirá un valor en forma de variable a nuestra sesión, el cual podremos acceder de manera inmediata.
+
+La segunda ruta **test_session_variable** nos permite acceder a esa nueva variable de la sesión, en cualquier momento, pero siempre y cuando hayamos creado primero el valor y el servidor no se haya reiniciado.
+
+La última ruta **logout** es la forma en la que destruimos la sesión y vacíamos la información que se encuentra alamcenada hasta ese momento.
+
+Como ves es muy sencillo el uso y manejo, sin embargo verifica y establece bien los momentos de creación, actualización y eliminación ya que es muy común perder una sesión por no fijarse el ciclo que puede seguir un usuario y se llega a caminos sin salida donde se borró la sesión pero aún se necesitaba la información.
