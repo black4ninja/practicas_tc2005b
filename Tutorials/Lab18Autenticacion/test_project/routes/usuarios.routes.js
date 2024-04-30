@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const controller = require("../controllers/usuarios.controller.js")
-const isAuth = require('../utils/is-auth');
+const isAuth = require('../utils/is-auth.js');
 
 router.get('/test_json', (req, res)=>{
     res.status(200).json({code: 200, msg:"Ok"});

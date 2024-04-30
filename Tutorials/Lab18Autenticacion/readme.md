@@ -130,7 +130,7 @@ Aquí definimos una función para manejar los datos, pero idealmente una clase d
 Aquí es donde podemos hacer uso de las clases y objetos de javascript, creando algo como lo siguiente:
 
 ```
-module.exports = class User {
+exports.User = class  {
     //Constructor de la clase. Sirve para crear un nuevo objeto, y en él se definen las propiedades del modelo
     constructor(my_username, my_name, my_password) {
         this.username = my_username;
