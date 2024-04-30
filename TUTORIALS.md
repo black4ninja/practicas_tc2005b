@@ -79,3 +79,8 @@ Los laboratorios son extensiones de lo que vemos en clase, siempre revisa el mat
 - [LAB17 - Interacción con la Base de datos](/Tutorials/Lab17BD/readme.md)
   - Conexión con MariaDB
   - Funciones Asíncronas
+- [LAB18 - Autenticación](/Tutorials/Lab18Autenticacion/readme.md)
+  - Registrar un usuario
+  - Encriptación de la contraseña
+  - Comparación de la contraseña
+  - Middleware de autenticación de sesión
