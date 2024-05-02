@@ -84,3 +84,10 @@ Los laboratorios son extensiones de lo que vemos en clase, siempre revisa el mat
   - Encriptación de la contraseña
   - Comparación de la contraseña
   - Middleware de autenticación de sesión
+- [LAB19 - RBAC](/Tutorials/Lab19RBAC/readme.md)
+  - Crear la base de datos
+  - Obtener permisos de los usuarios
+  - Interfaz gráfica dinámica
+  - Protección de rutas por permiso
+  - Cerrar sesión
+  - Asignar privilegio a un nuevo usuario

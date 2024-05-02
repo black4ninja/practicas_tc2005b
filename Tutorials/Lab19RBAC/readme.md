@@ -285,6 +285,7 @@ module.exports.do_login = async (req, res) => {
     }
 }
 ```
+## Mostrar/ocultar elementos de la interfaz gráfica dependiendo del permiso del usuario
 
 Vamos a continuar para generar una interfaz gráfica dinámica de acuerdo al permiso del usuario, modifica el último apartado de **do_login** en el render de la siguiente manera: 
 
@@ -294,8 +295,6 @@ res.render('usuarios/logged', {
     permisos: request.session.permisos || [],
 });
 ```
-
-## Mostrar/ocultar elementos de la interfaz gráfica dependiendo del permiso del usuario
 
 Ahora para mostrar u ocultar componentes en nuestra interfaz gráfica, en nuestra view de logged hay que agregar el siguiente código:
 
