@@ -1,0 +1,30 @@
+<html>
+
+<head>
+    <%- include('./../css.ejs') %>
+</head>
+
+<body>
+    <h1>Gracias por iniciar sesión!</h1>
+    <p>
+        <%= user.username %>
+    </p>
+    <p>
+        <%= user.name %>
+    </p>
+    <p>
+        <%= user.password %>
+    </p>
+
+    <% for(permiso of permisos) { %>
+        <% if(permiso.permiso=='ver_clan' ) { %>
+            Permiso de ver clan!
+            <% } %>
+                <% if(permiso.permiso=='crear_tropa' ) { %>
+                    Permiso de crear tropa!
+                    <% } %>
+                        <% } %>
+</body>
+<%- include('./../scripts.ejs') %>
+
+</html>
