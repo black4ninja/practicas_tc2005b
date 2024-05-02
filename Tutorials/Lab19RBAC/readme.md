@@ -241,7 +241,6 @@ static async getPermisos(username) {
 module.exports.do_login = async (req, res) => {
     try {
         const usuarios = await model.User.findUser(req.body.username)
-
         if (usuarios.length < 1) {
             res.render("usuarios/registro", {
                 registro: false
@@ -250,8 +249,8 @@ module.exports.do_login = async (req, res) => {
         }
 
         const usuario = usuarios[0];
-        const doMatch = await bcrypt.compare(req.body.password, usuario.password);
-
+        //const doMatch = await bcrypt.compare(req.body.password, usuario.password);
+        const doMatch = (req.body.password == usuario.password) ? true : false
         if (!doMatch) {
             res.render("usuarios/registro", {
                 registro: false
@@ -271,12 +270,11 @@ module.exports.do_login = async (req, res) => {
         
         /* Cuando tengamos la confirmación del permiso se guarda la sesión y los permisos en nuestro req.session */
         req.session.permisos = permiso;
-        req.session.username = usuario.nombre;
+        req.session.username = usuario.username;
         req.session.isLoggedIn = true;
-
+        console.log(req.session)
         res.render('usuarios/logged', {
-            user: usuario,
-            permisos: req.session.permisos || [],
+            user: usuario
         });
     } catch (error) {
         res.render("usuarios/registro", {
@@ -292,28 +290,59 @@ Vamos a continuar para generar una interfaz gráfica dinámica de acuerdo al per
 ```
 res.render('usuarios/logged', {
     user: usuario,
-    permisos: request.session.permisos || [],
+    permisos: req.session.permisos || [],
 });
 ```
 
 Ahora para mostrar u ocultar componentes en nuestra interfaz gráfica, en nuestra view de logged hay que agregar el siguiente código:
 
 ```
-<% for(permiso of permisos) { %>
-    <% if(permiso.permiso=='ver_clan' ) { %>
-        Permiso de ver clan!
-    <% } %>
-    <% if(permiso.permiso == 'crear_tropa') { %>
-        Permiso de crear tropa!
-    <% } %>
-<% } %>
+<html>
+    <head>
+        <%- include('./../css.ejs') %>
+    </head>
+    <body>
+        <h1>Gracias por iniciar sesión!</h1>
+        <p><%= user.username %></p>
+        <p><%= user.name %></p>
+        <p><%= user.password %></p>
+        <% for(permiso of permisos) { %>
+            <% if(permiso.permiso=='ver_clan' ) { %>
+                Permiso de ver clan!
+            <% } %>
+            <% if(permiso.permiso == 'crear_tropa') { %>
+                Permiso de crear tropa!
+            <% } %>
+        <% } %>
+    </body>
+    <%- include('./../scripts.ejs') %>
+</html>
 ```
+
+Por último vamos a adecuar un poco el login para que nuestros datos funcionen con los de la base de datos, en primer lugar actualiza el query de findUser para usar la tabla de **usuario** y no la de **user** del laboratorio anterior en usuarios.model.js:
+
+```
+Select * from usuario WHERE username = ?
+```
+
+Ahora bien si vamos al navegador y hacemos login con el siguiente usuario:
+
+```
+user: andrea
+pass: $2a$12$XTN3lOvdUVferZxggiaAJOLTqV4NPsxOEtyYgQGLjZAU1YGbVPvqC
+```
+
+Debido a que insertamos a Andrea directamente no conocemos su contraseña así que veremos que sucede cuando no aplicamos bien la autenticación de la contraseña pero efectuamos bien el método.
+
+Sí hacemos login desde el navegador veremos como resultado que el permiso asignado a andrea es visible.
+
+![lab_19](/Tutorials/Lab19RBAC/imgs/002.jpg)
 
 ## Proteger las rutas dependiendo del permiso del usuario
 
 Pero ahora ¿qué pasa si queremos bloquear toda una ruta, es decir, si el usuario intenta acceder desde el navegador a la ruta aunque este logueado queremos que verifique si tiene el permiso o no para acceder, por lo que en nuestras rutas, como ya lo vimos en laboratorios pasados, vamos a agregar un **middleware** por cada permiso
 
-Crea un nuevo archivo dentro de utils llamado can-create.js que será el middleware para verificar este permiso.
+Crea un nuevo archivo dentro de utils llamado **can-create.js** que será el middleware para verificar este permiso.
 
 ```
 module.exports = (request, response, next) => {
@@ -331,7 +360,7 @@ module.exports = (request, response, next) => {
 }
 ```
 
-Para el otro permiso que tenemos disponible en nuestra base de datos crea un archivo que se llame can-view.js quer será el middleware para el permiso. 
+Para el otro permiso que tenemos disponible en nuestra base de datos crea un archivo que se llame **can-view.js** quer será el middleware para el permiso. 
 
 ```
 module.exports = (request, response, next) => {
@@ -417,7 +446,7 @@ async save() {
 
 Bien prueba tu laboratorio! Registra un usuario y verifica que se haya agregado el permiso del usuario.
 
-Como por ahora estamos hardcodeando que el usuario tenga el permiso de crear tropa solamente, el usuario no puede acceder a **usuarios/obtener_usuarios** y lo mandará al logout.
+Como por ahora estamos asignando de manera directa que el usuario tenga el permiso de crear tropa solamente, el usuario no puede acceder a **usuarios/obtener_usuarios** y lo mandará al logout.
 
 Prueba también una vez logueado la ruta de **usuarios/editar_usuario**, a la cual, el usuario si tendrá acceso.
 
