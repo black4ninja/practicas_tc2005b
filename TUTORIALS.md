@@ -91,3 +91,8 @@ Los laboratorios son extensiones de lo que vemos en clase, siempre revisa el mat
   - Protección de rutas por permiso
   - Cerrar sesión
   - Asignar privilegio a un nuevo usuario
+- [LAB22 - Archivos](/Tutorials/Lab22Archivos/readme.md)
+  - Uso de multer
+  - Subiendo archivos públicos
+  - Consulta de archivos públicos
+  - Consulta de archivos privados
