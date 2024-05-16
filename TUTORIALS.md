@@ -96,3 +96,10 @@ Los laboratorios son extensiones de lo que vemos en clase, siempre revisa el mat
   - Subiendo archivos públicos
   - Consulta de archivos públicos
   - Consulta de archivos privados
+- [LAB24 - AJAX](/Tutorials/Lab24AJAX/readme.md)
+  - Introducción
+  - Empezando con un API
+  - Event load
+  - Agregar producto AJAX
+  - Cargar lista de productos AJAX
+  - Data tables AJAX
