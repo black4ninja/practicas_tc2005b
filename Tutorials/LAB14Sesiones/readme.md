@@ -17,7 +17,7 @@ En general, todas las cookies funcionan de la misma manera, pero se han aplicado
 
 Cookies mágicas es una vieja expresión informática que se refiere a paquetes de información que se envían y reciben sin cambios en los datos. Estas se utilizarían normalmente para iniciar sesión en sistemas informáticos de bases de datos, como la red interna de una empresa. Este concepto es anterior al de "cookie" que usamos hoy.
 
-Las cookies HTTP son una versión reutilizada de la "cookie mágica" creada para la navegación por Internet actual. En 1994, Lou Montulli, programador de navegadores web, se inspiró en la "cookie mágica" para crear la cookie HTTP, mientras ayudaba a una tienda de compras en línea a arreglar sus servidores sobrecargados. La cookie HTTP es lo que actualmente denominamos cookie de forma más general. También es lo que algunos ciberdelincuentes pueden utilizar para espiar tu actividad en línea y piratear información personal.
+Las cookies HTTP son una versión reutilizada de la "cookie mágica" creada para la navegación por Internet actual. En 1994, Lou Montulli, programador de navegadores web, se inspiró en la "cookie mágica" para crear la cookie HTTP, mientras ayudaba a una tienda de compras en línea a arreglar sus servidores sobrecargados. La cookie HTTP es lo que actualmente denominamos cookie de forma más general. También es lo que algunos ciber delincuentes pueden utilizar para espiar tu actividad en línea y piratear información personal.
 
 Dentro de Node y express podemos hace uso de las cookies para mantener y revisar una sesión de usuario.
 
@@ -86,7 +86,7 @@ Ahora tenemos la capacidad de crear cookies, pero nuestro servidor aún no es ca
 npm i cookie-parser
 ```
 
-Como siempre debemos configurar la librería paara nuestro uso en express
+Como siempre debemos configurar la librería para nuestro uso en express
 
 ```
 const cookieParser = require('cookie-parser');
@@ -177,7 +177,7 @@ Para ello usaremos otra librería llamada **express-session**, para ello ejecuta
 npm i express-session
 ```
 
-Y como siempre vamos a inicializarla en el archivo **index.js**
+Y como siempre vamos a iniciar su valor en el archivo **index.js**
 
 ```
 const session = require('express-session');
@@ -233,13 +233,13 @@ const server = http.createServer( (request, response) => {
 app.listen(3000);
 ```
 
-Con lo anterior no estamos creando una cookie, sino que estamos creando una sesión que es almacenada entre nuestro navegador y el servidor. Esto ya que si tratamos de buscar la cookie en el navgeador veremos que no aparece.
+Con lo anterior no estamos creando una cookie, sino que estamos creando una sesión que es almacenada entre nuestro navegador y el servidor. Esto ya que si tratamos de buscar la cookie en el navegador veremos que no aparece.
 
-Aquí la ventaja del servidor es que de manera automática, este establece la forma de conexión entre los datos permitiendonos guardar datos dentro de la sesión, puedes verlo como una cookie que vive del lado del servidor.
+Aquí la ventaja del servidor es que de manera automática, este establece la forma de conexión entre los datos permitiéndonos guardar datos dentro de la sesión, puedes verlo como una cookie que vive del lado del servidor.
 
 Ahora bien, al igual que las cookies la recomendación es guardar poca información ya sea por facilidad del servidor y para evitar comprometer información importante del mismo.
 
-Más adelante en otros laboratorios veremos de que manera podemos hacer uso más especializado de la sesión, por ahora quedate en la forma de poder crear los datos, modificarlos y eliminarlos.
+Más adelante en otros laboratorios veremos de que manera podemos hacer uso más especializado de la sesión, por ahora quédate en la forma de poder crear los datos, modificarlos y eliminarlos.
 
 Por lo mismo vamos a añadir 3 nuevas rutas a nuestro navegador:
 
@@ -268,6 +268,6 @@ La primera ruta **test_session** añadirá un valor en forma de variable a nuest
 
 La segunda ruta **test_session_variable** nos permite acceder a esa nueva variable de la sesión, en cualquier momento, pero siempre y cuando hayamos creado primero el valor y el servidor no se haya reiniciado.
 
-La última ruta **logout** es la forma en la que destruimos la sesión y vacíamos la información que se encuentra alamcenada hasta ese momento.
+La última ruta **logout** es la forma en la que destruimos la sesión y vaciamos la información que se encuentra almacenada hasta ese momento.
 
 Como ves es muy sencillo el uso y manejo, sin embargo verifica y establece bien los momentos de creación, actualización y eliminación ya que es muy común perder una sesión por no fijarse el ciclo que puede seguir un usuario y se llega a caminos sin salida donde se borró la sesión pero aún se necesitaba la información.

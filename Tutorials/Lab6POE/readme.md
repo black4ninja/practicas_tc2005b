@@ -9,7 +9,7 @@ Antes de hablar del DOM, debemos mencionar las estructuras de datos que debiste 
 
 Dentro de las estructuras de datos tenemos los árboles, que modelan datos a través de un nodo y hojas o hijos que se van derivando de su misma estructura.
 
-A esto es donde nos lleva el DOM, si analizamos un poco observaremos que nuestro código HTML en realidad lo es una estructura de datos en forma de árbol, pues cada etiqueta puede contener información de otras etiquetas y cada una de estas pueden tener un número ilimitado de hijos. De la misma manera las propiedades se amarran como hojas a las etiquetas para dar valor particular segúns el caso.
+A esto es donde nos lleva el DOM, si analizamos un poco observaremos que nuestro código HTML en realidad lo es una estructura de datos en forma de árbol, pues cada etiqueta puede contener información de otras etiquetas y cada una de estas pueden tener un número ilimitado de hijos. De la misma manera las propiedades se amarran como hojas a las etiquetas para dar valor particular según sea el caso.
 
 Por lo tanto el DOM viene como significado de Document Object Model, que en español podríamos resolver como Modelo de Objetos del Documento. Este es una interfaz que permite crear, editar o eliminar elementos del documento. También se pueden agregar eventos para hacer dinámico el documento, pero esto lo veremos un poco más adelante.
 
@@ -61,14 +61,14 @@ Para ejemplificar el siguiente código sería incorrecto.
 
 ```
 <p id="para">Soy un párrafo.</p>
-<p id="para">Soy otro parráfo.</p>
+<p id="para">Soy otro párrafo.</p>
 ```
 
 Para que el **id** funcione, debemos segmentar o nombrar individualmente cada párrafo.
 
 ```
 <p id="para1">Soy un párrafo.</p>
-<p id="para2">Soy otro parráfo.</p>
+<p id="para2">Soy otro párrafo.</p>
 ```
 
 Ya que hemos segmentado nuestros id ahora viene la forma de llamarlo desde Javascript.
@@ -83,7 +83,7 @@ Entonces el código final con el que podríamos llamar nuestro ejemplo sería el
 const paragraph1 = document.getElementById("para1");
 console.log(paragraph1);
 ```
-Si checamor el resultado en la consola, veremos:
+Si revisamos el resultado en la consola, veremos:
 
 ```
 <p id="para1">Soy un párrafo.</p>
@@ -163,7 +163,7 @@ El query selector all encuentra todos los métodos que coinciden con el selector
 </ul>
 ```
 
-Si quisieramos encontrar todos los elementos **li** de nuestro ejemplo, podríamos utilizar el combinador de hijos **>** para encontrar todos los elementos hijos de **ul**.
+Si quisiéramos encontrar todos los elementos **li** de nuestro ejemplo, podríamos utilizar el combinado de hijos **>** para encontrar todos los elementos hijos de **ul**.
 
 ```
 const listItems = document.querySelectorAll("ul > li");
@@ -237,7 +237,7 @@ let elemento3Lista = document.createElement("li");
 
 **Ojo: Aquí solo estamos creando las etiquetas**
 
-Después podemos utlizar la propiedad **textContent** para agregar texto para nuestros 3 elementos de la lista.
+Después podemos utilizar la propiedad **textContent** para agregar texto para nuestros 3 elementos de la lista.
 
 ```
 let elemento1Lista = document.createElement("li");
@@ -302,7 +302,7 @@ console.log(newH3)
 
 Verás que de la misma manera **newH3** se actualiza con el nuevo valor, y esto es por que los valores no se guardan de manera estática sino por referencia unos de otros. En el día a día no vamos a trabajar de esta manera, pero es un buen ejemplo para entender como se modifican las cosas.
 
-Al final verás que en cuanto al **style** podrás modificar practicamente cualquier propiedad de css que necesites, desde background-color, border-style, font-size, etc.
+Al final verás que en cuanto al **style** podrás modificar prácticamente cualquier propiedad de css que necesites, desde background-color, border-style, font-size, etc.
 
 ## Usar eventos con Javascript
 Los eventos son cosas que pasan en el documento que estás programando, el cual se encarga de avisarte para que tu código pueda hacer algo al respecto.
@@ -328,7 +328,7 @@ newButton.setAttribute("id","btn");
 document.body.appendChild(newButton);
 ```
 
-Si bien estamos utilizando el código de los ejemplos anteriores para agregar un **button** observa que utlizamos el método **setAttribute** para agregar el **id** a nuestro botón, esto sería el equivalente a que en el HTML declararamos la etiqueta de la siguiente manera:
+Si bien estamos utilizando el código de los ejemplos anteriores para agregar un **button** observa que utilizamos el método **setAttribute** para agregar el **id** a nuestro botón, esto sería el equivalente a que en el HTML declaráramos la etiqueta de la siguiente manera:
 
 ```
 <button id="btn">Mostrar Alerta</button>

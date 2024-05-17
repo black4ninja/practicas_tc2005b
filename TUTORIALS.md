@@ -1,6 +1,6 @@
 # TUTORIALES
 
-Los laboratorios son extensiones de lo que vemos en clase, siempre revisa el material ya que puede haber detalles que por tiempo no alcancemos a ver y que es tu responsabilidad entender para no atrasarte en las bases de lo que tienes que aprender del curso.
+Los laboratorios son extensiones de lo que vemos en clase, siempre revisa el material ya que puede haber detalles que por tiempo no alcancemos a ver y que es tu responsabilidad entender para no retrasarte en las bases de lo que tienes que aprender del curso.
 - [LAB1 - Introducción a HTML](/Tutorials/Lab1HTML/readme.md)
   - Plantilla básica de HTML
   - Introducción a HTML
@@ -31,7 +31,7 @@ Los laboratorios son extensiones de lo que vemos en clase, siempre revisa el mat
 - [LAB6 - Programación Orientada a Eventos](/Tutorials/Lab6POE/readme.md)
   - El DOM
   - ¿Cómo seleccionar elementos en el documento?
-  - Usar eventos con Jasvascript
+  - Usar eventos con Javascript
 - [LAB7 - Manejo de Ramas](/Tutorials/Lab7Branches/readme.md)
   - Introducción a las ramas
   - Cambio entre ramas y obtener la última versión

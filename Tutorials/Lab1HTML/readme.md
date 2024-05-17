@@ -25,7 +25,7 @@ El desarrollo web se basa en programación por etiquetas, estas vienen de la for
 <tag></tag>
 ```
 
-Esta sintáxis fue creada por el creador de la WWW Tim Berners Lee, y se ha vuelto el modelo estándar de desarrollo web que los navegadores hoy en día utilizan para todo lo que hoy en día se encuentra disponible en Internet.
+Esta sintaxis fue creada por el creador de la WWW Tim Berners Lee, y se ha vuelto el modelo estándar de desarrollo web que los navegadores hoy en día utilizan para todo lo que hoy en día se encuentra disponible en Internet.
 
 Si bien los navegadores web utilizan el HTML como estándar, no es el único protocolo de comunicación para obtener información de un servidor.
 
@@ -70,7 +70,7 @@ Otro estándar utilizado en la industria que si bien es más viejo más no es ob
 
 Como puedes ver HTML tiene su sintaxis específica como si fuera un lenguaje de programación, mientras que XML puede modelar cualquier tipo de dato con la diferencia que esto no será visible en el navegador.
 
-Por último el otro tipo de estándar más usado es conocido como JSON, este estándar es más nuevo y busca ser una evolución a XML en el sentido de reducir el duplicado con el uso de etiquetas manejando la información en una estructura de datos como la pudieramos encontrar en otros lenguajes de programación: listas, objetos, diccionarios o tablas hash. [Ver estándar JSON](https://www.json.org/json-en.html)
+Por último el otro tipo de estándar más usado es conocido como JSON, este estándar es más nuevo y busca ser una evolución a XML en el sentido de reducir el duplicado con el uso de etiquetas manejando la información en una estructura de datos como la pudiéramos encontrar en otros lenguajes de programación: listas, objetos, diccionarios o tablas hash. [Ver estándar JSON](https://www.json.org/json-en.html)
 
 ```
 {
@@ -149,7 +149,7 @@ Las propiedades que tenemos es el href, target, rel,title. Primero entendamos qu
 
 - El atributo href recibe la url de la página a donde queremos ir.
 - El atributo target es opcional y en este caso abre una nueva pestaña del navegador con la indicación **_blank**.
-- El atributo rel igualmente es opcional y por default una etiqueta a utiliza el nofollow, esto sirve para que en caso de los buscadores como Google cuando entran a revisar las páginas y detectan estas etiquetas crean un mapa de a que sitios lleva la página, esto ayuda a la página destino a pocisionares mejor en internet, existe todo un tema al respecto dentro de marketing y SEO (Search Engine Optimization) para que funcione correctamente.
+- El atributo rel igualmente es opcional y por default una etiqueta a utiliza el nofollow, esto sirve para que en caso de los buscadores como Google cuando entran a revisar las páginas y detectan estas etiquetas crean un mapa de a que sitios lleva la página, esto ayuda a la página destino a posicionarse mejor en internet, existe todo un tema al respecto dentro de marketing y SEO (Search Engine Optimization) para que funcione correctamente.
 - El atributo title ayuda a mostrar al usuario un título si pasa por encima el cursor.
 
 ## Formularios HTML
@@ -174,9 +174,9 @@ La etiqueta form recibe varios atributos importantes
 ```
 
 - El **action** es la url que vamos a llamar y desde donde se subirá la información que vamos a enviar del formulario.
-- El **method** será el tipo de request que hata la url es decir podrá ser de tipo: GET,POST,PUT,DELETE.
+- El **method** será el tipo de request que hará la url es decir podrá ser de tipo: GET,POST,PUT,DELETE.
 
-> Nota: Cuando llames la url, asegurate que tu servidor pueda manejar la llamada, el error más común es hacer una llamada POST y que el servidor solo procese la url mediante un GET.
+> Nota: Cuando llames la url, asegúrate que tu servidor pueda manejar la llamada, el error más común es hacer una llamada POST y que el servidor solo procese la url mediante un GET.
 
 > En el ejemplo de código la url es **/age.php**, esto funciona para servidores desarrollados en php, pero otro tipo de urls pueden ser de formato sin extensión como **/age** solamente.
 

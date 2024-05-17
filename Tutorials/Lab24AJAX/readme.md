@@ -6,7 +6,7 @@ Dentro de lo que hemos trabajado hasta ahora tenemos un servidor con la capacida
 
 Dentro de todo esto hemos implementado un patrón de arquitectura llamado MVC, donde en la parte de la Vista hemos utilizado EJS para dar formato a nuestros archivos HTML.
 
-Algo que comentabamos anteriormente en relación al EJS, es que todo el código que añadimos al archivo HTML es para ejecutar un pre-renderizado del HTML final, por lo que una vez que el HTML llega al navegador se pierde todo rastro de haber usado EJS y tenemos un archivo estático. Esta línea es importante pues es lo que hace el manejo del sistema de templates, y también la diferencia principal entre como trabaja esta parte en contraste con React por ejemplo.
+Algo que comentábamos anteriormente en relación al EJS, es que todo el código que añadimos al archivo HTML es para ejecutar un pre-renderizado del HTML final, por lo que una vez que el HTML llega al navegador se pierde todo rastro de haber usado EJS y tenemos un archivo estático. Esta línea es importante pues es lo que hace el manejo del sistema de templates, y también la diferencia principal entre como trabaja esta parte en contraste con React por ejemplo.
 
 Al momento de servir un EJS lo que hacemos es usar la función render y a través de ella hemos pasado información del servidor al archivo HTML.
 
@@ -40,7 +40,7 @@ El término AJAX viene de (Asynchronous Javascript And XML) para request al serv
 
 Existen múltiples formas de enviar un request al servidor y obtener información del servidor.
 
-Usando el método **fetch()**, esta sería la forma más moderna y versatil. Lo único que debes saber es que no está soportado por viejos navegadores, pero hoy en día ya es un poco complicado encontrar un navegador que no lo tenga.
+Usando el método **fetch()**, esta sería la forma más moderna y versátil. Lo único que debes saber es que no está soportado por viejos navegadores, pero hoy en día ya es un poco complicado encontrar un navegador que no lo tenga.
 
 La sintaxis básica es:
 
@@ -121,7 +121,7 @@ log("Loading 2");
 
 ![lab_24](/Tutorials/Lab24AJAX/imgs/004.png)
 
-Cuando visitamos la url veremos que el evento load se carga hasta el final a pesar de que Loading 2 está después, este es un evento asincrónico.
+Cuando visitamos la url veremos que el evento load se carga hasta el final a pesar de que Loading 2 está después, este es un evento asíncrono.
 
 > Nota: Ten cuidado de duplicar la llamada al evento load el cual puede llevar a resultados inesperados.
 
@@ -144,7 +144,7 @@ submitButton.addEventListener('click', function(event) {
 });
 ```
 
-Este evento tiene 2 sentidos particulares, aparte de hacer clic en los datos lo estamos llamando al momento de hacer click en el botón de submit de nuestro formulario. Si lo dejamos tal cual el formulario se enviará a nuestro servidor y tendremos un conclicto, pero este es el momento de **interceptar** el envío al servidor mediante:
+Este evento tiene 2 sentidos particulares, aparte de hacer clic en los datos lo estamos llamando al momento de hacer click en el botón de submit de nuestro formulario. Si lo dejamos tal cual el formulario se enviará a nuestro servidor y tendremos un conflicto, pero este es el momento de **interceptar** el envío al servidor mediante:
 
 ```
 event.preventDefault();
@@ -170,7 +170,7 @@ class Product {
 
 Dentro de esta, vamos a almacenar los productos nuevos que vayamos creando.
 
-> Nota: No olvides que la lista de productos que tenemos se reinicia cada vez que se reinicia el servidor, por lo que nuevos productos solo se almacenan mientras no realicemos ningúna modificación al código.
+> Nota: No olvides que la lista de productos que tenemos se reinicia cada vez que se reinicia el servidor, por lo que nuevos productos solo se almacenan mientras no realicemos ninguna modificación al código.
 
 Ahora agregaremos el siguiente método:
 
@@ -227,7 +227,7 @@ async function addProduct(product){
 }
 ```
 
-Y aquí es donde empezará la magia, agregar un producto recibe un objeto de nuestra clase **Product**. A partir de ahí viene al fin nuestra llamada AJAX, la cuaal recibe la url que usaremos del API **/add_product**, el método de conexión **POST**, el header para indicar que enviaremos la conexión en formato JSON y como no estamos mandando el formulario necesitamos tranformas nuestro nuevo producto al body de la aplicación en un formato legible que en este caso es string.
+Y aquí es donde empezará la magia, agregar un producto recibe un objeto de nuestra clase **Product**. A partir de ahí viene al fin nuestra llamada AJAX, la cual recibe la url que usaremos del API **/add_product**, el método de conexión **POST**, el header para indicar que enviaremos la conexión en formato JSON y como no estamos mandando el formulario necesitamos transformar nuestro nuevo producto al body de la aplicación en un formato legible que en este caso es string.
 
 Observa que la ejecución del fetch utiliza un **await** ya que no sabemos en que momento va a regresar la llamada al servidor, por lo que dejamos que suceda en sus propios términos y al regresar con el éxito o error lo validamos para verlo en la consola.
 
@@ -240,7 +240,7 @@ submitButton.addEventListener('click', function(event) {
     addProduct(result.product);
 });
 ```
-Una vez que prevenimos la ejecución default del evento del formulario, generamos el producto con los datos del mismo y lo envíamos a través de una llamada por AJAX.
+Una vez que prevenimos la ejecución default del evento del formulario, generamos el producto con los datos del mismo y lo enviamos a través de una llamada por AJAX.
 
 Intenta recargar el servidor y agrega un nuevo producto, observa el resultado.
 
@@ -302,9 +302,9 @@ El resultado será que al agregar un nuevo producto cargaremos la lista justo de
 
 Éxito, pero no tanto, ya que aunque vamos actualizando la lista, esta solo responde a nuestros eventos, que pasaría si alguien más se conecta al servidor y crea un producto, no lo podríamos ver hasta que agreguemos uno.
 
-Por tando vamos a usar el botón que tenemos para actualizar productos. Para ello vamos a definir un nuevo evento clic, como este se encuentra fuera del formulario no es necesario aplicar el preventDefault.
+Por tanto vamos a usar el botón que tenemos para actualizar productos. Para ello vamos a definir un nuevo evento clic, como este se encuentra fuera del formulario no es necesario aplicar el preventDefault.
 
-Debajo del evento listener del submitButto, agrega lo siguiente:
+Debajo del evento listener del submitButton, agrega lo siguiente:
 
 ```
 updateProductsButton.addEventListener('click', function(event) {
@@ -314,7 +314,7 @@ updateProductsButton.addEventListener('click', function(event) {
 
 Si bien nuestro caso de uso nos permite visualizar los cambios en el servidor, es probable que no queramos tener que esperar a hacer clic en el botón, o en su defecto agregar un nuevo producto para ver la carga de la tabla. Por lo que otra funcionalidad donde podemos aplicar el AJAX es en un cierto tiempo.
 
-Vamo a agregar lo siguiente debajo de nuestro último listener.
+Vamos a agregar lo siguiente debajo de nuestro último listener.
 
 ```
 setInterval(() =>{
@@ -330,17 +330,17 @@ Con esto ya tenemos 3 fuentes para cargar la actualización de los datos:
 - Al dar click en actualizar
 - Cada 5 segundos
 
-Estas opciones tienen sus ventajas y desventajas, por ejemplo la carga cada 5 segundos podemos reducirla a 1 segundo pero en un conjunto grande de datos esto quizás no sea la mejor opción puesto que tan solo el renderizado podría tomar más de ese segundo.
+Estas opciones tienen sus ventajas y desventajas, por ejemplo la carga cada 5 segundos podemos reducirla a 1 segundo pero en un conjunto grande de datos esto quizás no sea la mejor opción puesto que tan solo el render podría tomar más de ese segundo.
 
 Al final del día dependerá el caso y el contexto de lo que estés haciendo para ver cual es la mejor forma de carga de información, considera siempre el peor caso para evitar que el crecimiento de tu aplicación límite tus proyectos.
 
 ## Data tables AJAX
 
-La última funciónn que creamos fue la de getProducts, que como dijimos en vez de pintar directamente los datos genera una lista de datos de resultado, esto es por que algunos componentes existentes en internet te permiten pegar la información tal cual como por ejemplo: gráficas, tablas, etc.
+La última función que creamos fue la de getProducts, que como dijimos en vez de pintar directamente los datos genera una lista de datos de resultado, esto es por que algunos componentes existentes en internet te permiten pegar la información tal cual como por ejemplo: gráficas, tablas, etc.
 
 Una ventaja de trabajar con estos componentes y es que nos evitamos construir funcionalidades complejas en cosas que hoy en día los usuarios esperan.
 
-Tal es el caso de los data table, estas son tablas donde representamos la información que vemos en nuestra base de datos, y podemos añadirle funcionalidad adicional que ya viene integrada como paginación, búsqueda y/o filtros.
+Tal es el caso de los data table, estas son tablas donde representamos la información que vemos en nuestra base de datos, y podemos añadirle funcionalidad adicional que ya viene integrada como paginar, búsqueda y/o filtros.
 
 La librería que usaremos es [Grid.js](https://gridjs.io/) y ya la integramos en la plantilla del proyecto por lo que de momento no necesitas realizar nada más en términos de instalación, si quieres verla consulta el archivo **index.html**.
 
@@ -361,7 +361,7 @@ gridTable = new gridjs.Grid({
 
 Esta librería tiene los siguientes parámetros, donde definimos:
 
-- columns: Un arreglo que debe ser el mismo número de elementos que contendra nuestra lista de datos, y serán los nombre que asignaremos a las columnas.
+- columns: Un arreglo que debe ser el mismo número de elementos que contendrá nuestra lista de datos, y serán los nombre que asignaremos a las columnas.
 - pagination: Si queremos activar la paginación de la tabla
 - search: Si queremos activar la búsqueda de la tabla.
 - sort: Si queremos activas el ordenamiento de la tabla.
@@ -369,7 +369,7 @@ Esta librería tiene los siguientes parámetros, donde definimos:
   - url: La url que llamaremos
   - then: Que queremos hacer con la respuesta resultado del servidor para cargar la tabla, aquí debemos devolver un arreglo con los datos, en nuestro caso ya viene directo pero debemos llamar la variable products.
 
-El resultado será algo commo lo siguiente:
+El resultado será algo como lo siguiente:
 
 ![lab_24](/Tutorials/Lab24AJAX/imgs/007.png)
 

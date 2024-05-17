@@ -14,11 +14,11 @@ El punto que empezaremos a ver ahora es uno de los más importantes desde el pun
 
 Cuando hablamos de la arquitectura nos estamos refiriendo a la forma en la que las carpetas del proyecto están estructuradas.
 
-Como ya habrás notado un proyecto grande de desarrollo, incluye archivos HTML, CSS, JS para el cliente, archivos js de back-end, de front-end y sobre ellos viene la lógica de modularizar nuestra aplicación según las funciones que tiene.
+Como ya habrás notado un proyecto grande de desarrollo, incluye archivos HTML, CSS, JS para el cliente, archivos js de back-end, de front-end y sobre ellos viene la lógica de crear módulos en nuestra aplicación según las funciones que tiene.
 
-Cuando ya tenemos una gran cantidad de archivos, esto se vuelve complicado si no planificamos como estructurar nuestros archivos, y es por ello que viene la primer aproximación en una de las arquitecturas más comúnes utilizadas en desarrollo web.
+Cuando ya tenemos una gran cantidad de archivos, esto se vuelve complicado si no planificamos como estructurar nuestros archivos, y es por ello que viene la primer aproximación en una de las arquitecturas más comunes utilizadas en desarrollo web.
 
-Hasta ahora cuando hablabamos de arquitectura nos referiamos a cliente-servidor. Pero esta arquiecturas nos habla de como se establece el protocolo de comunicación del sistema.
+Hasta ahora cuando hablábamos de arquitectura nos referíamos a cliente-servidor. Pero esta arquitecturas nos habla de como se establece el protocolo de comunicación del sistema.
 
 Ahora la arquitectura de software como ya mencioné habla de la estructura de carpetas del proyecto, si bien existen una gran cantidad de arquitecturas, todas con un propósitos específico, en desarrollo de back-end la más común y simple es MVC o mejor conocida como Modelo-Vista-Controlador.
 
@@ -28,7 +28,7 @@ Un diagrama que explica de manera sencilla como funciona la arquitectura es el s
 
 Tendremos una petición HTTP, hasta ahora la hemos resuelto directamente en una función de Javascript, pero dentro del servidor lo ideal es separar según la fuente, esto hace más legible el código, estructura mejor la carpeta de archivos y permite probar lo que estamos haciendo.
 
-Al llegar el request HTTP, llegamos a la ruta o lo que ahora conoceremos como el **controlador**, dentro de este lo más común será tener que llamar a algún elemento de información, normalmente una base de datos, lo que sucede en la arquitectura es pasar esta responsabilidad a otro archivo el cual llamaremos el **modelo** que su única función es obtener y manejar la información, por último se regresará al **controlador** y este hara el pre renderizado del HTML con EJS como en nuestro caso y devolverá la petición al cliente habiendo cargado en el código HTML la información que se ocupa de la base de datos.
+Al llegar el request HTTP, llegamos a la ruta o lo que ahora conoceremos como el **controlador**, dentro de este lo más común será tener que llamar a algún elemento de información, normalmente una base de datos, lo que sucede en la arquitectura es pasar esta responsabilidad a otro archivo el cual llamaremos el **modelo** que su única función es obtener y manejar la información, por último se regresará al **controlador** y este hará el pre renderizado del HTML con EJS como en nuestro caso y devolverá la petición al cliente habiendo cargado en el código HTML la información que se ocupa de la base de datos.
 
 Todo este camino se realizará para cada ruta de cada función de cada módulo del sistema, hacerlo de manera efectiva nos ayudará a que existan partes del código replicadas y simplificará la llamada de funciones, ya que no necesitamos crear un query a la base de datos para obtener lo usuarios en cada ruta, sino que esto lo delegaremos a un modelo que hará esta llamada y se insertará cada vez que lo utilicemos en un controlador.
 
@@ -313,7 +313,7 @@ module.exports.index = async(req,res) =>{
 }
 ```
 
-Observa como a diferencia del laboatorio anterior, usamos la estructura de archivos para cargar nuestra carpeta de usuarios y luego nuestro ejs para modularizar nuestra funcionalidad.
+Observa como a diferencia del laboratorio anterior, usamos la estructura de archivos para cargar nuestra carpeta de usuarios y luego nuestro ejs para modularizar nuestra funcionalidad.
 
 Por último vamos a cargar nuestros usuarios en una etiqueta **ul**, primero vamos a pasarlos desde el resultado de nuestro modelo a la vista usando el parámetro de json que recibe el método render.
 

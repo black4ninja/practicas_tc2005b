@@ -1,8 +1,8 @@
 # Intro a Javascript
 
-Para este laboratorio tendras aparte los archivos HTML y JS correspondientes para poder verlos desde tu navegador y podrás ver cada concepto dentro de este documento.
+Para este laboratorio tendrás aparte los archivos HTML y JS correspondientes para poder verlos desde tu navegador y podrás ver cada concepto dentro de este documento.
 
-Javascript es el lenguaje de programación por exelencia para usarse dentro del navegador, cuando hablamos de desarrollo web, tenemos que el código HTML, le da estructura a nuestr página, el CSS le da el estilo y JS nos permite dotar de funcionalidad a nuestro sitio.
+Javascript es el lenguaje de programación por excelencia para usarse dentro del navegador, cuando hablamos de desarrollo web, tenemos que el código HTML, le da estructura a nuestra página, el CSS le da el estilo y JS nos permite dotar de funcionalidad a nuestro sitio.
 
 Visto de otra forma, JS nos va a ayudar a que en la arquitectura cliente-servidor, sea el cliente el que tenga mayor capacidad de solicitar al servidor de información ya sea a través de la petición de la misma o el guardado.
 
@@ -13,7 +13,7 @@ Comenzaremos desde la base de como declarar el javascript para poder trabajar co
 ## Inline Scripting
 Cuando hablamos de empezar a trabajar con Javascript vamos a tener varias formas de hacerlo.
 
-La primera de ellas es a través del inline sripting o dentro del mismo archivo HTML donde estemos trabajando. Esta forma nos permite visualizar el código en cualquier parte del archivo.
+La primera de ellas es a través del inline scripting o dentro del mismo archivo HTML donde estemos trabajando. Esta forma nos permite visualizar el código en cualquier parte del archivo.
 
 Por lo general aunque se puede realizar la buena práctica nos dice que debemos separar en archivos diferentes la funcionalidad, pero eso lo veremos poco a poco.
 
@@ -84,7 +84,7 @@ Observa que colocamos la etiqueta del **script** fuera de la etiqueta **body**, 
 
 Cuando trabajamos con Javascript es muy común que este realice procesamiento, si la página contiene estilos e imágenes su tiempo de carga puede empezar a aumentar entre más cosas tenga, si a eso le añadimos el tiempo de procesamiento de Javascript hay páginas que tardan hasta 1 minuto en cargar. Si hablamos de páginas web optimizadas son segundos los que tarda un usuario en salirse sin haber visto nuestro contenido. Por ello al colocar el script fuera del body hacemos que esta carga se realice de manera paralela a cuando el usuario ya está navegando esto ayuda a recuperar valiosos segundos de navegación.
 
-Debe existir un equilibrio entre cuando cargar de manera paralela y la carga inicial de la página, pero todo esto se refiere a un tema de optimización para pocisionamiento de la página en buscadores y es todo un tema de estudio.
+Debe existir un equilibrio entre cuando cargar de manera paralela y la carga inicial de la página, pero todo esto se refiere a un tema de optimización para posicionamiento de la página en buscadores y es todo un tema de estudio.
 
 Ahora bien dentro del nuevo archivo **script.js** podemos empezar directamente a escribir el código de javascript sin necesidad de escribir alguna directiva o etiqueta adicional como se muestra a continuación.
 
@@ -92,7 +92,7 @@ Ahora bien dentro del nuevo archivo **script.js** podemos empezar directamente a
 alert( 'Hello, world!' );
 ```
 
-Observa que estamos usando nuevamente la misma declaración que cuando hicimos el **inline scripting**, solo que ahora lo hacemos desde el archivo separado, el resultado final será el mismo que el anterior pero abremos realizado una buena práctica separando nuestros códigos.
+Observa que estamos usando nuevamente la misma declaración que cuando hicimos el **inline scripting**, solo que ahora lo hacemos desde el archivo separado, el resultado final será el mismo que el anterior pero habremos realizado una buena práctica separando nuestros códigos.
 
 [Ver ejemplo completo HTML](/Tutorials/Lab4JS/2CodeStructure/1SeparateFiles/index.html)
 
@@ -154,7 +154,7 @@ alert( 'Hello' );
 <br>
 [Ver ejemplo completo JS 3](/Tutorials/Lab4JS/2CodeStructure/2MultipleScripts/script3.js)
 
-Como adicional obser lo que pasa cuando intentamos cargar un archivo externo de javascript y adentro de esa misma etiqueta ejecutar código también.
+Como adicional observa lo que pasa cuando intentamos cargar un archivo externo de javascript y adentro de esa misma etiqueta ejecutar código también.
 
 ```
 <!DOCTYPE HTML>
@@ -200,13 +200,13 @@ Así bien la forma correcta de hacer lo anterior sería la siguiente
 </html>
 ```
 
-Donde de manera continua separamos el código del archivo y en otra etiqueta el inline sripting que queremos ejecutar.
+Donde de manera continua separamos el código del archivo y en otra etiqueta el inline scripting que queremos ejecutar.
 
 [Ver ejemplo completo HTML](/Tutorials/Lab4JS/2CodeStructure/3CombinedScripting/index.html)
 
 [Ver ejemplo completo JS](/Tutorials/Lab4JS/2CodeStructure/3CombinedScripting/script.js)
 
-**Nota: Para los siguiente ejemeplos seguiremos con el entendido que el archivo HTML no se modifica y solo el contenido del script.js va cambiando**
+**Nota: Para los siguiente ejemplos seguiremos con el entendido que el archivo HTML no se modifica y solo el contenido del script.js va cambiando**
 
 La base del archivo HTML es la siguiente
 
@@ -228,9 +228,9 @@ La base del archivo HTML es la siguiente
 ```
 
 ### Declaraciones
-Las declaraciones son sintáxis y comandos que ejecutan acciones
+Las declaraciones son sintaxis y comandos que ejecutan acciones
 
-Ya vimos la primer declaración alert('Hello World') que muesta el mensaje Hello World.
+Ya vimos la primer declaración alert('Hello World') que muestra el mensaje Hello World.
 
 Podemos tener tantas declaraciones en nuestro código como queramos. Las declaraciones se separan con ;
 
@@ -254,7 +254,7 @@ El punto y coma puede ser omitido en la mayoría de los casos cuando un salto de
 alert('Hello')
 alert('World')
 ```
-Aquí Javascript interpreta el salto de línea como un punto y coma "implicito", a esto se le llama inserción automática de punto y coma.
+Aquí Javascript interpreta el salto de línea como un punto y coma "implícito", a esto se le llama inserción automática de punto y coma.
 
 >Nota: La mayoría de los casos una nueva línea implica un punto y coma. Pero en la mayoría de los casos no significa siempre.
 
@@ -315,7 +315,7 @@ Se recomienda el uso de estándares para la documentación del código para Java
 ## UseStrict
 
 Por un largo tiempo, Javascript evolucionó sin problemas de compatibilidad. Nuevas funcionalidades fueron añadidas al lenguaje
-mientras mientras que funcionalidad antigüa no cambió.
+mientras mientras que funcionalidad antigua no cambió.
 
 Eso tuvo el beneficio de nunca romper el código. Sin embargo, un problema de ello es que el lenguaje se quedó atrapado en el tiempo.
 
@@ -333,7 +333,7 @@ La directiva debe colocarse al inicio de un script, para que todo el script func
 
 Este código va a trabajar de la forma moderna
  
-Asegurate que "use strict" este hasta arriba, de otra forma no se habilitarán las funciones.
+Asegúrate que "use strict" este hasta arriba, de otra forma no se habilitarán las funciones.
 
 ```
 alert("some code");
@@ -343,7 +343,7 @@ alert("some code");
 // strict mode is not activated
 ```
 
-No existe dirextiva como "no use strict" que regrese el engine a su conducta anterior.
+No existe directiva como "no use strict" que regrese el engine a su conducta anterior.
 Una vez usado el strict mode no hay vuelta atrás.
 
 
@@ -367,7 +367,7 @@ Una variable es información guardada a través de un nombre.
 Podemos usar las variables para guardar productos, visitantes y otro tipo de información.
 
 
-Para crear una variable en Javascript usarmos la plabra reservada **let**
+Para crear una variable en Javascript usaremos la palabra reservada **let**
 
 ```
 let message;
@@ -406,7 +406,7 @@ let age = 25;
 let message = 'Hello';
 ```
 
-Algunas personas definen múltiples variables en este estilo multilínea
+Algunas personas definen múltiples variables en este estilo multi línea
 
 ```
 let user = 'John',
@@ -422,11 +422,11 @@ let user = 'John'
   , message = 'Hello';
 ```
 
-Tecnicamente todas estas variantes hacen lo mismo, entonces en más un estilo personal y de estética.
+Técnicamente todas estas variantes hacen lo mismo, entonces en más un estilo personal y de estética.
 
 ### Var en lugar de let
 
-En scripts "antigüos", también puedes encontrar el uso de la palabra reservada **var** en lugar de **let**
+En scripts "antiguos", también puedes encontrar el uso de la palabra reservada **var** en lugar de **let**
 
 ```
 var message3 = 'Hello';
@@ -450,7 +450,7 @@ message' has already been declared
 
 Existen 2 limitaciones al nombrado de variables
 1. El nombre contiene solo letras, dígitos o símbolos $ y _.
-2. El primer caracter no debe ser un dígito.
+2. El primer carácter no debe ser un dígito.
 
 ```
 let userName;
@@ -533,7 +533,7 @@ myBirthday2 = '01.01.2001'; // error, can't reassign the constant!
 
 La buena práctica para el uso de constantes difíciles de recordad es usar valores conocidos antes de su ejecución.
 
-Tales constantes son nombrados usando mayúsculas y guines bajos. 
+Tales constantes son nombrados usando mayúsculas y guiones bajos. 
 
 ```
 const COLOR_RED = "#F00";
@@ -552,14 +552,14 @@ Beneficios:
 - Cuando leemos el código, COLOR_ORANGE es mas significativo que #FF7F00
 
 ### ¿Reusar o crear variables?
-Algunos programadores tienden a reusar las variables en lugar re declarar nuevas.
+Algunos programadores tienden a re usar las variables en lugar re declarar nuevas.
 
 Como resultado, sus variables son como cajas donde avientan cosas sin cambiar sus nombres. Como resultado, ¿qué hay dentro de la caja?¿quién sabe?
 Necesitamos ir a detalle y verificar, esto consume mucho tiempo.
 
-Una variable extra es buena, no mala. Preguntate lo siguiente: ¿Cuánto te cobran por una nueva variable? NADA, SON GRATIS.
+Una variable extra es buena, no mala. Pregúntate lo siguiente: ¿Cuánto te cobran por una nueva variable? NADA, SON GRATIS.
 
-Los optimizadores modernos de Javascript optimizan muy bien el código, entonces no habrá problemas de rendimiento.
+Los sistemas modernos de Javascript optimizan muy bien el código, entonces no habrá problemas de rendimiento.
 Usar diferentes nombre de variables ayuda incluso al motor de Javascript a optimizar más tu código.
 
 [Ver ejemplo completo HTML](/Tutorials/Lab4JS/4Variables/index.html)
@@ -589,7 +589,7 @@ n = 12.345;
 
 El tipo number representa tanto enteros como flotantes.
 
-Existen muchos tipos de operación para los numeros. ej. multiplicación *, división /, suma +, resta -, etc.
+Existen muchos tipos de operación para los números. ej. multiplicación *, división /, suma +, resta -, etc.
 
 Además de los números regulares, también tenemos valores especiales que son: Infinity, -Infinity y NaN.
 
@@ -616,7 +616,7 @@ Realizar operaciones matemáticas en Javascript es "seguro", podemos hacer lo qu
 El script no fallará con un error fatal. Lo más que puede suceder es obtener un NaN como resultado.
 
 ### BigInt
-En Javascript los números se representand por valores enteros (253-1) (eso es 9007199254740991), o menores que -(253-1) para negativos.
+En Javascript los números se representan por valores enteros (253-1) (eso es 9007199254740991), o menores que -(253-1) para negativos.
 
 Para ser precisos los números puede soportar hasta 1.7976931348623157 ^ 10308, pero fuera de ese rango existirá un error de precisión, porque no todos los dígitos
 caben en 64-bits. Por lo que un valor aproximado será guardado.
@@ -650,7 +650,7 @@ En Javascript existen 3 tipos de comillas:
 2. Simples: 'Hello'.
 3. Backticks: \`Hello\`.
 
-Dobles y simples son comillas "sencillas". Practicamente no existe diferencia en Javascript.
+Dobles y simples son comillas "sencillas". Prácticamente no existe diferencia en Javascript.
 
 Backticks son comillas de "funcionalidad extendida". Estas nos permiten meter variables y expresiones dentro de un string usando
 la simbología ${...}, por ejemplo
@@ -718,7 +718,7 @@ age = undefined;
 alert(age); // "undefined"
 ```
 
-Pero no te recomiendo realizar esta acción. Normalmente, uno utiliza null para asignar "vacío" o "desconocido" a una variable, mientras que undefined está reservado al valor inicial default para desasignar cosas.
+Pero no te recomiendo realizar esta acción. Normalmente, uno utiliza null para asignar "vacío" o "desconocido" a una variable, mientras que undefined está reservado al valor inicial default para quitar la asignación cosas.
 
 ### Objetos y símbolos
 
@@ -757,7 +757,7 @@ Los últimos 3 necesitan una explicación adicional
 
 [Ver ejemplo completo JS](/Tutorials/Lab4JS/5DataTypes/script.js)
 
-## Interacción: Alert, promt, confirm
+## Interacción: Alert, prompt, confirm
 Como vamos a estar utilizando el navegador para visualizar nuestro ambiente de demostración, vamos a ver algunas funciones para interactuar con el usuario.
 
 ### Alert
@@ -777,9 +777,9 @@ result = prompt(title, [default]);
 title - Es el texto que se muestra al visitante.
 default - Como opcional es el segundo parámetro, el valor inicial para el campo de entrada de texto
 
-Las llaves cuadrada en la sintáxis[...]
+Las llaves cuadrada en la sintaxis[...]
 
-Las llaves cuadradas al rededor de default en la sintáxis denotan que el parámetro es opcional, no requerido.
+Las llaves cuadradas al rededor de default en la sintaxis denotan que el parámetro es opcional, no requerido.
 
 ```
 let age = prompt('How old are you?', 100);
@@ -808,7 +808,7 @@ alert( isBoss ); // true if OK is pressed
 
 ### Conversión de Strings
 
-Conversiones de strin suceden cuando necesitamos convertir un valor en un string.
+Conversiones de string suceden cuando necesitamos convertir un valor en un string.
 
 ```
 let value = true;
@@ -883,7 +883,7 @@ console.log( y - x ); // 2
 ```
 
 ### Operaciones Matemáticas
-Las siguientes operacioens matemáticas son soportadas:
+Las siguientes operaciones matemáticas son soportadas:
 - Suma +,
 - Resta -,
 - Multiplicación *,
@@ -1011,7 +1011,7 @@ console.log( '01' == 1 ); // true, string '01' becomes a number 1
 ### Igualdad estricta
 ```
 console.log( 0 == false ); // true
-//Strin vacío
+//String vacío
 console.log( '' == false ); // true
 ```
 
@@ -1069,7 +1069,7 @@ if (1) { // 0 es verdadero
 ```
 
 ```
-let cond = (year == 2015); // evalua para verdadero o false
+let cond = (year == 2015); // evalúa para verdadero o false
 
 if (cond) {
   //...
@@ -1384,7 +1384,7 @@ El resultado final sería algo como:
 
 En Javascript, una función no es una "estructura mágica del lenguaje", más bien es un tipo especial de valores.
 
-La sintáxis que usamos anteriormente se le conoce como **Function Declaration**.
+La sintaxis que usamos anteriormente se le conoce como **Function Declaration**.
 
 ```
 function sayHi() {
@@ -1392,7 +1392,7 @@ function sayHi() {
 }
 ```
 
-Existe otra sintáxis que es llamada **Function Expression**. Esta forma nos permite crear una función en medio de cualquier expresión. Esto es algo muy importante pues es lo que hace diferente a Javascript de muchos lenguajes de programación, ya que podemos hacer muchas operaciones como almacenar la función en una variable.
+Existe otra sintaxis que es llamada **Function Expression**. Esta forma nos permite crear una función en medio de cualquier expresión. Esto es algo muy importante pues es lo que hace diferente a Javascript de muchos lenguajes de programación, ya que podemos hacer muchas operaciones como almacenar la función en una variable.
 
 ```
 let sayHi = function() {
@@ -1467,7 +1467,7 @@ function showCancel() {
 ask("Do you agree?", showOk, showCancel);
 ```
 
-En la práctica estas funciones son muy útiles. Lamayor diferencia entre una pregunta del mundo real y el ejemplo anterior es que una pregunta real tiene formas más complejas de interactuar con un usuario que un simple **confirm**. En el navegador tales funciones por lo general dibujan una bonita venta de pregunta , pero eso es otro tema.
+En la práctica estas funciones son muy útiles. La mayor diferencia entre una pregunta del mundo real y el ejemplo anterior es que una pregunta real tiene formas más complejas de interactuar con un usuario que un simple **confirm**. En el navegador tales funciones por lo general dibujan una bonita venta de pregunta , pero eso es otro tema.
 
 Los argumentos **showOk** y **showCancel** de **ask** son llamadas **funciones callback** o solamente **callbacks**.
 
@@ -1497,7 +1497,7 @@ Existe otra simple forma de crear funciones, que a menudo es mejor que las **Fun
 let func = (arg1, arg2, ..., argN) => expression;
 ```
 
-Esto crea una función que agrega n argumentos, luego evalua la **expression** a la derecha y devuelve su resultado.
+Esto crea una función que agrega n argumentos, luego evalúa la **expression** a la derecha y devuelve su resultado.
 
 En otras palabras, sería la versión corta de:
 
@@ -1522,7 +1522,7 @@ let sum = function(a, b) {
 alert( sum(1, 2) ); // 3
 ```
 
-Como puedes ver **(a, b) => a + b**, significa una función que acepta 2 parámetros **a** y **b**. Al ejecutarse, se evalua la expresión a + b y regresa el resultado.
+Como puedes ver **(a, b) => a + b**, significa una función que acepta 2 parámetros **a** y **b**. Al ejecutarse, se evalúa la expresión a + b y regresa el resultado.
 
 - Si solo tenemos un argumento, el paréntesis al rededor de los parámetros puede ser omitido, haciendo la versión todavía más corta.
 

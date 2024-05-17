@@ -4,23 +4,23 @@
 
 En el laboratorio de introducción al back-end, comenzamos a trabajar con crear un servidor y empezar a servir respuestas desde el mismo. En la última parte incluso pudimos enviar código HTML y conectar parte de lo que hemos trabajado con front-end hasta el momento.
 
-Como te había mencionado hasta este punto si bien ya pudieramos crear un proyecto complejo, aún nos faltan ver algunas cosas que harán nuestra vida más fácil.
+Como te había mencionado hasta este punto si bien ya pudiéramos crear un proyecto complejo, aún nos faltan ver algunas cosas que harán nuestra vida más fácil.
 
-Ahora que vamos a empezar este camino de optimización, el primer paso es empezar a manejar las rutas del proyecto, si bien esto vamos a irlo mejorando con cada laboratorio que avancemos es momento de empezar a entender cmoo funcionan las URL en un proyecto de desarrollo web.
+Ahora que vamos a empezar este camino de optimización, el primer paso es empezar a manejar las rutas del proyecto, si bien esto vamos a irlo mejorando con cada laboratorio que avancemos es momento de empezar a entender como funcionan las URL en un proyecto de desarrollo web.
 
 Como ya sabes existen varios métodos de conexión o de peticiones que podemos hacer al servidor, FETCH, GET, POST, PUT y DELETE entre los más conocidos.
 
-Este tipo de conexión se hace desde el servidor y somos nosotros los que decidimos de que manera regresar información. Por ejemplo, el espacio en los navegadores web para escribir una dirección o URL, lo que reciben hacen es mandar una petición GET y lo más normal es que estas peticiones nos veulvan el código HTML ya que si son las que colocamos en la url del navegador son la primera respuesta de acción que veremos.
+Este tipo de conexión se hace desde el servidor y somos nosotros los que decidimos de que manera regresar información. Por ejemplo, el espacio en los navegadores web para escribir una dirección o URL, lo que reciben hacen es mandar una petición GET y lo más normal es que estas peticiones nos vuelvan el código HTML ya que si son las que colocamos en la url del navegador son la primera respuesta de acción que veremos.
 
 Después de esto veremos de manera muy breve el concepto de las REST API, las cuales a través de los otros métodos de conexión nos permiten enviar o actualizar información, usando los otros estándares que ya hemos mencionado como JSON o XML.
 
 Lo importante que empezaremos a ver es que a partir de decidir que método de conexión usaremos podemos ir segmentando la información que tenemos para poderla regresar en diferentes URLs.
 
-Esto nos lleva a que todo **request** debe regresarnos una respuesta al menos en teoría. El **response** deberá variar en su formato de regreso pero algo que siempre debe existir es un código de validación de errores.
+Esto nos lleva a que todo **request** debe regresar una respuesta al menos en teoría. El **response** deberá variar en su formato de regreso pero algo que siempre debe existir es un código de validación de errores.
 
-Idealmente el código de respuesta deberá estár en el formato estándar de [codificación de códigos de estado HTTP](https://developer.mozilla.org/es/docs/Web/HTTP/Status).
+Idealmente el código de respuesta deberá estar en el formato estándar de [codificación de códigos de estado HTTP](https://developer.mozilla.org/es/docs/Web/HTTP/Status).
 
-Es muy importante que te familiarices con estos códigos ya que en desarrollo web lo son todo, muchos malos programadores inventan sus propios estándares confundiendo o haciendo más complicados sus trabajaos reinventando la rueda.
+Es muy importante que te familiarices con estos códigos ya que en desarrollo web lo son todo, muchos malos programadores inventan sus propios estándares confundiendo o haciendo más complicados sus trabajos reinventando la rueda.
 
 Empecemos creando un archivo **index.js**, como en el laboratorio anterior y coloquemos la base de un servidor nuevo.
 
@@ -84,13 +84,13 @@ Para obtener el resultado entonces da clic en el botón **Send** de la parte sup
 
 ![lab_10](/Tutorials/Lab10RutasYFormas/imgs/002.jpg)
 
-Aquí veremos una diferencia importante en el navegador con la respuesta, en primer lugar observá el código **200 Ok** que aparece reflejado, esto nos indica que en nuestro servidor si no colocamos un código, de manera default siempre se devuelve un código 200, esto no lo olvides ya que puede generar confusiones más adelante.
+Aquí veremos una diferencia importante en el navegador con la respuesta, en primer lugar observa el código **200 Ok** que aparece reflejado, esto nos indica que en nuestro servidor si no colocamos un código, de manera default siempre se devuelve un código 200, esto no lo olvides ya que puede generar confusiones más adelante.
 
 La otra parte es que a diferencia del navegador aquí veremos el response en formato de texto, ya que justamente habíamos declarado **response.setHeader('Content-Type', 'text/plain');** lo que indica que el tipo de respuesta es un texto plano.
 
 Para ello se utiliza el  **text/plain**, el cual es mejor conocido como los MIME types. Normalmente estamos acostumbrados a que los archivos nos guían en sus extensiones, por ejemplo: .txt,.html,.css,.pdf, etc.
 
-Las extensiones en su mayoría nos permite visualizar un tipo de archivo, pero técnicamente no es suficiente con colocar la extensión, sobre todo con archivos binarios, ya que requieren la codificación necesaria, no solo la extensión, para estonos sirven los MIME types, ayudan a la codificación y decodificación.
+Las extensiones en su mayoría nos permite visualizar un tipo de archivo, pero técnicamente no es suficiente con colocar la extensión, sobre todo con archivos binarios, ya que requieren la codificación necesaria, no solo la extensión, para esto nos sirven los MIME types, ayudan a la codificación y decodificación.
 
 Para nuestro caso serán necesarios para identificar cuando recibimos, texto, html, json o cualquier otro formato que queramos manejar.
 
@@ -241,8 +241,8 @@ Una forma de verla en su formato más simple es la siguiente:
 El código anterior cubre lo siguiente:
 
 - Las propiedades:
-  - method: [GET,POST,PUT,DELETE] permiten colocar cualquier tipo de método de conexión que necesitemos para subir como ya hemos venido diciendo la información y alinearla dentro de nuestras rutas. En caso de no escribirla por default utiliza el método GET, pero lo más compun es utilizarla en métodos tipo POST ya que todo el contenido se guardará dentro del body del request.
-  - action: Contiene la url de formato a llamar, dependiendo el tipo de servidor aquí puede variar, en ocasiones se escribe la url completa incluído el dominio, para nuestro caso basta con empezar despues de localhost:3000, utilizando primero **/** y de ahí el nombre interno de rutas que se tiene.
+  - method: [GET,POST,PUT,DELETE] permiten colocar cualquier tipo de método de conexión que necesitemos para subir como ya hemos venido diciendo la información y alinearla dentro de nuestras rutas. En caso de no escribirla por default utiliza el método GET, pero lo más común es utilizarla en métodos tipo POST ya que todo el contenido se guardará dentro del body del request.
+  - action: Contiene la url de formato a llamar, dependiendo el tipo de servidor aquí puede variar, en ocasiones se escribe la url completa incluido el dominio, para nuestro caso basta con empezar después de localhost:3000, utilizando primero **/** y de ahí el nombre interno de rutas que se tiene.
   - enctype: De momento todavía no lo veremos pero es un formato que permite trabajar para el caso especial de subir archivos al servidor.
   
 - Los elementos internos:
@@ -250,7 +250,7 @@ El código anterior cubre lo siguiente:
 
 >Nota: Cuida mucho en no confundir el elemento button con el submit, ya que el primero solo funciona para añadir alguna funcionalidad dentro del formulario, pero el segundo es el encargado de enviar la información del formulario al servidor.
 
->Nota 2: En internet existen muchas librerías que añaden mejor funcionalidad o facilidad para trabajar con algunos componentes dandoles máyor usabilidad o mejor diseño. Te recomiendo siempre tengas a la mano librerías para datepickers y establezcas un formato unificado para los forms que por lo general ya traen integrado los frameworks de diseño.
+>Nota 2: En internet existen muchas librerías que añaden mejor funcionalidad o facilidad para trabajar con algunos componentes dándoles mayor usabilidad o mejor diseño. Te recomiendo siempre tengas a la mano librerías para datepickers y establezcas un formato unificado para los forms que por lo general ya traen integrado los frameworks de diseño.
 
 Para que el código de nuestro servidor funciones vamos a tener que separara el GET y el POST, donde para el primer escribiremos el html del formulario que queremos y para el POST procesaremos la respuesta a subir esa información.
 
@@ -306,7 +306,7 @@ response.write(html);
 response.end();  
 ```
 
-Como puedes ver estamos utilizando el mismo header de código html que en la ruta **test_html**, pero a diferencia de ese aquí estamos utilizando la librería fs para leer el archivo **form.html** en memoria, codificandolo a utf8 y pasándolo como un string para escribirlo en el **respnse.write()**.
+Como puedes ver estamos utilizando el mismo header de código html que en la ruta **test_html**, pero a diferencia de ese aquí estamos utilizando la librería fs para leer el archivo **form.html** en memoria, codificándose a utf8 y pasándolo como un string para escribirlo en el **respnse.write()**.
 
 Esta es la forma más útil de poder probar y ver nuestro código html y no escribirlo al vuelo pues de lo contrario tendremos que hacer mucha prueba y error antes de verlo como nosotros queremos.
 

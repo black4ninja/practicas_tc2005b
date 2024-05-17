@@ -28,7 +28,7 @@ Vamos a instalar la librería de manera global para el ejercicio que estaremos t
 
 La bandera -g hace la misma instalación, pero esto hace que la librería sea global, es decir que sea accesible desde cualquier lugar de nuestra computadora. Internamente Node ya sabe que debe realizar la instalación en una carpeta especial a la cual si se hace la llamada a la librería debe estar disponible.
 
-Ahoras bien como te mencioné, podemos iniciar un proyecto desde aquí, pero debemos considerar un punto en el control de versiones que no hemos cubierto hasta el momento.
+Ahora bien como te mencioné, podemos iniciar un proyecto desde aquí, pero debemos considerar un punto en el control de versiones que no hemos cubierto hasta el momento.
 
 ## .gitignore
 
@@ -66,7 +66,7 @@ Al final veremos reflejado un nuevo archivo llamado **package.json**, el resulta
 }
 ```
 
-El archivo **package.json** nos dará una visibilidad inicial de como ejecutar y correr nuestro proyecto diferente a lo que hemos visto hasta el momento. Las configuraciones iniciales nos permiten escribir los datos de nuestro proyecto como el nombre, la versión, una descripción y el que nos interesa es el **main** pues es el que nos dice que archivo inical se ejecuta. Recuerdas que te comente que en Node podemos utilizar app.js o main.js, aquí es donde realmente hacemos la distinción y en nuestro caso usaremos index.js.
+El archivo **package.json** nos dará una visibilidad inicial de como ejecutar y correr nuestro proyecto diferente a lo que hemos visto hasta el momento. Las configuraciones iniciales nos permiten escribir los datos de nuestro proyecto como el nombre, la versión, una descripción y el que nos interesa es el **main** pues es el que nos dice que archivo inicial se ejecuta. Recuerdas que te comente que en Node podemos utilizar app.js o main.js, aquí es donde realmente hacemos la distinción y en nuestro caso usaremos index.js.
 
 Ahora vamos a instalar nuestra primera librería, en este caso express.
 
@@ -101,7 +101,7 @@ Un error al inicio es querer modificar la versión de la librería y cambiarla p
 
 > Nota: Nunca actualices una librería solo cambiando el número, si tienes suerte no sucederá nada, pero si no, romperás todo tu proyecto y puede llevarte a un efecto domino.
 
-Ahora que verás la actualización, también es probable que veas un archivo llamadao **package-lock.json**, este archivo es el hermano perdido del primero,  puede parecer molesto y puede darte algunos dolores de cabeza en el control de versiones, pero es un archivo sin filtros de como se estructura en tu máquina el proyecto, ya que si quieres pasarlo a otra máquina puedas hacerlo sin batallar con las librerías. De momento no vamos a tomarlo en cuenta pero para tu proyecto ten cuidado con él, ya que aunque lo elimines volverá a aparecer.
+Ahora que verás la actualización, también es probable que veas un archivo llamado **package-lock.json**, este archivo es el hermano perdido del primero,  puede parecer molesto y puede darte algunos dolores de cabeza en el control de versiones, pero es un archivo sin filtros de como se estructura en tu máquina el proyecto, ya que si quieres pasarlo a otra máquina puedas hacerlo sin batallar con las librerías. De momento no vamos a tomarlo en cuenta pero para tu proyecto ten cuidado con él, ya que aunque lo elimines volverá a aparecer.
 
 ## Básicos de express (Middlewares)
 
@@ -132,7 +132,7 @@ Este pequeño código nos permitirá crear un servidor para utilizar express y r
 
 La primera que veremos es conocida como **Middlewares**, estos son funciones que se van a ejecutar antes de realizar una instrucción o ruta del servidor, piensa en el caso de la autenticación de un usuario, podemos tener una verificación de autenticación en cada ruta de nuestro código, esto no será lo más óptimo pues estaremos duplicando código a diestra y siniestra. Para ello será mejor tener esta función que se ejecute antes de cada ruta y que este centralizada en el mismo pesado de código. Si bien podríamos llamarla simplemente como una función externa, el uso de middlewares proporcionado por express nos ayudará a secuenciar mejor el código más que como un proceso que como una función.
 
-Regresando al código que acabamos de agregar, observa que tenemos 2 Middleware, y la sintáxis que utilizan después de configurar express, es el uso del objeto **request** y **response** que son los mismos que ya vimos en laboratorios anteriores y aquí están agregando un objeto más, el **next**. El objeto next es el que me indica que esto es un middleware pues lo único que haremos es que una vez que termine nuestra función que queremos ejecutar en middleware debemos llamar a **next()**, para decirle a express que avance a la siguiente sección o al siguiente middleware.
+Regresando al código que acabamos de agregar, observa que tenemos 2 Middleware, y la sintaxis que utilizan después de configurar express, es el uso del objeto **request** y **response** que son los mismos que ya vimos en laboratorios anteriores y aquí están agregando un objeto más, el **next**. El objeto next es el que me indica que esto es un middleware pues lo único que haremos es que una vez que termine nuestra función que queremos ejecutar en middleware debemos llamar a **next()**, para decirle a express que avance a la siguiente sección o al siguiente middleware.
 
 Por tanto, antes de que nuestro servidor imprima la url del request, deberá imprimir Middleware y Este es otro middleware.
 
@@ -190,7 +190,7 @@ Pero en nuestra terminal si ejecutamos **pm2 logs** veremos lo siguiente:
 0|index    | Otro middleware!
 ```
 
-Lo que sucede aquí, es que nuestro servidor aún no maneja rutas, por lo que primero  llega a imprimir la url del request, pero una vez que lo hace empieza a ejecutar nuestros middlewares, pon especial atención en que no parece que se estén llamando directamente, y esto es por la variable app que de declaramos. Al menos para este arranque esta variable nos permite conectar en cadena cada uno de los elementos en el archivo haciendo que se ejecute el primer middleware, luego el segundo y así sucesivamente si tuvieramos más.
+Lo que sucede aquí, es que nuestro servidor aún no maneja rutas, por lo que primero  llega a imprimir la url del request, pero una vez que lo hace empieza a ejecutar nuestros middlewares, pon especial atención en que no parece que se estén llamando directamente, y esto es por la variable app que de declaramos. Al menos para este arranque esta variable nos permite conectar en cadena cada uno de los elementos en el archivo haciendo que se ejecute el primer middleware, luego el segundo y así sucesivamente si tuviéramos más.
 
 Ahora vamos a modificar nuestro segundo middleware a lo siguiente:
 
@@ -206,7 +206,7 @@ En el laboratorio anterior teníamos una manera de centralizar los errores 404 d
 
 ## Rutas con express
 
-En la forma previa para poder identificar rutas, necesitabamos meter un switch dentro de la función create server e identificar según la url que se estuviera llamando y hacer nuestro segmento de código de acuerdo al método de conexión y la ruta.
+En la forma previa para poder identificar rutas, necesitábamos meter un switch dentro de la función create server e identificar según la url que se estuviera llamando y hacer nuestro segmento de código de acuerdo al método de conexión y la ruta.
 
 Ahora con express todo esto será mucho más sencillo, para declarar la ruta default por ejemplo haremos lo siguiente:
 
@@ -320,7 +320,7 @@ const server = http.createServer( (request, response) => {
 app.listen(3000);
 ```
 
-Ve que la principal diferencia fue haber separado en funciones nuestro código para evitar el switch que teniamos y sus internos del GET y POST.
+Ve que la principal diferencia fue haber separado en funciones nuestro código para evitar el switch que teníamos y sus internos del GET y POST.
 
 Ahora bien vamos a mejorar la forma en la que trabajamos con nuestro formulario, y esto lo haremos a través de una nueva librería que debemos instalar en nuestro proyecto.
 
@@ -337,7 +337,7 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended: false}));
 ```
 
-El body parser nos permitirá trabajar más facilmente con las variables recibidas de nuestros request ya que su trabajo le permite codificar el body de una petición de manera sencilla y mas entendible.
+El body parser nos permitirá trabajar más fácilmente con las variables recibidas de nuestros request ya que su trabajo le permite codificar el body de una petición de manera sencilla y mas entendible.
 
 Lo que teníamos al trabajar con el formulario era lo siguiente:
 
@@ -393,7 +393,7 @@ El uso de request.body se limitará a funciones que manden información por el b
 
 ## Separando en clases
 
-Ya tenemos varias rutas trabajadas en nuestro proyecto, pero cada una puede representar un caso diferente, tan solo el manejo del formulario podríamos encapsularlo en un solo archivo para reducir que crezca mucho el **index.js**, hagámoslo.
+Ya tenemos varias rutas trabajadas en nuestro proyecto, pero cada una puede representar un caso diferente, tan solo el manejo del formulario podríamos encapsular en un solo archivo para reducir que crezca mucho el **index.js**, vamos a hacerlo.
 
 Crear un archivo nuevo llamado **formulario.routes.js**. Esto lo haremos dentro de una nueva carpeta a la cual llamaremos **routes**.
 

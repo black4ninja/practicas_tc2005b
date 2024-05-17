@@ -2,7 +2,7 @@
 
 ## Introducción a las ramas
 
-En el laboratorio 2 estuvimos trabajando con la introducción al control de versiones, desde aquí vimos el diagrama y los elementos principales que componen la herramienta de Git. A manera de repaso los veremos nuevamentes pues serán fundamentales en el siguiente paso.
+En el laboratorio 2 estuvimos trabajando con la introducción al control de versiones, desde aquí vimos el diagrama y los elementos principales que componen la herramienta de Git. A manera de repaso los veremos nuevamente pues serán fundamentales en el siguiente paso.
 
 ```
 ┌──────────────┐         ┌──────────────┐
@@ -22,9 +22,9 @@ out   │ ┌──────────────┐
 └──────────────┘
 
 ```
-- El working tree es el pedado de proyecto en cualquier momento (usualmente es el momento actual). Cuando agregas o editas código, modificas el working tree.
-- El stagin area es donde se colocan los cambios del working tree antes de hacerlos permanentes.
-- Un repository es la colección de cambios permanentes (commits) realizados a través de la historia del proyecto. Típicamente, existe un repositorio remotor (Github,Gitlab,Bitbucket,etc.) y muchos repositorios locales, uno para cada desarrollador involucrado en el proyecto al menos.
+- El working tree es el pedazo de proyecto en cualquier momento (usualmente es el momento actual). Cuando agregas o editas código, modificas el working tree.
+- El staging area es donde se colocan los cambios del working tree antes de hacerlos permanentes.
+- Un repository es la colección de cambios permanentes (commits) realizados a través de la historia del proyecto. Típicamente, existe un repositorio remoto (Github,Gitlab,Bitbucket,etc.) y muchos repositorios locales, uno para cada desarrollador involucrado en el proyecto al menos.
 
 Ahora bien, si esta es la forma de cliente-servidor que tenemos para visualizar en donde se encuentran nuestros archivos, es importante mencionar que el siguiente paso para trabajar con control de versiones es a través del manejo de branches o ramas.
 
@@ -32,8 +32,8 @@ Desde este punto toma la siguiente analogía, eres dueño del tiempo y el espaci
 
 Antes de entrar de lleno recuerda los 2 valores fundamentales que te transmití para el manejo de versiones que son:
 
-1. Disciplina - Aquí viene la responsabilidad de la persona en asegurarse que se encuentrar con los cambios más recientes y no forzar a agregar ningún cambio con comandos extraños que puedan llegar a afectar la línea del tiempo del proyecto o los archivos del mismo repositorio de manera remota.
-2. Comunicación - Cuando algo extrano suceda siempre es mejor invocar al equipo para que entre todos apoyen a resolver los conflictos, dejarlo en manos de una sola persona puede llevar a perder archivos importantes.
+1. Disciplina - Aquí viene la responsabilidad de la persona en asegurarse que se encuentra con los cambios más recientes y no forzar a agregar ningún cambio con comandos extraños que puedan llegar a afectar la línea del tiempo del proyecto o los archivos del mismo repositorio de manera remota.
+2. Comunicación - Cuando algo extraño suceda siempre es mejor invocar al equipo para que entre todos apoyen a resolver los conflictos, dejarlo en manos de una sola persona puede llevar a perder archivos importantes.
 
 >Nota: Recuerda que puedes recuperar un archivo que haya sido commiteado al repositorio remoto siempre y cuando no borren los apuntadores de commits que vienen, como regla específica si ya se subió mal, mejor arreglarlo en commits posteriores, si el error compromete seguridad por regla mejor crear un nuevo repositorio y un nuevo historial de commits.
 
@@ -45,7 +45,7 @@ Dependiendo de tu equipo puede o no ser común trabajar con los comandos de crea
 
 ![lab_7](/Tutorials/Lab7Branches/imgs/001.jpg)
 
-Para ir ubicandonos, vamos a ver que el branch default para GitHub es main pero si nos acercamos al menú que aparece podremos desplegar todos los branches que tenga nuestro repositorio. Nuevamente como apenas vamos comenzando solo existe main.
+Para ir ubicándonos, vamos a ver que el branch default para GitHub es main pero si nos acercamos al menú que aparece podremos desplegar todos los branches que tenga nuestro repositorio. Nuevamente como apenas vamos comenzando solo existe main.
 
 ![lab_7](/Tutorials/Lab7Branches/imgs/002.jpg)
 
@@ -199,7 +199,7 @@ On branch develop
 nothing to commit, working tree clean
 ```
 
-Ahora recuerda el diagrama del funcionamiento de git y preguntante. ¿En qué parte se encuentra nuestro archivo?
+Ahora recuerda el diagrama del funcionamiento de git y pregúntate. ¿En qué parte se encuentra nuestro archivo?
 
 Ya pasamos del **working tree** al **staging area** usando el **git add**, de ahí firmamos el cambio del **staging area** con un commit hacia nuestro **repositorio local.**
 
@@ -331,13 +331,13 @@ Este GitFlow simplificado es un mapa de como debemos trabajar en un repositorio.
 
 ![lab_7](/Tutorials/Lab7Branches/imgs/009.png)
 
-Nuevamente y haciendo incapié, recuerda que las ramas de master o main y develop no se tocan para trabajo continuo, solo para configuraciones o en su defecto no se tocan.
+Nuevamente y haciendo hincapié, recuerda que las ramas de master o main y develop no se tocan para trabajo continuo, solo para configuraciones o en su defecto no se tocan.
 
 Las configuraciones de GitHub te permiten bloquear estas ramas de recibir commits, sin embargo pueden limitarse al plan que tienes, por lo que más que la automatización establece con tu equipo que no deben realizarse commits a estas ramas.
 
 Por lo mismo vamos a realizar algo similar a lo que hicimos previamente en develop pero vamos a simular el trabajo continuo de un día a día.
 
-Vamos a pensar que nos toca trabajar en el **README.md** y que además nos solicitan un archivo **CONTRIBUTING.md** en donde específiquemos la estrategia para desarrollar commits y branches dentro del equipo. Además nos solicitan que todo el desarrollo se realice en Inglés.
+Vamos a pensar que nos toca trabajar en el **README.md** y que además nos solicitan un archivo **CONTRIBUTING.md** en donde especifiquemos la estrategia para desarrollar commits y branches dentro del equipo. Además nos solicitan que todo el desarrollo se realice en Inglés.
 
 Antes que nada vamos a crear un nuevo branch de **Trabajo**.
 
@@ -368,13 +368,13 @@ Con esto hemos visto que no se necesitan tener cambios para crear ramas en el pr
 
 ![lab_7](/Tutorials/Lab7Branches/imgs/010.jpg)
 
-Pero, ohh no  hemos cometido un error fatal, si te diste cuenta al momento de crear el branch estabamos en el branch de **main** y no de develop, por lo que al crear nuestra nueva rama el contenido de **README.md** es el original y no contiene el cambio que realizamos.
+Pero, ohh no  hemos cometido un error fatal, si te diste cuenta al momento de crear el branch estábamos en el branch de **main** y no de develop, por lo que al crear nuestra nueva rama el contenido de **README.md** es el original y no contiene el cambio que realizamos.
 
 Caos, muerte y destrucción, pero es justo por este tipo de detalles que se recomienda hacer iteraciones cortas, ya que el error lo voy a tener en 2 líneas, pero imagina que es 1 mes de trabajo entre versiones, entonces ahí si puedo tener un problema.
 
 Aquí tengo 2 opciones, si el cambio entre versiones es muy amplio, lo mejor sería borrar mi branch remoto y volver a empezar, pero hay algo que podemos hacer para arreglarlo.
 
-Asegurandonos que estamos en nuestro nuevo branch,dentro de nuestra consola vamos a realizar un:
+Asegurándonos que estamos en nuestro nuevo branch,dentro de nuestra consola vamos a realizar un:
 
 ```
 git pull origin develop
@@ -435,7 +435,7 @@ git push origin
 
 Perfecto, ahora nos hicieron la solicitud de agregar un archivo **CONTRIBUTING.md** al repositorio donde vamos a establecer el estándar para este repositorio para la generación de commits y branches.
 
-Este archivo es un poco extenso pero te lo dejo [aquí](/Tutorials/Lab7Branches/CONTRIBUTING.md), utilizalo como base para el repositorio de tu equipo y futuros proyectos.
+Este archivo es un poco extenso pero te lo dejo [aquí](/Tutorials/Lab7Branches/CONTRIBUTING.md), utilízalo como base para el repositorio de tu equipo y futuros proyectos.
 
 ![lab_7](/Tutorials/Lab7Branches/imgs/013.jpg)
 
@@ -449,7 +449,7 @@ git push origin
 
 ![lab_7](/Tutorials/Lab7Branches/imgs/014.jpg)
 
-Finalmente nos hace falta agregar una cceso rápido al archivo **CONTRIBUTING.md** desde nuestro archivo **README.md**. Por lo que actualizaremos el archivo a lo siguiente:
+Finalmente nos hace falta agregar una acceso rápido al archivo **CONTRIBUTING.md** desde nuestro archivo **README.md**. Por lo que actualizaremos el archivo a lo siguiente:
 
 ```
 # My Git Learning of branches
@@ -521,7 +521,7 @@ Como ya dijimos un Pull Request es el intento de hacer un merge entre una rama y
 
 ![lab_7](/Tutorials/Lab7Branches/imgs/020.jpg)
 
-Esto me aparece si seleccione crear el Pull Request desde el menú, si seleccionaste la notificación, puede que te precargue algunos datos, pero vamos desde el inicio.
+Esto me aparece si seleccione crear el Pull Request desde el menú, si seleccionaste la notificación, puede que te pre cargue algunos datos, pero vamos desde el inicio.
 
 La parte más importante del Pull Request es seleccionar a donde quiero hacer el merge y desde que branch, esto lo haremos en el siguiente espacio.
 
@@ -560,13 +560,13 @@ En la segunda parte veremos que se hace la lista de todos los commits que contie
 
 Lo siguiente que debemos hacer es crear la descripción de nuestro Pull Request.
 
-Una muy mala práctica es solo poner una frase corta, los equipos de desarrollo más experimentados tienen plantillas donde se incorpora una explicación de los cambios, checklist para verificar que su proceso de desarrollo y calidad se realiza correctamente, e incluso algunos agregan fotos o videos para que la o las personas que revisen el Pull Request entiendan más fácimente de que se está hablando.
+Una muy mala práctica es solo poner una frase corta, los equipos de desarrollo más experimentados tienen plantillas donde se incorpora una explicación de los cambios, checklist para verificar que su proceso de desarrollo y calidad se realiza correctamente, e incluso algunos agregan fotos o videos para que la o las personas que revisen el Pull Request entiendan más fácilmente de que se está hablando.
 
 Dar información es más fácil a que las personas adivinen que estabas haciendo.
 
 Una ventaja es que el contenido de este espacio recibe lenguaje markdown por lo que puedes hacer muchas combinaciones cuando empiezas a conocer el lenguaje.
 
-En nuestro caso vamos a agregar lo siguiente a manera de estándard.
+En nuestro caso vamos a agregar lo siguiente a manera de estándar.
 
 ```
 <!--- Provide a general summary of your changes in the Title above -->
@@ -603,7 +603,7 @@ Not available
       merge & deploy.
 ```
 
-Al finalizar actualizamos el Pull Reques y el resultado se debería ver como el siguiente:
+Al finalizar actualizamos el Pull Request y el resultado se debería ver como el siguiente:
 
 ![lab_7](/Tutorials/Lab7Branches/imgs/025.jpg)
 
@@ -613,7 +613,7 @@ Hasta este punto todo lo hemos realizado como nosotros mismos, el último paso n
 
 > Nota: Es responsabilidad de la persona que crea el Pull Request insistir en que el equipo revise el trabajo, pero no siempre estamos todos disponibles todo el tiempo, por lo que busca la mejor estrategia con tu equipo para que no pase mucho tiempo.
 
-> Nota 2: Algo muy común que puede pasar es que varios miembros del equipo realicen Pull Request al mismo tiempo, uno de los conflictos que tienen al hacer esto es que todos quieren mergear su trabajo a la vez. Pero los Pull Request son una **fila** cuando se atiende uno y se hace merge, el siguiente debe bajar la última versión, resolver conflictos y atenderse. Como ya dije, lo más común es hacerme responsable de mi trabajo pero olvidar a los demás, esto es trabajo en equipo, comuniquense efectivamente para llevar un buen control de actualizaciones para evitar algún problema entre archivos.
+> Nota 2: Algo muy común que puede pasar es que varios miembros del equipo realicen Pull Request al mismo tiempo, uno de los conflictos que tienen al hacer esto es que todos quieren mergear su trabajo a la vez. Pero los Pull Request son una **fila** cuando se atiende uno y se hace merge, el siguiente debe bajar la última versión, resolver conflictos y atenderse. Como ya dije, lo más común es hacerme responsable de mi trabajo pero olvidar a los demás, esto es trabajo en equipo, comuníquense efectivamente para llevar un buen control de actualizaciones para evitar algún problema entre archivos.
 
 Los siguientes pasos los realizaremos en el supuesto de que somos otro miembro del equipo que va a revisar el Pull Request que acabamos de subir.
 
@@ -629,7 +629,7 @@ Aquí vamos a seleccionar de las opciones en la parte superior la que dice **Fil
 
 ![lab_7](/Tutorials/Lab7Branches/imgs/027.jpg)
 
-Aquí nos va a aprecer una vista mostrandonos los cambios y los archivos nuevos, y en particular veremos que aparece primero el **CONTRIBUTING.md**, la pocisión dependerá de la estructura de tu proyecto.
+Aquí nos va a aparecer una vista mostrándonos los cambios y los archivos nuevos, y en particular veremos que aparece primero el **CONTRIBUTING.md**, la posición dependerá de la estructura de tu proyecto.
 
 Lo ideal al revisar el código es ver cada cambio, entenderlo y en caso de que algo no quede claro crear un comentario y una revisión para que la persona responsable haga el chequeo pertinente. Ahora bien, estos cambios son sugerencias de mejora, si aplican o no depende del responsable del Pull Request o justificar su acción o realizar el cambio pertinente.
 
@@ -644,7 +644,7 @@ Lo que va a suceder es que se agregará el comentario y se notificará al respon
 
 La persona que revisa podrá decidir si revisa lo que resta del código o esperar a que se realice el cambio para hacer una nueva revisión.
 
-En micaso seguir revisando el código. Cuando finalice el archivo **CONTRIBUTING.md** puedo marcarlo como revisado.
+En mi caso seguir revisando el código. Cuando finalice el archivo **CONTRIBUTING.md** puedo marcarlo como revisado.
 
 ![lab_7](/Tutorials/Lab7Branches/imgs/030.jpg)
 
@@ -686,11 +686,11 @@ En este Pull Request ya hemos realizado todo lo necesario, entonces como respons
 
 ## Estrategias de Merge (merge, rebase, squash+merge)
 
-Antes de terminar con el PR, vamos a resolver uno de los mitos en el control de versiones, las estrategias de mergeo.
+Antes de terminar con el PR, vamos a resolver uno de los mitos en el control de versiones, las estrategias de merge.
 
 Dentro de Git, tenemos varias opciones para fusionar ramas, y cada una hace algo diferente, es importante conocerlas.
 
-A nivel general las estrategias de mergeo es la forma en la que Git tratará los commits de la rama que estamos fusionando. No hay una sola forma válida, cada estrategia tiene sus pro y sus contras, algunas empresas optan por ciertas estrategias que otras por conveniencia.
+A nivel general las estrategias de merge es la forma en la que Git tratará los commits de la rama que estamos fusionando. No hay una sola forma válida, cada estrategia tiene sus pro y sus contras, algunas empresas optan por ciertas estrategias que otras por conveniencia.
 
 Vamos a ver cada estrategia en particular. Veremos que tenemos como estrategias el merge, el rebase y el squash+merge.
 
@@ -700,11 +700,11 @@ Vamos a ver cada estrategia en particular. Veremos que tenemos como estrategias 
 - Rebase - Es la más agresiva de las estrategias, aquí se empuja el historial de commits al final de la fila en la rama a fusionar, aquí se debe tener cuidado pues si no se está en la última versión se generarán conflictos importantes.
 - Squash+merge - Esta estrategia es sencilla, parecida al rebase, empuja los cambios al final del historial de la rama fusionada, peros con la diferencia al rebase que combina todo el historial de commits de la rama a fusionar en uno solo, por lo que tendremos commits que en su detalle incluirán commits de viejos de la rama a fusionar.
 
-Como puedes ver lo único importante de la estrategia de mergeo es como queremos que se visualice el historial de commits al momento de hacer la fusión.
+Como puedes ver lo único importante de la estrategia de merge es como queremos que se visualice el historial de commits al momento de hacer la fusión.
 
 Para mi pull request yo voy a seleccionar la estrategia de merge pues prefiero mantener la visualización de todo el historial y por donde va pasando. Pero esto no significa que se la única estrategia que utilizó, con mis clientes en ocasiones utilizo la estrategia de rebase por la simplicidad del historial de commits.
 
-Habla con tu equipo y dfefinan que estrategia utilizarán para su proyecto.
+Habla con tu equipo y definan que estrategia utilizarán para su proyecto.
 
 ![lab_7](/Tutorials/Lab7Branches/imgs/038.jpg)
 
@@ -720,7 +720,7 @@ Aquí recuerda lo que te dije, este branch que finalizamos es de **Trabajo** por
 
 ![lab_7](/Tutorials/Lab7Branches/imgs/041.jpg)
 
-Si algo malo sucediera, nota que puedes restaurar el branch o incluso revertir el merge, ten cuidad que sea solo al momento, ya que si lo haces más adelante nuevamente puedes poner en riesto el repositorio remoto.
+Si algo malo sucediera, nota que puedes restaurar el branch o incluso revertir el merge, ten cuidad que sea solo al momento, ya que si lo haces más adelante nuevamente puedes poner en riesgo el repositorio remoto.
 
 Si regresamos a la vista principal del repositorio y seleccionamos el branch de **develop**, veremos que tenemos la última versión actualizada en el repositorio remoto.
 
@@ -771,7 +771,7 @@ Fast-forward
  create mode 100644 CONTRIBUTING.md
 ```
 
-Otra pregunta que te puedes estar haciendo es ¿qué pasó con mi branch local de **feature/contributing-standard** pues antes de cambiarnos a **develop** estabamos en él.
+Otra pregunta que te puedes estar haciendo es ¿qué pasó con mi branch local de **feature/contributing-standard** pues antes de cambiarnos a **develop** estábamos en él.
 
 Si ejecutamos:
 
@@ -789,7 +789,7 @@ Obtendremos que sigue ahí
 
 Nuevamente debemos entender que aunque realizamos la actualización a la última versión, y que el branch ya no existe en el repositorio local, un branch no se eliminará hasta que no le digamos a git, en este caso podríamos dejarlo hasta ahí y realmente no nos afectaría en nada tenerlo, pero después de trabajar un rato puede que tengas una lista enorme de branches que ya no utilices.
 
-Para sincronizar mis branches locales con los del repositorio remotor vamos a ejecutar la siguiente secuencia de comandos.
+Para sincronizar mis branches locales con los del repositorio remoto vamos a ejecutar la siguiente secuencia de comandos.
 
 ```
 git fetch
@@ -801,7 +801,7 @@ Donde vamos a sustituir main por master en caso de que así se llamara el princi
 
 - git fetch - Es un pull pero para los branches del repositorio, esto actualiza cualquier branch que no tengamos y que este en el repositorio remoto.
 - git remote prune origin - Purga los branches no utilizados para marcar cuales existen en remoto y cuales en local
-- La última línea es una combinación para borrar todos los branches locales que no estén sincornizados con remoto o que no sean el principal **main** o **master**.
+- La última línea es una combinación para borrar todos los branches locales que no estén sincronizados con remoto o que no sean el principal **main** o **master**.
 
 Después de prune el resultado de la consola será:
 
@@ -871,7 +871,7 @@ De aquí en adelante y no será nada nuevo lo que haremos pues los pasos a segui
 - Corregir cualquier cambio adicional.
 - Hacer el merge.
 
-Iremos un poco más rápido pero iremos paso a paso, si consideras que ya entendiste toda la leccón te invito a que lo intentes, incluso si fallas aprenderás a que no hacer y como resolver problemas, mejor ahorita que en tu proyecto.
+Iremos un poco más rápido pero iremos paso a paso, si consideras que ya entendiste toda la lección te invito a que lo intentes, incluso si fallas aprenderás a que no hacer y como resolver problemas, mejor ahorita que en tu proyecto.
 
 ### Bajar la última versión de **develop** y asegurarnos que no hay cambios adicionales a realizar.
 
@@ -924,7 +924,7 @@ Pero hey, podemos hacer un último detalle para trabajar como los profesionales.
 
 Un paso que realizan muchas empresas al finalizar una versión, es marcarla como una versión estable, ya que si algo malo sucede puede entrar en acción rápidamente sin depender del repositorio, esto permite automatizar a que en el momento de crear estas versiones especiales se suban de manera automática a los servidores y ahorran mucho tiempo y esfuerzo por parte del equipo de desarrollo.
 
-Marecar las versiones estables tiene muchas formas de hacerse, algunos extienden el GitFlow creando ramas especiales donde solo se hacen merge de dichas versiones, en otros casos al finalizar un merge a **main** se ejecuta una serie de comandos para generar esta versión especial.
+Marcar las versiones estables tiene muchas formas de hacerse, algunos extienden el GitFlow creando ramas especiales donde solo se hacen merge de dichas versiones, en otros casos al finalizar un merge a **main** se ejecuta una serie de comandos para generar esta versión especial.
 
 En nuestro caso vamos a crear una etiqueta y que eso quede en el historial aparte para que de ser necesario podamos bajar la última versión estable.
 
@@ -1005,7 +1005,7 @@ To github.com:black4ninja/git-learning-branches.git
  * [new tag]         v0.0.1 -> v0.0.1
  ```
 
-Pero lo más práctico es ir a GitHub y ver que suicedió.
+Pero lo más práctico es ir a GitHub y ver que sucedió.
 
 ![lab_7](/Tutorials/Lab7Branches/imgs/050.jpg)
 ![lab_7](/Tutorials/Lab7Branches/imgs/051.jpg)

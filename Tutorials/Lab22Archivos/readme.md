@@ -28,11 +28,11 @@ npm i multer
 ```
 Al momento hemos usado la librería de express y el body-parser que no son nuevas para nosotros, la nueva librería que usaremos es la de **multer**.
 
-Multer es una librería que nos permite manejar archivos dentro de nuestros formularios para poder subirlos al servidor, pero quizás te estes preguntando. ¿Por qué necesitamos hacer todo esto si tengo el input file disponible en mi formulario?. Si bien esto es correcto, al momento de subir al servidor veremos que esto no funciona, y de echo cuando analizamos la razón tiene todo un sentido de lógica.
+Multer es una librería que nos permite manejar archivos dentro de nuestros formularios para poder subirlos al servidor, pero quizás te estés preguntando. ¿Por qué necesitamos hacer todo esto si tengo el input file disponible en mi formulario?. Si bien esto es correcto, al momento de subir al servidor veremos que esto no funciona, y de echo cuando analizamos la razón tiene todo un sentido de lógica.
 
 Cuando manejamos un formulario simple por lo general estamos utilizando texto, por más complejo o grande que este sea siempre el texto será en cuestión de tamaño pequeño comparado con un archivo que tan solo en su base puede llegar a pesar más que el texto de un formulario.
 
-Piensa en diferentes tipos de archivos, imágenes, videos, binarios, zips, entre otros si subieramos de golpe esto al servidor tardaría mucho y se bloquearía nuestra interfaz como sucede en algunos sitios.
+Piensa en diferentes tipos de archivos, imágenes, videos, binarios, zips, entre otros si subiéramos de golpe esto al servidor tardaría mucho y se bloquearía nuestra interfaz como sucede en algunos sitios.
 
 La magia de todo esto ocurre cuando "partimos" en pedazos nuestros archivos y los subimos poco a poco al servidor, aquí es donde entra multer que acepta cada uno de estos pedazos, reconstruye nuestro archivo y lo guarda en nuestro servidor.
 
@@ -117,7 +117,7 @@ Ya que tenemos nuestro form armado y corriendo vamos además de una carpeta **pu
 ![lab_22](/Tutorials/Lab22Archivos/imgs/004.png)
 
 Como mencioné, no nos enfocaremos en una arquitectura completa para este laboratorio, pero al menos haremos el uso de rutas y controladores por facilidad. Para ello debemos crear a la altura de **index.js** otro archivo al que llamaremos **index.controller.js**,
- este arechivo deberá contener de momentro lo siguiente:
+ este archivo deberá contener de momento lo siguiente:
 
 ```
 const log = console.log
@@ -143,7 +143,7 @@ Si cargamos un archivo y damos clic en **Upload** deberemos ver algo como lo sig
 
 Ya tenemos la ruta preparada, ahora vamos con lo que necesitamos para el laboratorio.
 
-Ahora bien, vamos a cargar el archivo que agregemos a nuestro proyecto, como ya mencionamos, usaremos multer para tomar el **multipart** de nuestro formulario y recibir el archivo.
+Ahora bien, vamos a cargar el archivo que agregamos a nuestro proyecto, como ya mencionamos, usaremos multer para tomar el **multipart** de nuestro formulario y recibir el archivo.
 
 Para ello necesitamos configurar en donde se guardará el archivo y con que nombre. Esto lo haremos de forma muy lineal con la siguiente configuración, dentro de nuestro archivo **index.controller.js** arriba de la función **upload_file**.
 
@@ -364,4 +364,4 @@ Con el uso del método de express **res.sendFile** podemos interpretar un archiv
 
 Este último paso es bastante sencillo en términos de solo realizar la canalización del archivo a la carpeta **private** pero tomando en cuenta que esto nos da control de acceso y de procesamiento en el proceso de consultar archivos que no están directamente abiertos al público nos permite hacer muchas cosas a largo plazo.
 
-De esta manera podemos trabajar con archivos en nuestro servidor, utilizando multer y haciendo variaciones, un proyecto de manejo de archivos tiene varias consideraciones importantes y adicionales que puedes manejar, revisalas para evitar caer en problemas según el tipo de arquitectura o servidores que estes utilizando.
+De esta manera podemos trabajar con archivos en nuestro servidor, utilizando multer y haciendo variaciones, un proyecto de manejo de archivos tiene varias consideraciones importantes y adicionales que puedes manejar, revisa esto para evitar caer en problemas según el tipo de arquitectura o servidores que estés utilizando.

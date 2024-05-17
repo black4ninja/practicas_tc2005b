@@ -217,7 +217,7 @@ INSERT INTO `tiene` (`id`, `username`, `created_at`) VALUES
 
 ### Obtener permiso del usuario logueado
 
-> Nota: Para la siguiente sección asegurate que tu base de datos este corriendo y este bien configurada como vimos en el laboratorio anterior.
+> Nota: Para la siguiente sección asegúrate que tu base de datos este corriendo y este bien configurada como vimos en el laboratorio anterior.
 
 Para poder obtener los permisos del usuario, tenemos que agregar a nuestro **usarios.model.js** el método getPermisos para obtener la información de nuestra base de datos, por lo que agrega ahí el siguiente método: 
 
@@ -360,7 +360,7 @@ module.exports = (request, response, next) => {
 }
 ```
 
-Para el otro permiso que tenemos disponible en nuestra base de datos crea un archivo que se llame **can-view.js** quer será el middleware para el permiso. 
+Para el otro permiso que tenemos disponible en nuestra base de datos crea un archivo que se llame **can-view.js** que será el middleware para el permiso. 
 
 ```
 module.exports = (request, response, next) => {
@@ -378,7 +378,7 @@ module.exports = (request, response, next) => {
 }
 ```
 
-Si te fijas en nuestros middlewares estamos usando una nueva ruta que es **logout**, agregalo en tu archivo de usuarios.routes.js:
+Si te fijas en nuestros middlewares estamos usando una nueva ruta que es **logout**, agrégalo en tu archivo de usuarios.routes.js:
 
 ```
 router.get('/logout', isAuth, canCreate, controller.logout);

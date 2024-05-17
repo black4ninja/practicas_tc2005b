@@ -6,7 +6,7 @@ Dentro de los laboratorios anteriores hemos mostrado como el uso de HTML, CSS y 
 
 Hasta este punto debe quedarnos claro que hemos utilizado archivos estáticos, es decir que no se modifican y que solo generan un procesamiento con Javascript a través de lo que conocemos como Programación Orientada a Eventos.
 
-Si bien lo hemos mencionado poco hemos llegado a un punto de inflección en el curso donde si bien nos podemos volver expertos en el desarrollo web estático, construyendo páginas web increíbles con los 3 exponentes, ha llegado el momento de empezar a pensar en el verdadero procesamiento de datos e información que nos permitira crear soluciones integrales a nuestros proyectos y clientes.
+Si bien lo hemos mencionado poco hemos llegado a un punto de infección en el curso donde si bien nos podemos volver expertos en el desarrollo web estático, construyendo páginas web increíbles con los 3 exponentes, ha llegado el momento de empezar a pensar en el verdadero procesamiento de datos e información que nos permitirá crear soluciones integrales a nuestros proyectos y clientes.
 
 Para ello necesitamos de distinguir entre el concepto de front-end y back-end. Muy escuchado por los programadores, pero ¿qué abarca cada uno? 
 
@@ -14,11 +14,11 @@ Si recuerdas, hemos hablado que la arquitectura que utilizamos para la comunicac
 
 ## Front-end
 
-El front-end es la parte de una aplicación que interactúa con los usuarios, es conocida como el lados del cliente. Básicamente es todo lo que vemos en pantalla cuando accedemos a un sitio web o aplicación: tipos de letra, colores, responsividad, eventos y otros elementos que permiten navegar dentro de una página web. Este conjunto crea lo que conocemos como la **experiencia de usuario**.
+El front-end es la parte de una aplicación que interactúa con los usuarios, es conocida como el lados del cliente. Básicamente es todo lo que vemos en pantalla cuando accedemos a un sitio web o aplicación: tipos de letra, colores, forma responsiva, eventos y otros elementos que permiten navegar dentro de una página web. Este conjunto crea lo que conocemos como la **experiencia de usuario**.
 
 Como hemos dichos el desarrollador de front-end se encarga de la experiencia de usuario, es decir, en el momento en el que se entra a una página web, se debe ser capaz de navegar en ella, por lo que el usuario verá una interface sencilla de usar, atractiva y funcional.
 
-Ahora bien, el front-end hoy en día no abarca solamente desarrollo web, pues hoy en día existen muchas formas de interfaces de usuario como aplicaciones de escritorio, aplicaciones móviles, entre otras. Cada una va a trener sus propias reglas, lenguajes y limitaciones.
+Ahora bien, el front-end hoy en día no abarca solamente desarrollo web, pues hoy en día existen muchas formas de interfaces de usuario como aplicaciones de escritorio, aplicaciones móviles, entre otras. Cada una va a tener sus propias reglas, lenguajes y limitaciones.
 
 ## Back-end
 
@@ -60,7 +60,7 @@ Dentro de app.js escribe lo siguiente:
 console.log("Hola Mundo");
 ```
 
-Antes de continuar te voy a decir que para manejar todo lo concerniente a NodeJS, es a través de línea de comandos y terminal. Aquí no hay escape y es el motivo de huída de muchos desarrolladores pues el manejo de servidores a través de terminal se les hace un proceso tedioso y complicado. Si bien es un terreno desafiante te pido que no te límites todavía, pues la capacidad que vas a adquirir desde este momento es mucha.
+Antes de continuar te voy a decir que para manejar todo lo concerniente a NodeJS, es a través de línea de comandos y terminal. Aquí no hay escape y es el motivo de huida de muchos desarrolladores pues el manejo de servidores a través de terminal se les hace un proceso tedioso y complicado. Si bien es un terreno desafiante te pido que no te límites todavía, pues la capacidad que vas a adquirir desde este momento es mucha.
 
 Desde nuestra terminal y en la carpeta del proyecto vamos a ejecutar el siguiente comando:
 
@@ -120,12 +120,12 @@ Si volvemos a ejecutar nuestro archivo con la instrucción **node app.js** en la
 ```
 Hola mundo desde node
 ```
-¿Por qué podemos manipular archivos?  Recuerda que cuando hablamos de un servidor es la computadora que almacena nuestra aplicación, por tanto nosotros somos responsables de como se maneja dicha computadora. Cuando hablamos de Javascript del lado del cliente en teoría no deberíamos modificar ningún archivo dentro de la computadora del cliente, pues no es algo que nos pertenezca, inluso desde el punto de ciberseguridad sería una muy mala práctica y nuestro sitio podría ser marcado como malicioso. Ahora nota que mi indicación es que no se debería hacer, pues el echo desde el punto ético y de seguridad es ese más desde el punto de vista funcional es que puede hacerse.
+¿Por qué podemos manipular archivos?  Recuerda que cuando hablamos de un servidor es la computadora que almacena nuestra aplicación, por tanto nosotros somos responsables de como se maneja dicha computadora. Cuando hablamos de Javascript del lado del cliente en teoría no deberíamos modificar ningún archivo dentro de la computadora del cliente, pues no es algo que nos pertenezca, viéndolo desde el punto de ciberseguridad sería una muy mala práctica y nuestro sitio podría ser marcado como malicioso. Ahora nota que mi indicación es que no se debería hacer, pues el echo desde el punto ético y de seguridad es ese más desde el punto de vista funcional es que puede hacerse.
 
 
 ## Async Sort
 
-Ya tenemos la capacidad de manipular los archivos de nuestra máquina lo que ya es un gran avance, pero que pasa con NodeJS y Javascript del lado del navegador, además del punto ético que te mencioné en el último párrafo, ¿existe alguna diferencia desde el punto de vista de la sintáxis del lenguaje? La respuesta es no.
+Ya tenemos la capacidad de manipular los archivos de nuestra máquina lo que ya es un gran avance, pero que pasa con NodeJS y Javascript del lado del navegador, además del punto ético que te mencioné en el último párrafo, ¿existe alguna diferencia desde el punto de vista de la sintaxis del lenguaje? La respuesta es no.
 
 NodeJS y Javascript siguen las mismas reglas de escritura de instrucciones, variables, funciones, métodos, etc. Quizás la diferencia radica es que en Javascript tenemos acceso al objeto DOM y podemos manipularlo, pero incluso el DOM desde el punto de vista del lenguaje es solo un objeto con datos, variables y funciones.
 
@@ -147,7 +147,7 @@ Trata de descubrir por tí mismo que hace el código anterior.
 
 El código anterior lo vamos a conocer como el async sort y nos permitirá ver uno de los usos más frecuentes de NodeJS que es la espera asíncrona de peticiones.
 
-Dentro del código tendremos un arreglo con números enteros no ordenados. Lo que hace el algoritmos es recorret dicha lista y utilizar la función de Javascript **setTimeout()**, la cual recibe 2 parámetros:
+Dentro del código tendremos un arreglo con números enteros no ordenados. Lo que hace el algoritmos es recorrer dicha lista y utilizar la función de Javascript **setTimeout()**, la cual recibe 2 parámetros:
 
 - Función - Una función que ejecute un código que deseemos, en este caso imprimir el número que estamos leyendo.
 - Tiempo (milisegundos) - El tiempo que debe pasar en milisegundos para que se ejecute la función que se recibe como parámetro.
@@ -210,7 +210,7 @@ const te_hackie = () => {
     console.log("jojo te hackié");
 }
 //setTimeout ejecuta la función recibida como primer parámetro 
-//cuando hayan transcurrido los milisegundos del segunto parámetro
+//cuando hayan transcurrido los milisegundos del segundo parámetro
 setTimeout(te_hackie, 7000);
 
 console.log("¿En dónde se ejecuta esta línea?");
@@ -249,7 +249,7 @@ El resultado debería ser el siguiente:
 ![lab_8](/Tutorials/Lab8IntroBackend/imgs/001.jpg)
 
 
-Si observas el mensaje de error dice **ERR_CONNECTION_REFUSED** indicandonos que no hay nada corriendo en la dirección local dentro del puerto 3000.
+Si observas el mensaje de error dice **ERR_CONNECTION_REFUSED** indicándonos que no hay nada corriendo en la dirección local dentro del puerto 3000.
 
 Ahora, vamos a ejecutar el archivo con:
 
@@ -265,7 +265,7 @@ Al inicio no pasará nada, pero deberá aparecer un loader de que algo esta suce
 
 Lo interesante, es que ahora no nos da la página de error, sino que simplemente se queda ahí, esto es por que el servidor recibe la petición, pero no tenemos nada actualmente que realice.
 
-Ahora vamos a descomentar el código que está dentro de la declaración de la función del servidor.
+Ahora vamos a quitar el comentario del código que está dentro de la declaración de la función del servidor.
 
 ```
 console.log(request.url);
@@ -311,7 +311,7 @@ La sorpresa vendrá con la segunda url **/favicon.ico**, aquí lo que sucede es 
 
 Como no estamos manejando esta url el navegador utiliza una imagen default.
 
-Para la instruccción:
+Para la instrucción:
 ```
 response.setHeader('Content-Type', 'text/html');
 ```
@@ -389,7 +389,7 @@ Al volver a cargar la url, puede ser la primera, **localhost:3000**, veremos el 
 
 Dentro de la página no hay problema, pero si exploramos el contenido html, veremos que se hace un código difícil de entender, a diferencia que hicimos lo mismo la primera vez con **index.html**, esto a se debe que el navegador entiende que se procesa una petición y su respuesta no es un html estandarizado, por lo que aunque intenta hacerlo añade más código del necesario.
 
-Vamos a modificar la respuesta con un html en regla, pero para ello nora que usaremos el tercer tipo de comilla de Javascript para evitar conflictos con otro tipo de comillas.
+Vamos a modificar la respuesta con un html en regla, pero para ello usaremos el tercer tipo de comillas de Javascript para evitar conflictos con otro tipo de comillas.
 
 ```
 response.write(`

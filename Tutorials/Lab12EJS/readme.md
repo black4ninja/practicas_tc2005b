@@ -42,7 +42,7 @@ Sea de una forma o de otra, una es menos práctica y la otra nos obliga a servir
 
 Para ello NodeJS y express nos permiten crear un folder especial dentro de nuestro proyecto conocido como la carpeta pública, esto permitirá que cualquier archivo dentro pueda ser servido desde el servidor a través de una url.
 
-Veamos como configurarlo y las posibilidades que nos da.
+Veamos como configurar esto y ver las posibilidades que nos da.
 
 Vamos a crear un nuevo servidor utilizando el npm init. Crea la configuración a tu gusto.
 
@@ -208,7 +208,7 @@ Ahora vamos a comenzar con el contenido HTML dinámico. Para ello utilizaremos u
 npm i ejs
 ```
 
-Al igual que la carpeta pública necesitamos configurarla para decirle a NodeJS y a express que esta sera la fuenta de plantillas dinámicas que utilizaremos.
+Al igual que la carpeta pública necesitamos realizar una configuración para decirle a NodeJS y a express que esta sera la fuente de plantillas dinámicas que utilizaremos.
 
 Para ello después de configurar express agregaremos lo siguiente:
 
@@ -259,7 +259,7 @@ Esto significa que si trabajamos con REACT, VUE, Angular o frameworks de desarro
 
 Existe mucha discusión al respecto sobre cual forma es mejor que otra, en la realidad la respuesta dependerá del equipo de desarrollo y sus conocimientos, como toda herramienta tiene sus beneficios y desventajas trabajar de una manera u otra.
 
-Al trabajar con el engine de html dinámico, vamos a ver que mientras trabajemos con estos archivos, estos siguen del lado del servidor, esto quiere decir que mientras utilicemos la sintáxis de los mismos quien los tiene es el servidor y no se han cargado en el navegador y mucho menos en el DOM.
+Al trabajar con el engine de html dinámico, vamos a ver que mientras trabajemos con estos archivos, estos siguen del lado del servidor, esto quiere decir que mientras utilicemos la sintaxis de los mismos quien los tiene es el servidor y no se han cargado en el navegador y mucho menos en el DOM.
 
 Esto es importante por que a veces queremos que se ejecute código de javascript del lado del cliente, pero si no entendemos en que parte del proceso está el HTML vamos a tardarnos en entender el error.
 
@@ -393,11 +393,11 @@ Ahora veremos que no debemos actualizar **index.ejs**, sino **body.ejs**, esto n
 
 Aquí las posibilidades ya son únicas, puedes cortar todo un sitio web por ejemplo separando la barra de navegación en 1 solo archivo, separar las secciones de una landing page como el hero section, los formularios, el footer, entre muchas otras combinaciones.
 
-La configuración rápida que te recomiendo es segmentar los css y scripts de la página, pues aunque son archivos separados como nuestro script.js, vamos a ver que una página incluye varios archivos así como librerías y es más fácil segmentarlos en 1 solo archivo para todo el sitio que tenerlos duplicaodos en diferentes páginas web.
+La configuración rápida que te recomiendo es segmentar los css y scripts de la página, pues aunque son archivos separados como nuestro script.js, vamos a ver que una página incluye varios archivos así como librerías y es más fácil segmentarlos en 1 solo archivo para todo el sitio que tenerlos duplicados en diferentes páginas web.
 
 Bien echo el código EJS permite tener múltiples sitios con diferentes diseños y funcionalidades en un solo proyecto, mal echo es un desastre de múltiples carpetas que no se sabe a donde llevan.
 
-Algo que no hemos visto hasta ahora es la particular sintáxis de EJS, si quieres ver toda la documentación al respecto no olvides consultar su [página oficial](https://ejs.co/).
+Algo que no hemos visto hasta ahora es la particular sintaxis de EJS, si quieres ver toda la documentación al respecto no olvides consultar su [página oficial](https://ejs.co/).
 
 Cuando hablamos de código de EJS veremos que siempre viene acompañado de los siguientes símbolos.
 
@@ -407,9 +407,9 @@ Cuando hablamos de código de EJS veremos que siempre viene acompañado de los s
 <%= %>
 ```
 
-Estos podemos verlos como una especie de etiquetas supercargadas de HTML que son las que incluyen el código de EJS.
+Estos podemos verlos como una especie de etiquetas super cargadas de HTML que son las que incluyen el código de EJS.
 
-La etiqueta de EJS pueden variar con los símbolor, cuando no lleva nada, utiliza código Javascript completo, **-** y **=** la diferencia principal que vamos a tener en cada uno es que al usar el **-** se puede escribir código de javascript a evaluar antes de cargar, mientras que **=** solo va a tomar el valor de variables como veremos a continuación.
+La etiqueta de EJS pueden variar con los símbolos, cuando no lleva nada, utiliza código Javascript completo, **-** y **=** la diferencia principal que vamos a tener en cada uno es que al usar el **-** se puede escribir código de javascript a evaluar antes de cargar, mientras que **=** solo va a tomar el valor de variables como veremos a continuación.
 
 Vamos a pensar que queremos cargar una lista de frases dentro de nuestro archivo **body.ejs**. Para hacerlo vamos a cargar información que viene desde nuestro servidor.
 
@@ -430,7 +430,7 @@ app.get('/test_ejs', (request, response, next) => {
 });
 ```
 
-Aquí declaramos una lista de frases, y en nuestro response mejoraremos el render. La función render carga el archivo ejs que le digamos en este caso el **index.ejs**, nota que no es necesario escribir la extensión del archivo. Como segundo parámetro que puede existir o no podemos agregar un JSON para pasar información al archivo ejs. Aquí es el punto donde te mencionaba que el archivo sigue existiendo en el servidor, todo este proceso de cargar el ejs en partes, pasarle la información y dejar un código específico de HTML se hace en un pre renderizado del lado del servidor, para que al final se pase el código HTML como uno solo al cliente.
+Aquí declaramos una lista de frases, y en nuestro response mejoraremos el render. La función render carga el archivo ejs que le digamos en este caso el **index.ejs**, nota que no es necesario escribir la extensión del archivo. Como segundo parámetro que puede existir o no podemos agregar un JSON para pasar información al archivo ejs. Aquí es el punto donde te mencionaba que el archivo sigue existiendo en el servidor, todo este proceso de cargar el ejs en partes, pasar la información y dejar un código específico de HTML se hace en un pre renderizado del lado del servidor, para que al final se pase el código HTML como uno solo al cliente.
 
 Dentro del **body.ejs** entonces necesitamos cargar:
 
@@ -452,7 +452,7 @@ Dentro del **body.ejs** entonces necesitamos cargar:
 <%- include('footer.ejs') %>a
 ```
 
-Aquí vamos a incluir código de Javascript dentro del HTML, pero utilizando la sintáxis de EJS, podemos crear un ciclo for, y dentro del mismo podemos agregar una etiqueta HTML, para que dentro de la misma coloquemos el valor de la frase que necesitamos.
+Aquí vamos a incluir código de Javascript dentro del HTML, pero utilizando la sintaxis de EJS, podemos crear un ciclo for, y dentro del mismo podemos agregar una etiqueta HTML, para que dentro de la misma coloquemos el valor de la frase que necesitamos.
 
 Como todo es cuestión de práctica para que te familiarices con todas las formas en que puedes escribir tu código HTML, pero ve que entre poder segmentar en archivos y utilizar código de Javascript para escribir el HTML la lógica del sitio se hace más simple.
 

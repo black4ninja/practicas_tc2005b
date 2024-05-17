@@ -70,7 +70,7 @@ const pool = mariadb.createPool({
 
 ```
 
-Deberás sustituir los valores de **user** y **pass** por los que hayas configurado en tu base de datos al momento de instalarla. Recuerda que para entornos de producción lo ideal es tener contraseñas largas para añdirle dificultad al acceso de la base de datos.
+Deberás sustituir los valores de **user** y **pass** por los que hayas configurado en tu base de datos al momento de instalarla. Recuerda que para entornos de producción lo ideal es tener contraseñas largas para añadirle dificultad al acceso de la base de datos.
 
 Ahora antes de hacer cualquier cosa vamos a añadir unos datos dentro de MariaDB para poder probarlo.
 
@@ -194,7 +194,7 @@ La anterior es lo que ya vimos como una función anónima, pues al momento no le
 
 Ahora debemos entender un poco como funcionan las Bases de Datos. Independientemente de donde nos conectemos sea en la misma computadora con localhost o a otro servidor, el tiempo que tarda la base de datos en responder es desconocido, y esto es importante que lo entendamos pues al conectarte a cualquier otro espacio no controlamos este tiempo. Esto pueden ser segundos o milisegundos pero al final no es un tiempo constante.
 
-Cuando ejecutamos un programa la secuencia de instrucciónes del código son secuenciales, pero el problema de ciertas llamadas a conexiones externas al no controlar el tiempo de respuesta puede provocar que se tarde mucho en responder.
+Cuando ejecutamos un programa la secuencia de instrucciones del código son secuenciales, pero el problema de ciertas llamadas a conexiones externas al no controlar el tiempo de respuesta puede provocar que se tarde mucho en responder.
 
 En programación general, simplemente escribimos el código y no nos preocupamos por esto pero ya en un desarrollo más avanzado como desarrollo web y conexión entre servidores veremos que tenemos que adecuarnos a otro estilo de programación.
 
@@ -245,9 +245,9 @@ Si bien al usar el async, estamos diciendo que nuestra función es asíncrona, p
 
 Como resultado y conclusión te recomiendo que todas las funciones de tu proyecto las definas como **async** para que en cualquier momento puedas hacer uso del **await** si lo necesitas, y en caso de que no, pues tu código ya estaría preparado para ello.
 
-También debemos resaltar que sucede cuando el código llega a la línea del **await**, lo que pasa es que como la palabra reservada nos dice, el código entra en un modo espera a que se ejecute la intrucción externa, en este caso el query a la base de datos y hasta que no termine podemos continuar donde nos quedamos.
+También debemos resaltar que sucede cuando el código llega a la línea del **await**, lo que pasa es que como la palabra reservada nos dice, el código entra en un modo espera a que se ejecute la instrucción externa, en este caso el query a la base de datos y hasta que no termine podemos continuar donde nos quedamos.
 
-Esto nos permite mantener un código secuencial para ello. Algo que mencionaremos pero no implementaremos, es que antes de que existiera **async/await** utilizabamos algo conocido como promesas y callbacks, en ocasiones se puede utilizar pero el código se vuelve más difícil de leer.
+Esto nos permite mantener un código secuencial para ello. Algo que mencionaremos pero no implementaremos, es que antes de que existiera **async/await** utilizábamos algo conocido como promesas y callbacks, en ocasiones se puede utilizar pero el código se vuelve más difícil de leer.
 
 Sin embargo todo el código en formato de promesas puede convertirse en **async/await** y viceversa.
 

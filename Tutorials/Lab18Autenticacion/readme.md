@@ -80,7 +80,7 @@ Guarda todos los archivos y corre en tu navegador la ruta correspondiente, deber
 
 ### Registrar un usuario en la BD
 
-> Nota: Para la siguiente sección asegurate que tu base de datos este corriendo y este bien configurada como vimos en el laboratorio anterior.
+> Nota: Para la siguiente sección asegúrate que tu base de datos este corriendo y este bien configurada como vimos en el laboratorio anterior.
 
 Ahora bien, ya tenemos nuestra vista para que el usuario introduzca información, ahora es momento de obtener dicha información a través del form que contiene nuestro EJS.
 
@@ -152,7 +152,7 @@ exports.User = class  {
         }
     }
     //Este método servirá para buscar un usuario por username
-    //Es estático ya que a diferencia de save(), el primero se guarda al crear un usuario siempre, pero en este segundo podmeos buscar un usuario sin crear un nuevo objeto usuario.
+    //Es estático ya que a diferencia de save(), el primero se guarda al crear un usuario siempre, pero en este segundo podemos buscar un usuario sin crear un nuevo objeto usuario.
     static async findUser(username) {
         try {
             const connection = await db();
@@ -258,7 +258,7 @@ Lo hemos conseguido, tenemos una vista con EJS, que manda datos y los guarda en 
 
 ## Encriptación de la contraseña
 
-Ahora que hemos alcanzados nuevos conocimientos viene la apertura a nuevos retos, y como podrás ver tenemos uno muy importante que cubrir, la contrasena, literalmente.
+Ahora que hemos alcanzados nuevos conocimientos viene la apertura a nuevos retos, y como podrás ver tenemos uno muy importante que cubrir, la contraseña, literalmente.
 
 Como en todo buen sistema lo ideal es tener un sistema de encriptación adecuado, no es objetivo del curso que empieces a crear tu propio algoritmo de encriptación y si tu enfoque no es en ciberseguridad, te recomiendo que uses uno de los que ya existen en la industria pues además de ser ya probados ayudan estandarizar uno de los puntos más importantes de nuestro sistema.
 

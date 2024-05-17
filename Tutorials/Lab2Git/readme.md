@@ -29,11 +29,11 @@ out   │ ┌──────────────┐
 └──────────────┘
 
 ```
-- El working tree es el pedado de proyecto en cualquier momento (usualmente es el momento actual). Cuando agregas o editas código, modificas el working tree.
-- El stagin area es donde se colocan los cambios del working tree antes de hacerlos permanentes.
-- Un repository es la colección de cambios permanentes (commits) realizados a través de la historia del proyecto. Típicamente, existe un repositorio remotor (Github,Gitlab,Bitbucket,etc.) y muchos repositorios locales, uno para cada desarrollador involucrado en el proyecto al menos.
+- El working tree es el pedazo de proyecto en cualquier momento (usualmente es el momento actual). Cuando agregas o editas código, modificas el working tree.
+- El staging area es donde se colocan los cambios del working tree antes de hacerlos permanentes.
+- Un repository es la colección de cambios permanentes (commits) realizados a través de la historia del proyecto. Típicamente, existe un repositorio remoto (Github,Gitlab,Bitbucket,etc.) y muchos repositorios locales, uno para cada desarrollador involucrado en el proyecto al menos.
 
-Cuando haces un cambio en el staging area es permanente, se queda removido de la staging area y commiteado al **reppo local**. Un commit es un grabado permanente de ese cambio. El repo contiene todos los commits que se han realizado.
+Cuando haces un cambio en el staging area es permanente, se queda removido de la staging area y commiteado al **repo local**. Un commit es un grabado permanente de ese cambio. El repo contiene todos los commits que se han realizado.
 
 ## Requerimientos Previos
 Instala Git en tu computadora según sea la versión de tu Sistema Operativo. [Git Oficial](https://git-scm.com/)
@@ -51,7 +51,7 @@ Al momento de iniciar un repositorio puedes hacerlo desde línea de comando.
 git init
 ```
 
-Para saber que el repositorio se inicio correctamente se debe crear un folder .git que por default es una carpeta ocular, debes habilitar ver este tipo de carpetas para poder verlas desde el manejador de archivos detu sistema operativo.
+Para saber que el repositorio se inicio correctamente se debe crear un folder .git que por default es una carpeta ocular, debes habilitar ver este tipo de carpetas para poder verlas desde el administrador de archivos de tu sistema operativo.
 
 Al momento de crear un nuevo repositorio se crea un branch default, más adelante trabajaremos con los branches. Por ahora lo único que debes saber es que el default es **master**, sí creas el repositorio desde la nube en ocasiones puede ser llamado como **main**.
 
@@ -107,7 +107,7 @@ index 0000000..0165e86
 +git is awesom
 ```
 
-Ahora vamos a preprara un commit al repositorio local
+Ahora vamos a preparar un commit al repositorio local
 
 ```
 git commit -m "add message"
@@ -372,7 +372,7 @@ Configura los datos básicos necesarios hasta que puedas clonar el repositorio.
 Para poder clonar un repositorio puedes usar **https** o **ssh**, la diferencia son protocolos de seguridad en como vamos a subir y bajar la información del repositorio, la más simple es https.
 
 - En https inicialmente se usaba tu usuario y contraseña de la plataforma cada vez que realizas un commit para poder firmarlo y conectarte. La realidad es que existen nuevas funciones de seguridad que obligan al usuario a crear un token dentro de la plataforma y en vez de la contraseña utilizar dicho token, por lo que necesitas realizar un proceso adicional y guardar muy bien el token para poder hacer tus commits.
-- El modo de ssh, es un protocolo de seguridad donde desde tu computadora creas un archivo el cual debes registrar en la plataforma de tu repositorio en la nube y con ello ya no vas a necesitar autentificarte cada vez que realices un commit.
+- El modo de ssh, es un protocolo de seguridad donde desde tu computadora creas un archivo el cual debes registrar en la plataforma de tu repositorio en la nube y con ello ya no vas a necesitar autentificarse cada vez que realices un commit.
 
 Si bien puedes usar uno u otro, la recomendación es que por seguridad generes tu llave de ssh, ya que hay repositorios que son restringidos solo a este tipo de comunicación y siempre va a ser una mejor práctica de seguridad.
 
