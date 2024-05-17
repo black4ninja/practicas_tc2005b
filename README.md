@@ -13,7 +13,7 @@ Este repositorio esta pensado como centro de información y documentación sobre
 
 [Tutoriales](/TUTORIALS.md) - te toman de la mano a través de una serie de pasos para crear un proyecto o entender un tema completo. Inicia aquí si eres nuevo al tema que estás buscando.
 
-Guías por Tema - discuten tempas clave o particulares y conceptos a un alto nivel y proveen información de trasfondo y explicación.
+Guías por Tema - discuten temas clave o particulares y conceptos a un alto nivel y proveen información de trasfondo y explicación.
 
 [Guías de Referencia](/REFERENCES.md) - contienen referencias técnicas para el tema revisado. Describen como funciona y como usarlo pero asumen que tienes un conocimiento básico de entendimiento para los conceptos clave.
 
