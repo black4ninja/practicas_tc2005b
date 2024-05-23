@@ -23,15 +23,23 @@ window.addEventListener('load', function() {
     }, 5000);*/
 
     gridTable = new gridjs.Grid({
-        columns: ["Id", "Name", "Price"],
+        columns: ["Id", "Name", "Price", {
+          name: "Actions",
+          formatter: (_, row) => {
+            return gridjs.h('button', {
+                className: 'py-2 mb-4 px-4 border rounded-md text-white bg-blue-600',
+                onClick: () => alert(`Editing "${row.cells[0].data}" "${row.cells[1].data}"`)
+              }, 'Edit');
+          }
+        }],
         pagination: true,
         search: true,
         sort: true,
-        server:{
-            url: "/products",
-            then: data => data.products
+        server: {
+          url: "/products",
+          then: data => data.products
         }
-    }).render(wrapper);
+      }).render(wrapper);
 });
 
 log("Loading 2");
